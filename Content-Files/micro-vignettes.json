@@ -1,0 +1,949 @@
+{
+  "_schema": {
+    "id": "string — unique identifier, format: [condition-slug]-[nnn]",
+    "scenario": "string — one or two sentences describing the clinical situation; written as a direct prompt to the physician",
+    "instead": "string — the vague or incorrect documentation a physician would typically write",
+    "write": "string — the specific, correct documentation that captures the CC or MCC",
+    "why": "string — brief explanation of why the correct phrasing matters; what it captures and what the wrong version misses",
+    "tags": {
+      "condition": "string — the CC or MCC being taught",
+      "classification": "MCC | CC | MCC-if-alive",
+      "procedures": "array of strings — LEJR | SHFFT | Spinal Fusion | CABG | Major Bowel | All",
+      "audience": "medicine | surgery | both",
+      "difficulty": "1 | 2 | 3 | 4 — 1=straightforward, 4=complex multi-condition",
+      "psi": "boolean — true if scenario also teaches a PSI-related documentation point"
+    }
+  },
+
+  "vignettes": [
+
+    {
+      "id": "aki-001",
+      "scenario": "On post-op day 2, your patient's creatinine has doubled to 2.2 from a baseline of 1.1. You started IV fluids and held the NSAIDs. What do you document?",
+      "instead": "Creatinine 2.2, elevated from baseline — likely prerenal. IV fluids running, NSAIDs held.",
+      "write": "Acute kidney injury, stage 2 by KDIGO criteria, likely prerenal etiology. Creatinine 2.2 from baseline 1.1. IV fluid resuscitation initiated, nephrotoxins held.",
+      "why": "Creatinine doubled = KDIGO Stage 2. Your treatment already reflects the diagnosis — the note needs to name it. 'Elevated creatinine' is a lab value, not a diagnosis, and will not be coded as AKI.",
+      "tags": {
+        "condition": "Acute Kidney Injury",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "aki-002",
+      "scenario": "Your patient has a baseline creatinine of 2.3 and was hypotensive intraoperatively for 40 minutes. Now on POD 1, creatinine is 4.2. Nephrology is at bedside. What do you document?",
+      "instead": "Creatinine elevated post-op, known CKD, likely ischemic injury. Nephrology consulted.",
+      "write": "Acute kidney injury with acute tubular necrosis, ischemic etiology, in the setting of intraoperative hypotension. Creatinine 4.2, baseline 2.3. Acute kidney injury on chronic kidney disease stage 3. Nephrology co-managing, CVVH being considered.",
+      "why": "Two diagnoses required: AKI with ATN (ischemic mechanism) and the underlying CKD stage. ATN is the more specific and clinically accurate code when ischemia is the mechanism. Both must be documented separately — collapsing them into 'known CKD' loses both the AKI MCC and the CKD CC.",
+      "tags": {
+        "condition": "Acute Kidney Injury",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "aki-003",
+      "scenario": "You are cross-covering and see 'prerenal azotemia' in your partner's progress note. Creatinine is 1.9, up from 1.0. What do you document in your note?",
+      "instead": "Agree with prerenal azotemia per previous note — continue IV fluids.",
+      "write": "Acute kidney injury, stage 2, likely prerenal etiology — creatinine 1.9 from baseline 1.0, meeting KDIGO Stage 2 criteria. Continuing IV hydration and nephrotoxin avoidance per prior plan. Note: 'prerenal azotemia' is not a codeable ICD-10 term; clarified as AKI.",
+      "why": "'Prerenal azotemia' cannot be coded and will generate a CDI query or be missed entirely. One sentence in your cross-cover note corrects it and captures the MCC.",
+      "tags": {
+        "condition": "Acute Kidney Injury",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "medicine",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "aki-004",
+      "scenario": "Your patient with stage 4 CKD received IV contrast for a CT scan. Creatinine rose from 3.1 to 4.8. You are managing conservatively. What do you document?",
+      "instead": "Contrast nephropathy — creatinine up from baseline, known CKD. Monitoring closely.",
+      "write": "Acute kidney injury with acute tubular necrosis, contrast-induced, on chronic kidney disease stage 4. Creatinine 4.8 from baseline 3.1. IV hydration, nephrotoxins held, nephrology notified.",
+      "why": "'Contrast nephropathy' is clinical shorthand, not a codeable ICD-10 diagnosis. Write AKI with ATN (contrast mechanism) plus CKD stage 4 — both code separately and both carry severity weight.",
+      "tags": {
+        "condition": "Acute Kidney Injury",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "CABG", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "sepsis-001",
+      "scenario": "Your post-colectomy patient develops fever, HR 118, WBC 22k, and is started on broad-spectrum IV antibiotics for a suspected anastomotic leak. What do you document?",
+      "instead": "Postoperative infection — started on antibiotics, surgery consulted.",
+      "write": "Sepsis due to suspected anastomotic leak following sigmoid colectomy. Meeting Sepsis-3 criteria — suspected intra-abdominal infection with systemic response. IV antibiotics initiated, surgery re-consulted for source control.",
+      "why": "'Infection' is not sepsis. Sepsis requires documented infection plus organ dysfunction or systemic decompensation linked together. If the clinical picture meets Sepsis-3 and you are treating it as sepsis, write sepsis.",
+      "tags": {
+        "condition": "Sepsis",
+        "classification": "MCC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "sepsis-002",
+      "scenario": "Your hip fracture patient develops hypotension on POD 2, cultures grow E. coli, and she requires vasopressors to maintain blood pressure. Lactate is 3.8. What do you document?",
+      "instead": "Bacteremia — E. coli, on vasopressors for hypotension. ID consulted.",
+      "write": "Septic shock due to E. coli bacteremia, source likely urinary. Vasopressors required to maintain MAP ≥65 mmHg despite adequate resuscitation. Lactate 3.8 mmol/L. Infectious disease and critical care co-managing.",
+      "why": "Bacteremia plus vasopressor dependence plus elevated lactate = septic shock, not just bacteremia. Septic shock is an MCC (if discharged alive). 'Bacteremia' alone is a CC — a meaningful difference in DRG weight.",
+      "tags": {
+        "condition": "Sepsis",
+        "classification": "MCC-if-alive",
+        "procedures": ["SHFFT"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "sepsis-003",
+      "scenario": "You write 'SIRS' in your note for a post-CABG patient with fever, tachycardia, and elevated WBC after a sternal wound infection is confirmed. What should you have written instead?",
+      "instead": "SIRS in the setting of sternal wound infection — antibiotics started.",
+      "write": "Sepsis due to sternal wound infection, post-CABG. Confirmed infection source with systemic response meeting Sepsis-3 criteria. IV vancomycin and piperacillin-tazobactam initiated. Cardiothoracic surgery consulted for wound management.",
+      "why": "SIRS is not sepsis in ICD-10-CM coding. SIRS codes to a different, lower-severity category. When a confirmed infection is the source, write sepsis — not SIRS.",
+      "tags": {
+        "condition": "Sepsis",
+        "classification": "MCC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "sepsis-004",
+      "scenario": "Your bowel resection patient develops sepsis with AKI and encephalopathy. You document 'sepsis with multi-organ dysfunction.' Is this sufficient?",
+      "instead": "Sepsis with multi-organ dysfunction — ICU transferred.",
+      "write": "Severe sepsis due to anastomotic leak with acute kidney injury (creatinine 3.1 from baseline 0.9) and metabolic encephalopathy. Sepsis-3 criteria met with SOFA score increase of 4. ICU transfer, nephrology and neurology consulted.",
+      "why": "'Multi-organ dysfunction' cannot be coded without naming the specific organs. For severe sepsis, each organ dysfunction must be named and coded separately — AKI, encephalopathy, respiratory failure. 'MODS' alone loses the individual MCC codes and undercaptures the severity.",
+      "tags": {
+        "condition": "Sepsis",
+        "classification": "MCC",
+        "procedures": ["Major Bowel", "SHFFT", "CABG"],
+        "audience": "medicine",
+        "difficulty": 4,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "enceph-001",
+      "scenario": "Your post-hip-fracture patient is confused on POD 1. Their sodium is 121 and they are on a reorientation protocol. What do you document?",
+      "instead": "Confusion postop — delirium precautions in place. Sodium low, correcting.",
+      "write": "Acute metabolic encephalopathy secondary to severe hyponatremia (sodium 121). CAM positive. Sodium correction initiated with hypertonic saline, neurology aware.",
+      "why": "'Confusion' and 'delirium' are not the same as encephalopathy. Delirium (F05) is a CC. Metabolic encephalopathy (G93.41) is an MCC. When there is a metabolic etiology, name the encephalopathy and link it to the cause.",
+      "tags": {
+        "condition": "Metabolic Encephalopathy",
+        "classification": "MCC",
+        "procedures": ["SHFFT", "LEJR"],
+        "audience": "medicine",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "enceph-002",
+      "scenario": "Your post-CABG patient is difficult to wean from the ventilator on POD 2 and appears confused. You attribute it to 'ICU delirium.' Is this the most accurate and complete documentation?",
+      "instead": "ICU delirium — reorientation protocol, sedation lightened.",
+      "write": "Metabolic encephalopathy secondary to hypoxia and metabolic derangement post-cardiopulmonary bypass. CAM positive POD 1-2. Treating underlying cause — optimizing ventilator settings, correcting electrolytes.",
+      "why": "Post-bypass cognitive changes are driven by metabolic and hypoxic mechanisms — making metabolic encephalopathy the accurate diagnosis, not just 'ICU delirium.' Encephalopathy is an MCC; delirium is a CC. The etiology is in the chart — document it.",
+      "tags": {
+        "condition": "Metabolic Encephalopathy",
+        "classification": "MCC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "enceph-003",
+      "scenario": "Your septic bowel patient becomes acutely confused on day 3. Ammonia is elevated and they have known cirrhosis. What do you document?",
+      "instead": "AMS in the setting of sepsis and liver disease — lactulose started.",
+      "write": "Acute metabolic encephalopathy secondary to sepsis and hepatic dysfunction, in the setting of known cirrhosis. Both septic encephalopathy and hepatic encephalopathy contributing. Lactulose initiated, rifaximin continued.",
+      "why": "When two metabolic etiologies are contributing, document both. Septic encephalopathy codes as metabolic (G93.41). Hepatic encephalopathy has its own code. Both can and should be documented when both are present — this is not upcoding, it is accuracy.",
+      "tags": {
+        "condition": "Metabolic Encephalopathy",
+        "classification": "MCC",
+        "procedures": ["Major Bowel"],
+        "audience": "medicine",
+        "difficulty": 4,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "enceph-004",
+      "scenario": "Your spine patient received IV opioids overnight and is difficult to arouse in the morning. Naloxone was given with improvement. What do you document?",
+      "instead": "Over-sedated — opioids held, monitoring.",
+      "write": "Toxic encephalopathy secondary to opioid toxicity. Patient somnolent and difficult to arouse; naloxone administered with clinical improvement. Opioid regimen revised, pain service consulted.",
+      "why": "'Over-sedated' is an observation, not a diagnosis. Toxic encephalopathy due to opioid toxicity is the correct specific diagnosis — and an MCC. The treatment (naloxone) confirms the diagnosis. Write it.",
+      "tags": {
+        "condition": "Metabolic Encephalopathy",
+        "classification": "MCC",
+        "procedures": ["Spinal Fusion", "LEJR", "SHFFT"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "malnut-001",
+      "scenario": "Your dietitian documents 'moderate malnutrition per ASPEN criteria' in their note. The patient has lost 9% of body weight in 3 months and has visible muscle wasting. What must you document?",
+      "instead": "Noted — nutrition consult following.",
+      "write": "Moderate protein-calorie malnutrition per ASPEN criteria — 9% weight loss over 3 months, moderate muscle wasting on exam, reduced intake in context of chronic illness. Physician assessment confirms moderate malnutrition. Oral nutritional supplements initiated.",
+      "why": "The dietitian cannot establish the diagnosis for coding purposes — only the physician can. 'Noted' is not a physician diagnosis. You must independently document the malnutrition diagnosis with severity for it to be coded.",
+      "tags": {
+        "condition": "Malnutrition",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "malnut-002",
+      "scenario": "Your post-bowel-resection patient has lost over 10% of their weight, has profound muscle wasting, and requires TPN. The dietitian has documented 'severe malnutrition.' What do you write?",
+      "instead": "Agree with nutrition consult — TPN initiated for poor nutritional status.",
+      "write": "Severe protein-calorie malnutrition per ASPEN criteria — greater than 10% weight loss, significant muscle and fat wasting on examination, energy intake severely reduced in context of active malignancy and recent surgery. TPN initiated. Physician diagnosis of severe malnutrition confirmed.",
+      "why": "Severe malnutrition is an MCC; moderate is a CC. The distinction requires the physician to document severity explicitly. Agreeing with the dietitian's note without your own documentation leaves the MCC uncaptured.",
+      "tags": {
+        "condition": "Malnutrition",
+        "classification": "MCC",
+        "procedures": ["Major Bowel", "SHFFT", "CABG"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "malnut-003",
+      "scenario": "Your patient's albumin is 2.0. You write 'low albumin — nutrition support started.' Is this sufficient documentation?",
+      "instead": "Low albumin 2.0 — nutrition consult placed, supplements ordered.",
+      "write": "Moderate protein-calorie malnutrition — albumin 2.0, consistent with significant protein deficit. Reduced intake for 2 weeks, mild muscle wasting on exam. Consistent with ASPEN criteria for moderate malnutrition in context of acute illness. Nutritional supplementation initiated.",
+      "why": "Albumin alone is not a malnutrition diagnosis — it is a lab value that supports the diagnosis. Under current ASPEN and GLIM criteria, albumin is not even a required criterion. Document the clinical findings (weight loss, wasting, intake) and name the diagnosis.",
+      "tags": {
+        "condition": "Malnutrition",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "medicine",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "malnut-004",
+      "scenario": "Your elderly hip fracture patient has lost 12% of their body weight over the past 6 months and requires tube feeds post-op. You write 'cachexia — tube feeds initiated.' What is the documentation problem?",
+      "instead": "Cachexia — tube feeds initiated for poor nutritional status.",
+      "write": "Severe protein-calorie malnutrition — 12% weight loss over 6 months, profound muscle wasting, tube feeds initiated. Meets ASPEN criteria for severe malnutrition in context of acute illness on chronic illness. Physician diagnosis: severe malnutrition.",
+      "why": "Cachexia and malnutrition are different diagnoses with different codes. Cachexia is a CC. Severe malnutrition is an MCC. If the clinical picture supports malnutrition — particularly with a documented weight loss percentage and wasting — write malnutrition, not cachexia.",
+      "tags": {
+        "condition": "Malnutrition",
+        "classification": "MCC",
+        "procedures": ["SHFFT", "LEJR"],
+        "audience": "medicine",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "hf-001",
+      "scenario": "Your LEJR patient receives IV Lasix on POD 1 for volume overload. BNP is 1,800. What do you document?",
+      "instead": "Volume overloaded — IV Lasix given, 1.5L net negative.",
+      "write": "Acute on chronic systolic heart failure. BNP 1,800, pulmonary edema on CXR, responding to IV diuresis with 1.5L net negative. EF 35% on prior echocardiogram.",
+      "why": "'Volume overloaded' describes a clinical finding, not a diagnosis. 'CHF' alone is unspecified — not an MCC or CC. Acute on chronic systolic heart failure is an MCC. Three additional words ('acute,' 'systolic,' 'chronic') make the difference.",
+      "tags": {
+        "condition": "Acute Heart Failure",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "hf-002",
+      "scenario": "You document 'CHF' in your discharge summary for a patient who received IV diuresis and had a BNP of 2,400 during admission. What is the problem and what should you write?",
+      "instead": "CHF — managed with IV then oral diuretics, BNP improving.",
+      "write": "Acute on chronic systolic heart failure, NYHA Class III — BNP 2,400 on admission, pulmonary edema on CXR, IV Lasix with transition to oral, net negative 3L over 2 days. EF 30%, managed with carvedilol, lisinopril, furosemide.",
+      "why": "'CHF' codes as I50.9 — unspecified heart failure — which is neither a CC nor an MCC. This single word choice loses the MCC entirely. Specify systolic or diastolic and acute versus chronic.",
+      "tags": {
+        "condition": "Acute Heart Failure",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "CABG", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "hf-003",
+      "scenario": "Your pre-op cardiology note for a CABG patient says 'systolic dysfunction, EF 28%, on GDMT.' Is this sufficient for HCC and DRG purposes?",
+      "instead": "Systolic dysfunction, EF 28%, on guideline-directed medical therapy.",
+      "write": "Chronic systolic heart failure with reduced ejection fraction (HFrEF), EF 28%, NYHA Class III. Managed with carvedilol, lisinopril, eplerenone, and furosemide — guideline-directed medical therapy.",
+      "why": "'Systolic dysfunction' is a physiological description, not an ICD-10-codeable diagnosis. 'Chronic systolic heart failure' is. For HCC purposes — which look back 180 days before surgery — the pre-op cardiology note must use diagnosis language, not functional descriptions.",
+      "tags": {
+        "condition": "Acute Heart Failure",
+        "classification": "MCC",
+        "procedures": ["CABG"],
+        "audience": "medicine",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "hf-004",
+      "scenario": "Your stable CABG patient has known heart failure but is compensated and does not require IV diuresis during the admission. Should you still document it?",
+      "instead": "Patient with known HF, currently compensated. No active intervention needed.",
+      "write": "Chronic systolic heart failure, stable, NYHA Class II — EF 35%, on carvedilol and lisinopril, no acute decompensation during this admission. Continue home regimen.",
+      "why": "Chronic stable heart failure is a CC — still worth documenting even without acute decompensation. In a 2-tier DRG procedure, only MCCs move payment; but chronic HF still carries HCC weight for target price risk adjustment, and in 3-tier procedures it moves the DRG to a higher tier.",
+      "tags": {
+        "condition": "Acute Heart Failure",
+        "classification": "CC",
+        "procedures": ["CABG", "LEJR", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "resp-001",
+      "scenario": "Your post-op patient requires high-flow nasal cannula at 40L/60% FiO2 on POD 1. You document 'hypoxia requiring supplemental oxygen — continue O2.' What is missing?",
+      "instead": "Hypoxia, O2 requirement increased — high-flow nasal cannula started.",
+      "write": "Acute hypoxic respiratory failure requiring high-flow nasal cannula at 40L/60% FiO2. Etiology likely atelectasis and volume overload post-operatively. Respiratory therapy initiated, upright positioning, incentive spirometry.",
+      "why": "Hypoxia is a finding. High-flow nasal cannula is a treatment. Acute hypoxic respiratory failure is the diagnosis — and an MCC. Mechanical ventilation is not required; patients on high-flow or non-invasive ventilation qualify.",
+      "tags": {
+        "condition": "Acute Respiratory Failure",
+        "classification": "MCC",
+        "procedures": ["CABG", "Major Bowel", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "resp-002",
+      "scenario": "Your COPD patient required BiPAP for 18 hours post-operatively and was difficult to wean. You document 'respiratory distress, improving.' What should you write?",
+      "instead": "Respiratory distress post-op — BiPAP initiated, weaning now. COPD contributing.",
+      "write": "Acute hypercapnic respiratory failure due to COPD exacerbation, requiring BiPAP for 18 hours post-operatively. Weaning in progress. Systemic steroids and scheduled nebulizers initiated.",
+      "why": "'Respiratory distress' is not a codeable diagnosis for respiratory failure. 'Respiratory failure' must be written explicitly. Specify the type — hypercapnic in COPD patients — and link to the etiology.",
+      "tags": {
+        "condition": "Acute Respiratory Failure",
+        "classification": "MCC",
+        "procedures": ["CABG", "Major Bowel", "Spinal Fusion", "LEJR"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "resp-003",
+      "scenario": "Your OHS patient on home BiPAP requires their device perioperatively and has baseline CO2 retention. They do not develop acute decompensation. What do you document?",
+      "instead": "Morbid obesity, on home BiPAP for sleep apnea. BiPAP continued.",
+      "write": "Obesity hypoventilation syndrome — BMI 46, home BiPAP, baseline pCO2 52 mmHg (prior ABG). BiPAP continued perioperatively. No acute respiratory decompensation.",
+      "why": "OHS and OSA are different diagnoses. 'Morbid obesity on BiPAP for sleep apnea' captures neither OHS nor the reason for the BiPAP correctly. OHS is a CC; OSA is not. The distinction requires naming OHS explicitly.",
+      "tags": {
+        "condition": "Acute Respiratory Failure",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "afib-001",
+      "scenario": "Your CABG patient develops atrial fibrillation with rapid ventricular response on POD 2. He converts to sinus rhythm with IV amiodarone. What do you document?",
+      "instead": "Post-op a-fib, rate controlled, converted with amiodarone.",
+      "write": "New-onset paroxysmal atrial fibrillation with rapid ventricular response, POD 2 post-CABG. Converted to sinus rhythm with IV amiodarone. Oral amiodarone 200mg daily continued for 4 weeks post-discharge. Cardiology aware.",
+      "why": "Post-CABG AF is extremely common and systematically underdocumented. 'Paroxysmal' is the correct type when AF terminates spontaneously or with intervention. Document the type, the management, and the discharge plan.",
+      "tags": {
+        "condition": "Atrial Fibrillation",
+        "classification": "CC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "afib-002",
+      "scenario": "You are discharging a LEJR patient who has been in persistent AF throughout the admission and remains in AF at discharge. You write 'history of a-fib.' What is the problem?",
+      "instead": "History of a-fib — rate controlled on metoprolol, anticoagulated.",
+      "write": "Persistent atrial fibrillation — present throughout admission, rate controlled on metoprolol. Anticoagulated with apixaban. In AF at time of discharge.",
+      "why": "'History of a-fib' implies the condition is resolved. A patient in active AF at discharge should be documented as having active, ongoing atrial fibrillation — not a history of it.",
+      "tags": {
+        "condition": "Atrial Fibrillation",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "CABG"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "afib-003",
+      "scenario": "Your patient has known AF and takes apixaban at home. The AF is never mentioned in your operative or post-operative notes. Does it need to be documented?",
+      "instead": "(No documentation of AF — it was 'known' and assumed to be in the chart)",
+      "write": "Atrial fibrillation, long-standing persistent — on home apixaban, rate controlled on metoprolol. Continued anticoagulation per home regimen, bridge protocol discussed with cardiology.",
+      "why": "A condition in the problem list or medication list is not automatically coded from the surgical stay. The physician must document active conditions during the hospitalization for them to be coded as secondary diagnoses. Known AF on anticoagulation is a CC — but only if you write it.",
+      "tags": {
+        "condition": "Atrial Fibrillation",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "CABG", "Spinal Fusion", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "copd-001",
+      "scenario": "Your SHFFT patient uses two inhalers at home and requires supplemental oxygen and standing nebulizer treatments after surgery. You document 'COPD — continue inhalers.' What is missing?",
+      "instead": "COPD — continue home inhalers, O2 as needed.",
+      "write": "COPD with acute exacerbation — increased O2 requirement post-operatively, worsening airflow obstruction, standing bronchodilator nebulizers initiated, systemic steroids started.",
+      "why": "'COPD' alone codes as a stable chronic diagnosis without additional severity weight. 'COPD with acute exacerbation' is a CC. If you escalated treatment — added steroids, increased bronchodilators, changed O2 requirements — document the exacerbation.",
+      "tags": {
+        "condition": "COPD",
+        "classification": "CC",
+        "procedures": ["SHFFT", "LEJR", "CABG", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "copd-002",
+      "scenario": "Your pre-op note for a CABG patient says 'pulmonary history — on inhalers.' What is wrong with this and what should it say?",
+      "instead": "Pulmonary history — on tiotropium and fluticasone/salmeterol at home.",
+      "write": "COPD, moderate persistent — on tiotropium and fluticasone/salmeterol, no acute exacerbation currently. FEV1 58% predicted on prior PFTs.",
+      "why": "'Pulmonary history' is not codeable. 'COPD' with severity and current status is. For HCC purposes, the pre-op note must use the diagnosis name — not a vague clinical descriptor — for the condition to count toward the 180-day risk adjustment lookback.",
+      "tags": {
+        "condition": "COPD",
+        "classification": "CC",
+        "procedures": ["CABG", "LEJR", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ohs-001",
+      "scenario": "Your morbidly obese spine patient uses home BiPAP and has documented daytime sleepiness and morning headaches. You document 'morbid obesity, OSA on BiPAP.' What is the documentation gap?",
+      "instead": "Morbid obesity, obstructive sleep apnea on home BiPAP. BiPAP continued perioperatively.",
+      "write": "Obesity hypoventilation syndrome (Pickwickian syndrome) — BMI 47, home BiPAP, morning headaches and daytime somnolence consistent with chronic hypercapnia. Prior pulmonology note documents pCO2 48 mmHg. BiPAP continued perioperatively.",
+      "why": "OSA is not a CC or MCC. OHS is a CC. The distinction is daytime hypercapnia — if your patient uses BiPAP (not CPAP), has morning headaches, and is morbidly obese, OHS is the clinically correct and documentarily more specific diagnosis.",
+      "tags": {
+        "condition": "Obesity Hypoventilation Syndrome",
+        "classification": "CC",
+        "procedures": ["Spinal Fusion", "LEJR", "SHFFT"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ohs-002",
+      "scenario": "Your anesthesia colleague mentions they had difficulty with ventilation intraoperatively in your morbidly obese patient on home CPAP. You write 'obese patient, known CPAP user — no complications.' What should you consider documenting?",
+      "instead": "Morbidly obese patient, on CPAP, required prolonged intubation — extubated successfully.",
+      "write": "Obesity hypoventilation syndrome — if confirmed by prior workup — versus obstructive sleep apnea alone. Intraoperative ventilatory difficulty noted by anesthesia; clinical picture reviewed. If prior ABG or pulmonology documentation supports OHS diagnosis, document explicitly.",
+      "why": "Difficult intraoperative ventilation in a morbidly obese CPAP/BiPAP user should prompt a review of whether OHS has been diagnosed. If prior documentation supports it, name it. If uncertain, query pulmonology or review the prior workup before discharge.",
+      "tags": {
+        "condition": "Obesity Hypoventilation Syndrome",
+        "classification": "CC",
+        "procedures": ["Spinal Fusion", "LEJR", "CABG"],
+        "audience": "surgery",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "perop-mi-001",
+      "scenario": "Your CABG patient's troponin is significantly elevated on POD 1. You write 'expected troponin release post-bypass.' Is this sufficient?",
+      "instead": "Troponin elevated post-bypass — expected, continue monitoring.",
+      "write": "Perioperative myocardial infarction (type 5, post-CABG) — troponin I peak 42 ng/mL, new ST changes in inferior leads on POD 1, confirmed on repeat ECG. Cardiology co-managing. Echocardiogram ordered to assess new wall motion abnormalities.",
+      "why": "Expected post-bypass troponin elevation and perioperative MI are not the same. If there are new ECG changes or new wall motion abnormalities, or if the troponin rise significantly exceeds the expected post-bypass range, document it as a perioperative MI. It is an MCC.",
+      "tags": {
+        "condition": "Perioperative MI",
+        "classification": "MCC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "perop-mi-002",
+      "scenario": "A CABG patient has demand ischemia documented in a progress note. Troponin is mildly elevated but there are no ECG changes. Is 'demand ischemia' the right diagnosis?",
+      "instead": "Demand ischemia — troponin mildly elevated, no ECG changes. Monitoring.",
+      "write": "Demand ischemia without MI — troponin mildly elevated with clinical picture consistent with supply-demand mismatch rather than acute plaque rupture. No new ECG changes, no new wall motion abnormalities. Continue monitoring.",
+      "why": "Demand ischemia (type 2 MI) and demand ischemia without MI are distinct. If the clinical picture does not support true MI, document it as demand ischemia without MI — this is accurate and still a CC. If criteria for MI are met, escalate to perioperative MI documentation.",
+      "tags": {
+        "condition": "Perioperative MI",
+        "classification": "CC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 4,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "anemia-001",
+      "scenario": "Your joint replacement patient required two units of packed red blood cells on POD 1. You document 'post-op anemia — transfused.' What is the documentation gap?",
+      "instead": "Post-op anemia — 2 units pRBC transfused.",
+      "write": "Acute blood loss anemia, postoperative — hemoglobin 7.1 following estimated blood loss of 800mL intraoperatively. Two units pRBC transfused with appropriate response.",
+      "why": "'Post-op anemia' codes as unspecified anemia — not a CC. 'Acute blood loss anemia' (D62) is a CC and accurately reflects the clinical situation. When you transfuse for surgical blood loss, name the diagnosis.",
+      "tags": {
+        "condition": "Acute Blood Loss Anemia",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "anemia-002",
+      "scenario": "Your SHFFT patient had a hemoglobin of 8.2 preoperatively (known anemia of chronic disease) and dropped to 6.9 post-op requiring transfusion. What should you document?",
+      "instead": "Anemia — hemoglobin 6.9, transfused 2 units. Known anemia of chronic disease.",
+      "write": "Acute blood loss anemia superimposed on anemia of chronic disease. Hemoglobin 6.9 post-operatively, dropped from preoperative 8.2. Two units pRBC transfused. Both conditions active and being managed.",
+      "why": "Two distinct anemia diagnoses are present and should both be documented. Anemia of chronic disease is a different code from acute blood loss anemia. Documenting both captures the full clinical picture — the chronic anemia does not disappear because the acute component is present.",
+      "tags": {
+        "condition": "Acute Blood Loss Anemia",
+        "classification": "CC",
+        "procedures": ["SHFFT", "LEJR", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "pressure-ulcer-001",
+      "scenario": "A nurse documents a 'Stage III sacral pressure injury present on arrival from the nursing home' in their admission assessment. You write nothing about it. Is this a problem?",
+      "instead": "(No physician documentation of the wound — only nursing note)",
+      "write": "Stage III sacral pressure injury — present on admission from skilled nursing facility. Wound care team consulted. POA = Yes.",
+      "why": "Pressure ulcer staging must be confirmed by a physician for coding purposes. Nursing documentation alone is insufficient. A Stage III pressure ulcer is an MCC — but only if the physician documents the stage. Write it in your admission note.",
+      "tags": {
+        "condition": "Pressure Ulcer",
+        "classification": "MCC",
+        "procedures": ["SHFFT", "LEJR"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "pressure-ulcer-002",
+      "scenario": "You document 'sacral decubitus ulcer — wound care ordered' on your SHFFT patient. What is the documentation gap?",
+      "instead": "Sacral decubitus ulcer — wound care ordered.",
+      "write": "Stage II sacral pressure injury, present on admission. Wound care team involved, moisture barrier and pressure relief mattress in place.",
+      "why": "Without a stage, the ulcer codes as unspecified — no CC or MCC. 'Decubitus ulcer' is an acceptable synonym but still requires physician staging. Stage II = CC; Stage III or IV = MCC.",
+      "tags": {
+        "condition": "Pressure Ulcer",
+        "classification": "CC",
+        "procedures": ["SHFFT", "LEJR"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "dvt-001",
+      "scenario": "Your LEJR patient develops calf swelling on POD 4 and duplex ultrasound confirms a popliteal DVT. You switch from prophylactic to therapeutic anticoagulation. What do you document?",
+      "instead": "DVT found on duplex — switched to therapeutic anticoagulation.",
+      "write": "Acute deep vein thrombosis, right popliteal vein, confirmed on duplex ultrasound POD 4. Enoxaparin dose adjusted to therapeutic range. Hematology consulted regarding duration of anticoagulation in the setting of recent surgery.",
+      "why": "DVT prophylaxis is not DVT treatment. Once confirmed, document the diagnosis explicitly: acute, laterality, specific vein, confirmed by imaging. This is a CC and must be named.",
+      "tags": {
+        "condition": "DVT",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "dvt-002",
+      "scenario": "Your LEJR patient develops acute dyspnea on POD 3 and CT-PA confirms bilateral pulmonary emboli. What do you document?",
+      "instead": "PE confirmed on CT-PA — anticoagulation started.",
+      "write": "Acute bilateral pulmonary emboli, hemodynamically stable. CT-PA confirmed POD 3. Therapeutic anticoagulation initiated with IV heparin bridge to oral agent. Cardiology and hematology consulted. Echo ordered to assess right heart strain.",
+      "why": "The imaging confirmed the diagnosis — write it explicitly. Specify bilateral vs. unilateral, hemodynamic stability, and treatment. Acute PE is an MCC.",
+      "tags": {
+        "condition": "DVT",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "cdiff-001",
+      "scenario": "Your post-bowel-resection patient tests positive for C. diff toxin on day 5. You start oral vancomycin and write 'diarrhea — C. diff positive, starting vanco.' What is missing?",
+      "instead": "Diarrhea, C. diff positive — starting vancomycin.",
+      "write": "C. difficile colitis confirmed on stool toxin PCR, day 5 post-operatively. Oral vancomycin 125mg QID initiated. Contact precautions in place. GI consulted.",
+      "why": "A positive test result is not a diagnosis. 'C. difficile colitis' is the diagnosis — and a CC. Document the organism, the confirmation method, the treatment, and precautions.",
+      "tags": {
+        "condition": "C. difficile",
+        "classification": "CC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "cdiff-002",
+      "scenario": "Your patient has severe C. diff colitis with WBC of 28k, creatinine 2.0, and toxic megacolon on imaging. You document 'C. diff colitis — on vancomycin and flagyl.' What is missing?",
+      "instead": "C. diff colitis — on vancomycin and metronidazole. Surgery aware.",
+      "write": "Fulminant C. difficile colitis with toxic megacolon — WBC 28k, creatinine 2.0, radiographic evidence of colonic dilation. IV metronidazole and high-dose oral vancomycin initiated. Colorectal surgery consulted for possible emergent colectomy.",
+      "why": "Fulminant C. diff with toxic megacolon is a far more severe presentation than uncomplicated C. diff colitis. The severity should be documented — it affects code assignment, clinical management documentation, and audit defensibility.",
+      "tags": {
+        "condition": "C. difficile",
+        "classification": "CC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "pleural-001",
+      "scenario": "Your CABG patient on POD 7 has a large left pleural effusion on CXR causing dyspnea. You perform thoracentesis and remove 900mL. You document 'pulmonary changes post-CABG — thoracentesis performed.' What should you write?",
+      "instead": "Pulmonary changes post-CABG — thoracentesis performed, patient improved.",
+      "write": "Large left pleural effusion, post-CABG, causing respiratory compromise. Thoracentesis performed with removal of 900mL exudative fluid. Respiratory status improved. Will monitor for reaccumulation.",
+      "why": "Pleural effusion is a CC and is extremely common after CABG. 'Pulmonary changes' is not a diagnosis. The thoracentesis confirms the diagnosis — write it.",
+      "tags": {
+        "condition": "Pleural Effusion",
+        "classification": "CC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "pleural-002",
+      "scenario": "Your CABG patient has small bilateral pleural effusions on POD 5 that are not causing respiratory compromise. You plan to discharge tomorrow. Should you document them?",
+      "instead": "(Effusions not mentioned in discharge summary — 'clinically insignificant')",
+      "write": "Small bilateral pleural effusions, post-CABG, clinically stable. No respiratory compromise, no intervention required at this time. Follow up with cardiothoracic surgery in 2 weeks.",
+      "why": "Even clinically insignificant effusions should be documented when present — they are a CC regardless of whether they required intervention. More importantly, documenting them at discharge ensures the next provider knows about them and can monitor for progression.",
+      "tags": {
+        "condition": "Pleural Effusion",
+        "classification": "CC",
+        "procedures": ["CABG"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "dementia-001",
+      "scenario": "Your 84-year-old hip fracture patient is agitated, combative, and requires redirection throughout the night. Her family confirms she has Alzheimer's at baseline. You write 'delirium — reorientation protocol.' What else should you document?",
+      "instead": "Delirium — reorientation and non-pharmacologic interventions in place.",
+      "write": "Moderate Alzheimer's dementia with behavioral disturbance — agitation and combativeness superimposed on baseline dementia. Acute delirium also present. Quetiapine 12.5mg at bedtime initiated. Family at bedside for reorientation.",
+      "why": "Delirium and dementia with behavioral disturbance are two separate diagnoses that can coexist. Dementia with behavioral disturbance is a CC. 'Delirium' alone in a patient with underlying dementia misses the underlying diagnosis entirely.",
+      "tags": {
+        "condition": "Dementia",
+        "classification": "CC",
+        "procedures": ["SHFFT", "LEJR"],
+        "audience": "medicine",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "dementia-002",
+      "scenario": "Your SHFFT patient's admission history lists 'memory problems' as a past medical history item. The family says he has Alzheimer's and lives in memory care. What should your H&P document?",
+      "instead": "PMH: memory problems, dementia per family.",
+      "write": "Moderate Alzheimer's dementia (pre-fracture MMSE approximately 14/30 per family report). Behavioral baseline: oriented to person only, wanders, requires full supervision. On donepezil 10mg. Cognitive status confirmed with memory care facility.",
+      "why": "'Memory problems' is not a diagnosis. 'Dementia per family' is not specific enough to code. Document the dementia type (Alzheimer's), severity (mild/moderate/severe), functional baseline, and current medications. This establishes the HCC and the CC in one paragraph.",
+      "tags": {
+        "condition": "Dementia",
+        "classification": "CC",
+        "procedures": ["SHFFT"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ileus-001",
+      "scenario": "Your post-colectomy patient on day 4 has no bowel sounds, abdominal distension, and an NG tube draining 1,200mL/day. You write 'not tolerating diet — NPO, NG tube in place.' What is the documentation gap?",
+      "instead": "Not tolerating diet — NG tube placed, NPO continued.",
+      "write": "Postoperative ileus — absent bowel sounds, abdominal distension, NG tube output 1,200mL/day. KUB shows dilated small bowel loops without evidence of mechanical obstruction. NPO, NG decompression, ambulation protocol ongoing.",
+      "why": "'Not tolerating diet' is an observation. Postoperative ileus is the diagnosis — and a CC. The NG tube you placed is treatment for ileus. Name the diagnosis you are treating.",
+      "tags": {
+        "condition": "Ileus",
+        "classification": "CC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ileus-002",
+      "scenario": "Your bowel resection patient's ileus has persisted for 8 days. You have been documenting 'slow GI recovery' in daily notes. What should you write in the discharge summary?",
+      "instead": "Prolonged post-operative course — slow GI recovery, discharged tolerating clear liquids.",
+      "write": "Prolonged postoperative ileus — absent bowel function for 8 days post-operatively, requiring sustained NG decompression, TPN for nutritional support, and prolonged hospitalization. Resolved on day 8 with return of bowel function.",
+      "why": "'Slow GI recovery' is not codeable. Postoperative ileus should be named in every progress note and in the discharge summary when it is prolonging the admission. Eight days of ileus requiring TPN is also an opportunity to document malnutrition.",
+      "tags": {
+        "condition": "Ileus",
+        "classification": "CC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ckd-001",
+      "scenario": "Your patient's baseline creatinine is 2.8, consistent with an eGFR of 22. You document 'CKD — creatinine at baseline.' What is the documentation gap?",
+      "instead": "CKD — creatinine 2.8, at baseline.",
+      "write": "Chronic kidney disease, stage 4 — eGFR 22 mL/min/1.73m², creatinine at baseline of 2.8. Nephrology following. No dialysis at this time.",
+      "why": "'CKD' without staging codes as unspecified — not a CC or MCC. The eGFR is in the chart. CKD Stage 4 (eGFR 15–29) is a CC. One word — the stage — changes the documentation from uncodeable to a CC.",
+      "tags": {
+        "condition": "CKD",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "ckd-002",
+      "scenario": "Your patient is on hemodialysis three times weekly. You document 'renal failure — on dialysis.' What should you write?",
+      "instead": "Renal failure — on hemodialysis.",
+      "write": "End-stage renal disease on hemodialysis three times weekly. Last session 2 days prior. Renal diet maintained, EPO dosing continued per nephrology.",
+      "why": "'Renal failure' is unspecified and may not code to ESRD. 'End-stage renal disease' is the specific diagnosis — and an MCC. Document it explicitly along with the dialysis modality and schedule.",
+      "tags": {
+        "condition": "CKD",
+        "classification": "MCC",
+        "procedures": ["LEJR", "SHFFT", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "cancer-001",
+      "scenario": "Your patient is 8 months post-hemicolectomy for Stage III colon cancer and is currently receiving adjuvant FOLFOX chemotherapy. You write 'history of colon cancer, s/p resection.' What is the documentation error?",
+      "instead": "History of colon cancer, status post right hemicolectomy, currently on chemotherapy.",
+      "write": "Stage III colon cancer, active — post right hemicolectomy, currently on adjuvant FOLFOX chemotherapy cycle 6 of 12. Active malignancy under treatment. No evidence of metastatic disease on most recent imaging.",
+      "why": "A patient receiving active chemotherapy does not have a 'history of' cancer — they have active cancer. 'History of' codes as resolved personal history (Z85.038) and does not capture the HCC. This is among the most common documentation errors in oncology patients.",
+      "tags": {
+        "condition": "Active Malignancy",
+        "classification": "MCC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "cancer-002",
+      "scenario": "Your patient has metastatic colorectal cancer with liver metastases and is on palliative FOLFIRI. You document 'metastatic colon cancer — palliative.' Is this complete?",
+      "instead": "Metastatic colon cancer, palliative intent.",
+      "write": "Metastatic colorectal cancer — primary sigmoid colon (active), with hepatic metastases and peritoneal carcinomatosis. On palliative FOLFIRI chemotherapy. Treatment intent: palliative. Oncology co-managing.",
+      "why": "Both the primary tumor site and the metastatic sites should be documented and will code separately. 'Metastatic colon cancer' alone misses the hepatic metastases and peritoneal disease as separate codes — each of which carries its own HCC weight.",
+      "tags": {
+        "condition": "Active Malignancy",
+        "classification": "MCC",
+        "procedures": ["Major Bowel"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "myelopathy-001",
+      "scenario": "You are performing a C5-C6 ACDF for cervical stenosis. Your operative indication reads 'cervical stenosis with upper extremity weakness.' What is the documentation gap for DRG and HCC purposes?",
+      "instead": "Cervical stenosis at C5-C6 with bilateral upper extremity weakness. Proceeding with ACDF.",
+      "write": "Cervical spondylotic myelopathy at C5-C6 — bilateral upper extremity weakness and impaired fine motor function, modified JOA score 12/18. Neurological deficit consistent with cord compression. Proceeding with anterior cervical discectomy and fusion for myelopathy.",
+      "why": "'Cervical stenosis with weakness' documents a structural finding and a symptom. 'Cervical spondylotic myelopathy' is the diagnosis — and an HCC. Myelopathy captures a neurological impairment that stenosis alone does not. The operative indication should name the diagnosis, not the anatomy.",
+      "tags": {
+        "condition": "Myelopathy",
+        "classification": "CC",
+        "procedures": ["Spinal Fusion"],
+        "audience": "surgery",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "withdrawal-001",
+      "scenario": "Your LEJR patient's family mentions he drinks 'a six-pack a day.' On POD 2 he becomes tremulous, diaphoretic, and agitated. CIWA protocol is initiated. What do you document?",
+      "instead": "Alcohol use disorder — CIWA protocol started, benzodiazepines given.",
+      "write": "Alcohol withdrawal syndrome, moderate — tremulousness, diaphoresis, and agitation on POD 2, CIWA score 14. IV lorazepam administered per protocol. Addiction medicine consulted.",
+      "why": "Alcohol use disorder and alcohol withdrawal are different diagnoses. Withdrawal is active, acute, and a CC. Document withdrawal separately from the underlying use disorder — both can and should be coded when both are present.",
+      "tags": {
+        "condition": "Withdrawal",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "hyponatremia-001",
+      "scenario": "Your post-SHFFT patient's sodium has dropped to 126. You ordered a sodium restriction and plan to check repeat labs. You document 'sodium low — restricting fluids.' What should you write?",
+      "instead": "Na 126, low — free water restriction ordered, repeat labs in AM.",
+      "write": "Hyponatremia, sodium 126, likely SIADH in the setting of pain and post-operative stress. Free water restriction initiated. Neurology notified given sodium below 130. Monitoring for symptoms.",
+      "why": "Na 126 is a lab value. Hyponatremia is the diagnosis — and a CC. Link the etiology when known. Document the intervention and the monitoring plan.",
+      "tags": {
+        "condition": "Hyponatremia",
+        "classification": "CC",
+        "procedures": ["SHFFT", "LEJR", "Major Bowel"],
+        "audience": "medicine",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "diabetes-001",
+      "scenario": "Your surgical patient with Type 2 diabetes and known neuropathy has HbA1c of 8.2. You document 'diabetes mellitus — insulin sliding scale.' What is the documentation gap?",
+      "instead": "Diabetes mellitus, Type 2 — insulin sliding scale in house.",
+      "write": "Type 2 diabetes mellitus with diabetic peripheral neuropathy — HbA1c 8.2, insulin sliding scale during hospitalization, home metformin and glipizide held peri-operatively. Endocrinology consulted for glycemic management.",
+      "why": "'Diabetes mellitus' alone codes as unspecified and maps to a lower-weight HCC. 'Type 2 DM with diabetic peripheral neuropathy' is a higher-weight HCC and captures the complication that is clinically present. Name the complication.",
+      "tags": {
+        "condition": "Diabetes with Complications",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "psi-resp-001",
+      "scenario": "Your post-Major Bowel patient was intubated for 48 hours post-operatively and required FiO2 of 70% to maintain SpO2 above 90%. You document 'prolonged intubation — extubated successfully on POD 2.' What is missing?",
+      "instead": "Prolonged intubation post-operatively — extubated successfully, tolerating room air now.",
+      "write": "Acute hypoxic respiratory failure requiring mechanical ventilation for 48 hours post-operatively — FiO2 70% to maintain SpO2 >90%. Etiology: atelectasis and aspiration risk. Extubated on POD 2 after ventilator wean. Respiratory therapy continuing.",
+      "why": "Prolonged intubation is a treatment — acute respiratory failure is the diagnosis. PSI 11 (postoperative respiratory failure) is triggered by specific codes. Accurate documentation of the respiratory failure diagnosis supports clinical validity and appropriate PSI capture.",
+      "tags": {
+        "condition": "Acute Respiratory Failure",
+        "classification": "MCC",
+        "procedures": ["Major Bowel", "CABG"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "psi-sepsis-001",
+      "scenario": "Your LEJR patient readmits on day 12 with a deep periprosthetic joint infection and sepsis. Your readmission note says 'wound infection — antibiotics started.' What should you document?",
+      "instead": "Wound infection — cultures sent, IV antibiotics started, orthopedics consulted.",
+      "write": "Sepsis due to periprosthetic joint infection, left total knee — wound cultures growing MRSA, systemic response with fever, tachycardia, and leukocytosis. IV vancomycin initiated. Orthopedic surgery and infectious disease co-managing. IR-guided washout planned.",
+      "why": "Periprosthetic joint infection is a specific diagnosis distinct from 'wound infection.' When systemic sepsis is present, document sepsis with the specific source. PSI 13 (postoperative sepsis) requires accurate source documentation for appropriate clinical and quality accounting.",
+      "tags": {
+        "condition": "Sepsis",
+        "classification": "MCC",
+        "procedures": ["LEJR"],
+        "audience": "both",
+        "difficulty": 3,
+        "psi": true
+      }
+    },
+
+    {
+      "id": "hf-hcc-001",
+      "scenario": "Your patient is scheduled for elective LEJR in 6 weeks. At their pre-op visit, you review their chart and see they take furosemide, carvedilol, and lisinopril for 'heart problems.' Their problem list says 'CHF.' What should you document in your pre-op note?",
+      "instead": "CHF — on home medications, stable for surgery.",
+      "write": "Chronic systolic heart failure with reduced ejection fraction (EF 38% on echo 4 months ago), NYHA Class II, stable on carvedilol 12.5mg, lisinopril 10mg, and furosemide 40mg. No acute decompensation. Cleared for elective surgery from cardiac standpoint.",
+      "why": "This is an HCC documentation opportunity — the pre-op visit falls within the 180-day lookback window. 'CHF' (unspecified) maps to a lower HCC weight than 'chronic systolic heart failure.' The pre-op note is where the risk adjustment target price gets built. Write it specifically.",
+      "tags": {
+        "condition": "Acute Heart Failure",
+        "classification": "CC",
+        "procedures": ["LEJR"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    },
+
+    {
+      "id": "resp-obstructive-001",
+      "scenario": "Your morbidly obese CABG patient uses BiPAP at home and has a prior ABG showing pCO2 of 54 mmHg. Your pre-op note says 'obesity, OSA on BiPAP.' What is the documentation problem?",
+      "instead": "Morbid obesity, obstructive sleep apnea on home BiPAP. Anesthesia notified.",
+      "write": "Obesity hypoventilation syndrome — BMI 48, home BiPAP, prior ABG with pCO2 54 mmHg consistent with chronic daytime hypercapnia. Anesthesia notified, prolonged intubation and ICU monitoring planned post-operatively.",
+      "why": "OSA is not a CC or MCC. OHS is a CC. The prior ABG with elevated pCO2 is the distinguishing finding — if it is in the chart, use it to document OHS rather than OSA. This also better informs anesthesia and the post-op monitoring plan.",
+      "tags": {
+        "condition": "Obesity Hypoventilation Syndrome",
+        "classification": "CC",
+        "procedures": ["CABG", "Spinal Fusion"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
+    }
+
+  ]
+}
