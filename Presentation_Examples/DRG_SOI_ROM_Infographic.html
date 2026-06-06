@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/uxorious/Downloads/ap_note_to_drg_infographic.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&amp;P Note → ICD-10 → DRG/SOI/ROM Infographic</title>
+<style>
+  :root {
+    --font-sans: -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'Menlo', 'Consolas', monospace;
+    --color-background-primary: #ffffff;
+    --color-background-secondary: #f5f5f4;
+    --color-text-primary: #1c1c1a;
+    --color-text-secondary: #5f5e5a;
+    --color-text-tertiary: #9ca3af;
+    --color-border-secondary: rgba(0,0,0,0.18);
+    --color-border-tertiary: rgba(0,0,0,0.10);
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background-primary: #1c1c1a;
+      --color-background-secondary: #2a2a27;
+      --color-text-primary: #e8e6df;
+      --color-text-secondary: #9c9a92;
+      --color-text-tertiary: #6b6b66;
+      --color-border-secondary: rgba(255,255,255,0.18);
+      --color-border-tertiary: rgba(255,255,255,0.10);
+    }
+    .tag-gray{background:#3a3a36;color:#d3d1c7}
+    .tag-amber{background:#3d2a0a;color:#fac775}
+    .tag-teal{background:#0a2920;color:#5dcaa5}
+    .cc-card{background:#2a1f08;border-color:#854f0b}.cc-card .icd{color:#fac775}.cc-card .desc{color:#ef9f27}.cc-card .badge{background:#854f0b;color:#faeeda}
+    .mcc-card{background:#042820;border-color:#0f6e56}.mcc-card .icd{color:#5dcaa5}.mcc-card .desc{color:#1d9e75}.mcc-card .badge{background:#0f6e56;color:#e1f5ee}
+    .base-card{background:#2c2c2a;border-color:#5f5e5a}.base-card .icd{color:#d3d1c7}.base-card .desc{color:#888780}.base-card .badge{background:#444441;color:#b4b2a9}
+    .rc-pdx .role-code{background:#26215c;color:#afa9ec}
+    .rc-sdx .role-code{background:#3d2a0a;color:#fac775}
+    .rc-mcc .role-code{background:#042820;color:#5dcaa5}
+    .mc-drg{background:#26215c;border-color:#534ab7}.mc-drg .m-title{color:#afa9ec}.mc-drg .m-val{color:#cecbf6}.mc-drg .m-sub{color:#afa9ec}
+    .mc-soi{background:#3d2a0a;border-color:#854f0b}.mc-soi .m-title{color:#ef9f27}.mc-soi .m-val{color:#fac775}.mc-soi .m-sub{color:#ef9f27}
+    .mc-rom{background:#042820;border-color:#0f6e56}.mc-rom .m-title{color:#1d9e75}.mc-rom .m-val{color:#5dcaa5}.mc-rom .m-sub{color:#1d9e75}
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+    padding: 2rem 1.5rem 3rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .page-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0 0 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin: 0 0 6px;
+  }
+  .note-box {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+  }
+  .note-box .dx-line { margin: 2px 0; }
+  .tag {
+    display: inline;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-weight: 500;
+    font-size: 12.5px;
+  }
+  .tag-gray  { background: #F1EFE8; color: #444441; }
+  .tag-amber { background: #FAEEDA; color: #633806; }
+  .tag-teal  { background: #E1F5EE; color: #085041; }
+  .arrow-row {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 6px;
+    color: var(--color-text-tertiary);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .code-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .code-card {
+    border-radius: var(--border-radius-md);
+    padding: 10px 10px 8px;
+    border: 0.5px solid;
+  }
+  .code-card .icd   { font-size: 12px; font-weight: 500; font-family: var(--font-mono); margin: 0 0 3px; }
+  .code-card .desc  { font-size: 11.5px; line-height: 1.4; margin: 0 0 5px; }
+  .code-card .badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 10px; }
+  .cc-card  { background: #FAEEDA; border-color: #BA7517; }
+  .cc-card .icd   { color: #412402; }
+  .cc-card .desc  { color: #633806; }
+  .cc-card .badge { background: #EF9F27; color: #412402; }
+  .mcc-card { background: #E1F5EE; border-color: #1D9E75; }
+  .mcc-card .icd   { color: #04342C; }
+  .mcc-card .desc  { color: #085041; }
+  .mcc-card .badge { background: #1D9E75; color: #E1F5EE; }
+  .base-card { background: #F1EFE8; border-color: #888780; }
+  .base-card .icd   { color: #2C2C2A; }
+  .base-card .desc  { color: #5F5E5A; }
+  .base-card .badge { background: #B4B2A9; color: #2C2C2A; }
+  .role-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .role-card {
+    border-radius: var(--border-radius-md);
+    padding: 9px 10px;
+    border: 0.5px solid var(--color-border-secondary);
+    background: var(--color-background-primary);
+  }
+  .role-card .role-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 4px; color: var(--color-text-secondary); }
+  .role-card .role-code  { font-size: 11px; font-family: var(--font-mono); margin: 2px 0; padding: 2px 5px; border-radius: 3px; display: inline-block; }
+  .role-card .role-note  { font-size: 11px; color: var(--color-text-secondary); margin-top: 4px; }
+  .rc-pdx { border-left: 3px solid #534AB7; }
+  .rc-sdx { border-left: 3px solid #BA7517; }
+  .rc-mcc { border-left: 3px solid #0F6E56; }
+  .rc-pdx .role-code { background: #EEEDFE; color: #3C3489; }
+  .rc-sdx .role-code { background: #FAEEDA; color: #633806; }
+  .rc-mcc .role-code { background: #E1F5EE; color: #085041; }
+  .metric-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .metric-card { border-radius: var(--border-radius-md); padding: 12px 12px 10px; border: 0.5px solid; }
+  .metric-card .m-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 6px; }
+  .metric-card .m-val   { font-size: 22px; font-weight: 500; margin: 0 0 2px; line-height: 1.1; }
+  .metric-card .m-sub   { font-size: 11px; line-height: 1.4; margin: 0; }
+  .mc-drg { background: #EEEDFE; border-color: #534AB7; }
+  .mc-drg .m-title { color: #534AB7; }
+  .mc-drg .m-val   { color: #3C3489; }
+  .mc-drg .m-sub   { color: #534AB7; }
+  .mc-soi { background: #FAEEDA; border-color: #BA7517; }
+  .mc-soi .m-title { color: #854F0B; }
+  .mc-soi .m-val   { color: #412402; }
+  .mc-soi .m-sub   { color: #854F0B; }
+  .mc-rom { background: #E1F5EE; border-color: #0F6E56; }
+  .mc-rom .m-title { color: #0F6E56; }
+  .mc-rom .m-val   { color: #04342C; }
+  .mc-rom .m-sub   { color: #0F6E56; }
+  .tier-legend {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin: 8px 0;
+    flex-wrap: wrap;
+  }
+  .tier-legend span {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-secondary);
+  }
+  .tier-legend .swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .divider { border: none; border-top: 0.5px dashed var(--color-border-tertiary); margin: 12px 0; }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  .compare-grid .col {
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .compare-grid .col strong { color: var(--color-text-primary); }
+  .worse  { color: #A32D2D; }
+  .better { color: #0F6E56; }
+  .excl-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin: 5px 0 0;
+    line-height: 1.5;
+  }
+  .spacer { margin-top: 14px; }
+</style>
+</head>
+<body>
+
+<div class="page-title">Assessment &amp; plan → ICD-10 → DRG / SOI / ROM — documentation specificity infographic</div>
+
+<p class="section-label">Step 1 — Physician assessment &amp; plan note</p>
+<div class="note-box">
+  <div class="dx-line"><strong>1.</strong> <span class="tag tag-gray">Heart failure</span> — optimize diuresis, uptitrate carvedilol</div>
+  <div class="dx-line"><strong>2.</strong> <span class="tag tag-teal">Acute-on-chronic systolic heart failure (EF 25%)</span> — will add sacubitril/valsartan</div>
+  <div class="dx-line"><strong>3.</strong> <span class="tag tag-gray">Hypertension</span> — continue amlodipine</div>
+  <div class="dx-line"><strong>4.</strong> <span class="tag tag-amber">Chronic kidney disease, stage 3b</span> — renally dose meds, renal follow-up</div>
+  <div class="dx-line"><strong>5.</strong> <span class="tag tag-amber">Persistent atrial fibrillation</span> — therapeutic on apixaban, rate controlled</div>
+  <div class="dx-line"><strong>6.</strong> <span class="tag tag-teal">Acute hypoxic respiratory failure</span> — supplemental O₂, pulm consult</div>
+  <div class="dx-line"><strong>7.</strong> <span class="tag tag-gray">Type 2 diabetes mellitus</span> — hold SGLT2i during admission</div>
+  <div class="dx-line"><strong>8.</strong> <span class="tag tag-teal">Hyponatremia, severe (Na 118)</span> — cautious correction, nephrology aware</div>
+</div>
+<div class="tier-legend">
+  <span><span class="swatch" style="background:#B4B2A9"></span> No impact / base</span>
+  <span><span class="swatch" style="background:#EF9F27"></span> CC — complication/comorbidity</span>
+  <span><span class="swatch" style="background:#1D9E75"></span> MCC — major CC</span>
+</div>
+
+<div class="arrow-row">↓</div>
+
+<p class="section-label">Step 2 — ICD-10 code assignment</p>
+<div class="code-grid">
+  <div class="base-card code-card">
+    <div class="icd">I50.9</div>
+    <div class="desc">Heart failure, unspecified</div>
+    <div class="badge">No impact</div>
+  </div>
+  <div class="mcc-card code-card">
+    <div class="icd">I50.22</div>
+    <div class="desc">Acute-on-chronic systolic HF</div>
+    <div class="badge">MCC</div>
+  </div>
+  <div class="base-card code-card">
+    <div class="icd">I10</div>
+    <div class="desc">Essential hypertension</div>
+    <div class="badge">No impact</div>
+  </div>
+  <div class="cc-card code-card">
+    <div class="icd">N18.32</div>
+    <div class="desc">CKD stage 3b</div>
+    <div class="badge">CC</div>
+  </div>
+  <div class="cc-card code-card">
+    <div class="icd">I48.11</div>
+    <div class="desc">Persistent atrial fibrillation</div>
+    <div class="badge">CC</div>
+  </div>
+  <div class="mcc-card code-card">
+    <div class="icd">J96.01</div>
+    <div class="desc">Acute hypoxic resp. failure</div>
+    <div class="badge">MCC</div>
+  </div>
+  <div class="base-card code-card">
+    <div class="icd">E11.9</div>
+    <div class="desc">Type 2 DM w/o complications</div>
+    <div class="badge">No impact</div>
+  </div>
+  <div class="mcc-card code-card">
+    <div class="icd">E87.1</div>
+    <div class="desc">Hyponatremia (severe)</div>
+    <div class="badge">MCC</div>
+  </div>
+</div>
+
+<div class="arrow-row spacer">↓</div>
+
+<p class="section-label">Step 3 — Diagnosis role classification</p>
+<div class="role-row">
+  <div class="role-card rc-pdx">
+    <div class="role-title">Principal diagnosis</div>
+    <div class="role-code">I50.22</div>
+    <div class="role-note">Acute-on-chronic systolic HF — reason for admission after workup</div>
+  </div>
+  <div class="role-card rc-sdx">
+    <div class="role-title">Meaningful secondary Dx (CC)</div>
+    <div class="role-code">N18.32</div>
+    <div class="role-code">I48.11</div>
+    <div class="role-note">CKD 3b &amp; persistent afib — both actively managed</div>
+  </div>
+  <div class="role-card rc-mcc">
+    <div class="role-title">Meaningful secondary Dx (MCC)</div>
+    <div class="role-code">J96.01</div>
+    <div class="role-code">E87.1</div>
+    <div class="role-note">Hypoxic resp. failure &amp; severe hyponatremia — highest-weight secondaries</div>
+  </div>
+</div>
+<p class="excl-note">I50.9, I10, E11.9 assigned but excluded from DRG/SOI/ROM impact — vague or low-specificity documentation yields no additional weight.</p>
+
+<div class="arrow-row spacer">↓</div>
+
+<p class="section-label">Step 4 — Downstream metric impact</p>
+<div class="metric-row">
+  <div class="metric-card mc-drg">
+    <div class="m-title">MS-DRG (payment)</div>
+    <div class="m-val">DRG 291</div>
+    <div class="m-sub">Heart failure &amp; shock <strong>with MCC</strong> — highest payment tier. MCC present (J96.01) triggered upgrade from base DRG 293.</div>
+  </div>
+  <div class="metric-card mc-soi">
+    <div class="m-title">APR-DRG SOI</div>
+    <div class="m-val">Subclass 4</div>
+    <div class="m-sub"><strong>Extreme.</strong> I50.22 + J96.01 + E87.1 interact — combination of cardiac failure, respiratory failure, and electrolyte crisis drives maximum severity.</div>
+  </div>
+  <div class="metric-card mc-rom">
+    <div class="m-title">APR-DRG ROM</div>
+    <div class="m-val">Subclass 3–4</div>
+    <div class="m-sub"><strong>Major to extreme.</strong> Acute respiratory failure is a strong ROM driver. Severe hyponatremia compounds. Mortality risk-adjustment reflects true patient acuity.</div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="compare-grid">
+  <div class="col">
+    <strong>If "heart failure" only (I50.9)</strong><br>
+    DRG 293 — base, no CC/MCC<br>
+    SOI subclass 1–2 &nbsp;|&nbsp; ROM subclass 1<br>
+    <span class="worse">Reimbursement ~$4,200 lower. Mortality stats look artificially low.</span>
+  </div>
+  <div class="col">
+    <strong>With full specificity (I50.22 + J96.01 + E87.1)</strong><br>
+    DRG 291 — MCC tier<br>
+    SOI subclass 4 &nbsp;|&nbsp; ROM subclass 3–4<br>
+    <span class="better">Accurate reimbursement. Risk-adjusted outcomes reflect true acuity.</span>
+  </div>
+</div>
+
+
+
+</body></html>

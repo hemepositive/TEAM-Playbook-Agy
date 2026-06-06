@@ -1,0 +1,924 @@
+<!--
+  CDI Specificity Explorer v1.0
+  Clinical Documentation Improvement Teaching Tool
+  CMO Office — Physician Quest Training Program
+  DRG weights: CMS IPPS FY2025 Final Rule, Table 5
+  Base rate: $6,000 (community hospital approximation)
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDI Specificity Explorer</title>
+    <style>
+        :root {
+            /* Base colors */
+            --color-background: #ffffff;
+            --color-background-secondary: #f9f9fb;
+            --color-text-primary: #111827;
+            --color-text-secondary: #4b5563;
+            --color-text-tertiary: #6b7280;
+            --color-text-muted: #9ca3af;
+            --color-border: #e5e7eb;
+            --color-border-secondary: #d1d5db;
+
+            /* Progress */
+            --color-primary: #534AB7;
+            --color-progress-bg: #e5e7eb;
+
+            /* Tier specific colors */
+            --badge-none-bg: #F1EFE8;
+            --badge-none-text: #5F5E5A;
+            --badge-cc-bg: #FAEEDA;
+            --badge-cc-text: #633806;
+            --badge-mcc-bg: #E1F5EE;
+            --badge-mcc-text: #085041;
+
+            --text-cc: #633806;
+            --text-mcc: #085041;
+
+            --pdx-bg: #EEEDFE;
+            --pdx-text: #3C3489;
+            --sdx-bg: #F1EFE8;
+            --sdx-text: #5F5E5A;
+
+            --drg-card-bg: #ffffff;
+            --drg-card-border: #e5e7eb;
+            --soi-card-bg: #ffffff;
+            --soi-card-border: #e5e7eb;
+            --rom-card-bg: #ffffff;
+            --rom-card-border: #e5e7eb;
+
+            /* Highlight card states */
+            --mcc-highlight-bg: #085041;
+            --cc-highlight-bg: #633806;
+            --mcc-highlight-text: #ffffff;
+            --cc-highlight-text: #ffffff;
+
+            /* Fonts */
+            --font-ui: -apple-system, "Segoe UI", sans-serif;
+            --font-mono: 'Menlo', 'Consolas', monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1c1c1a;
+                --color-background-secondary: #2a2a27;
+                --color-text-primary: #f3f4f6;
+                --color-text-secondary: #d1d5db;
+                --color-text-tertiary: #9ca3af;
+                --color-border: #3f3f46;
+                --color-border-secondary: #52525b;
+
+                --badge-none-bg: #3a3a36;
+                --badge-none-text: #d3d1c7;
+                --badge-cc-bg: #3d2a0a;
+                --badge-cc-text: #fac775;
+                --badge-mcc-bg: #042820;
+                --badge-mcc-text: #5dcaa5;
+
+                --text-cc: #ef9f27;
+                --text-mcc: #1d9e75;
+
+                --pdx-bg: #26215c;
+                --pdx-text: #afa9ec;
+                --sdx-bg: #3a3a36;
+                --sdx-text: #d3d1c7;
+
+                --drg-card-bg: #26215c;
+                --drg-card-border: #534ab7;
+                --soi-card-bg: #3d2a0a;
+                --soi-card-border: #854f0b;
+                --rom-card-bg: #042820;
+                --rom-card-border: #0f6e56;
+
+                --color-progress-bg: #4b5563;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            min-height: 500px;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            max-width: 1280px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* LEFT PANE */
+        .left-pane {
+            padding: 16px;
+            border-right: 1px solid var(--color-border);
+        }
+
+        .section-header {
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--color-text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .section-header p {
+            font-size: 11px;
+            color: var(--color-text-tertiary);
+        }
+
+        /* Diagnosis Row */
+        .dx-row {
+            border: 0.5px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 7px;
+            transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dx-row:hover {
+            border-color: var(--color-border-secondary);
+        }
+
+        .dx-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 9px 10px 6px;
+        }
+
+        .dx-main {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .dx-number {
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            min-width: 16px;
+        }
+
+        .dx-text-wrap {
+            flex: 1;
+            position: relative;
+        }
+
+        .dx-vague,
+        .dx-specific {
+            transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .dx-vague {
+            font-style: italic;
+            color: var(--color-text-secondary);
+            max-height: 50px;
+            opacity: 1;
+        }
+
+        .dx-specific {
+            font-weight: 500;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .dx-row.is-specified .dx-vague {
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+        }
+
+        .dx-row.is-specified .dx-specific {
+            max-height: 50px;
+            opacity: 1;
+        }
+
+        .dx-row:not(.is-specified):hover .dx-vague {
+            opacity: 0.35;
+        }
+
+        .dx-row:not(.is-specified):hover .dx-specific {
+            max-height: 50px;
+            opacity: 0.6;
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+
+        .dx-badges {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .badge.none {
+            background-color: var(--badge-none-bg);
+            color: var(--badge-none-text);
+        }
+
+        .badge.cc {
+            background-color: var(--badge-cc-bg);
+            color: var(--badge-cc-text);
+        }
+
+        .badge.mcc {
+            background-color: var(--badge-mcc-bg);
+            color: var(--badge-mcc-text);
+        }
+
+        .icd-pill {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            background-color: var(--color-background-secondary);
+            border: 1px solid var(--color-border);
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: var(--color-text-secondary);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dx-bottom {
+            padding: 5px 10px 8px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dx-note {
+            font-size: 10px;
+            color: var(--color-text-muted);
+        }
+
+        .dx-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .role-tag {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .role-pdx {
+            background-color: var(--pdx-bg);
+            color: var(--pdx-text);
+        }
+
+        .role-sdx {
+            background-color: var(--sdx-bg);
+            color: var(--sdx-text);
+        }
+
+        /* Toggle Switch */
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+            min-height: 28px;
+        }
+
+        .toggle-wrap:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .toggle-track {
+            width: 28px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: var(--color-border-secondary);
+            position: relative;
+            transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toggle-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toggle-wrap[aria-checked="true"] .toggle-track {
+            background-color: #085041;
+            /* PRD uses #085041 for dark teal, or #0F6E56 */
+        }
+
+        .toggle-wrap[aria-checked="true"] .toggle-thumb {
+            transform: translateX(12px);
+        }
+
+        .toggle-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* RIGHT PANE */
+        .right-pane {
+            background-color: var(--color-background-secondary);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .metric-card {
+            background-color: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 12px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .metric-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--color-text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .metric-value-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .metric-value {
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            display: inline-block;
+            transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .metric-reimb .metric-value {
+            font-size: 28px;
+        }
+
+        .metric-sub {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-top: 2px;
+            display: inline-block;
+            transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .delta-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 12px;
+            background-color: var(--badge-none-bg);
+            color: var(--badge-none-text);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 6px;
+        }
+
+        .delta-badge.positive {
+            background-color: var(--badge-mcc-bg);
+            color: var(--badge-mcc-text);
+        }
+
+        /* Subclass Progress Bars */
+        .subclass-progress {
+            margin-top: 8px;
+        }
+
+        .subclass-bar-wrap {
+            height: 4px;
+            background-color: var(--color-progress-bg);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+
+        .subclass-bar {
+            height: 100%;
+            background-color: var(--color-text-secondary);
+            border-radius: 2px;
+            transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms;
+            width: 25%;
+            /* Minor by default */
+        }
+
+        .subclass-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Total Progress */
+        .total-progress-wrap {
+            margin-top: auto;
+            padding-top: 16px;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--color-text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .progress-track {
+            height: 6px;
+            background-color: var(--color-progress-bg);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reset-btn {
+            width: 100%;
+            padding: 8px;
+            margin-top: 12px;
+            background: none;
+            border: 1px solid var(--color-border-secondary);
+            border-radius: 6px;
+            color: var(--color-text-secondary);
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reset-btn:hover {
+            background-color: var(--color-border);
+            color: var(--color-text-primary);
+        }
+
+        /* Text Colors for tiers */
+        .text-cc {
+            color: var(--text-cc);
+        }
+
+        .text-mcc {
+            color: var(--text-mcc);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="sr-only">CDI Specificity Explorer - Clinical Documentation Improvement Teaching Tool</h1>
+
+    <div class="container">
+        <main class="left-pane">
+            <header class="section-header">
+                <h2>Assessment & Plan</h2>
+                <p>Review the primary and secondary diagnoses. Hover or specify to see the impact of specificity.</p>
+            </header>
+
+            <div id="dx-list" class="dx-list">
+                <!-- Diagnosis rows rendered here by JS -->
+            </div>
+        </main>
+
+        <aside class="right-pane">
+
+            <!-- DRG Card -->
+            <div id="drg-card" class="metric-card drg-card">
+                <div class="metric-label">MS-DRG Assignment</div>
+                <div class="metric-value-wrap">
+                    <div id="val-drg" class="metric-value">DRG 293</div>
+                </div>
+                <div id="sub-drg" class="metric-sub">HF & shock — no CC/MCC</div>
+            </div>
+
+            <!-- SOI Card -->
+            <div id="soi-card" class="metric-card soi-card">
+                <div class="metric-label">Severity of Illness (SOI)</div>
+                <div id="val-soi" class="metric-value">1</div>
+                <div class="subclass-progress">
+                    <div class="subclass-bar-wrap">
+                        <div id="bar-soi" class="subclass-bar" style="width: 25%;"></div>
+                    </div>
+                    <div class="subclass-labels">
+                        <span>Minor</span>
+                        <span id="lbl-soi">Minor</span>
+                        <span>Extreme</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROM Card -->
+            <div id="rom-card" class="metric-card rom-card">
+                <div class="metric-label">Risk of Mortality (ROM)</div>
+                <div id="val-rom" class="metric-value">1</div>
+                <div class="subclass-progress">
+                    <div class="subclass-bar-wrap">
+                        <div id="bar-rom" class="subclass-bar" style="width: 25%;"></div>
+                    </div>
+                    <div class="subclass-labels">
+                        <span>Minor</span>
+                        <span id="lbl-rom">Minor</span>
+                        <span>Extreme</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reimbursement Card -->
+            <div id="reimb-card" class="metric-card metric-reimb">
+                <div class="metric-label">Est. Reimbursement</div>
+                <div id="val-reimb" class="metric-value">$4,332</div>
+                <div>
+                    <div id="delta-reimb" class="delta-badge">+ $0</div>
+                </div>
+            </div>
+
+            <div class="total-progress-wrap">
+                <div class="progress-labels">
+                    <span id="lbl-prog-count">0 of 5 specified</span>
+                    <span id="lbl-prog-pct">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div id="bar-total-prog" class="progress-fill"></div>
+                </div>
+                <button id="btn-reset" class="reset-btn">Reset all to vague</button>
+            </div>
+
+        </aside>
+    </div>
+
+    <script>
+        const diagnoses = [
+            {
+                id: 0,
+                vague: "Heart failure",
+                specific: "Acute-on-chronic systolic heart failure (EF 25%)",
+                icd_vague: "I50.9",
+                icd_specific: "I50.22",
+                tier_vague: "none",
+                tier_specific: "mcc",
+                role: "pdx",
+                note: "Heart failure must specify acuity (acute/chronic) and type (systolic/diastolic)."
+            },
+            {
+                id: 1,
+                vague: "Respiratory distress",
+                specific: "Acute hypoxic respiratory failure",
+                icd_vague: "R06.09",
+                icd_specific: "J96.01",
+                tier_vague: "none",
+                tier_specific: "mcc",
+                role: "sdx",
+                note: "Symptoms like 'respiratory distress' do not code as conditions. Diagnose the underlying failure if supported."
+            },
+            {
+                id: 2,
+                vague: "Low sodium",
+                specific: "Severe hyponatremia (Na 118)",
+                icd_vague: "E87.1",
+                icd_specific: "E87.1",
+                tier_vague: "none",
+                tier_specific: "mcc",
+                role: "sdx",
+                note: "Adding severity ('severe') to hyponatremia often upgrades it to an MCC when clinically validated."
+            },
+            {
+                id: 3,
+                vague: "Kidney disease",
+                specific: "Chronic kidney disease, stage 3b",
+                icd_vague: "N18.9",
+                icd_specific: "N18.32",
+                tier_vague: "none",
+                tier_specific: "cc",
+                role: "sdx",
+                note: "CKD requires staging (1-5 or ESRD) to reflect the true severity and capture CC weight."
+            },
+            {
+                id: 4,
+                vague: "Atrial fibrillation",
+                specific: "Persistent atrial fibrillation",
+                icd_vague: "I48.91",
+                icd_specific: "I48.11",
+                tier_vague: "none",
+                tier_specific: "cc",
+                role: "sdx",
+                note: "Specify type (paroxysmal, persistent, permanent) to allow appropriate clinical tracking and severity."
+            }
+        ];
+
+        const toggled = new Set();
+        const BASE_RATE = 6000;
+
+        // DOM Elements
+        const dxListEl = document.getElementById('dx-list');
+
+        const valDrg = document.getElementById('val-drg');
+        const subDrg = document.getElementById('sub-drg');
+        const drgCard = document.getElementById('drg-card');
+
+        const valSoi = document.getElementById('val-soi');
+        const lblSoi = document.getElementById('lbl-soi');
+        const barSoi = document.getElementById('bar-soi');
+        const soiCard = document.getElementById('soi-card');
+
+        const valRom = document.getElementById('val-rom');
+        const lblRom = document.getElementById('lbl-rom');
+        const barRom = document.getElementById('bar-rom');
+        const romCard = document.getElementById('rom-card');
+
+        const valReimb = document.getElementById('val-reimb');
+        const deltaReimb = document.getElementById('delta-reimb');
+
+        const lblProgCount = document.getElementById('lbl-prog-count');
+        const lblProgPct = document.getElementById('lbl-prog-pct');
+        const barTotalProg = document.getElementById('bar-total-prog');
+
+        const btnReset = document.getElementById('btn-reset');
+
+        function init() {
+            renderDiagnoses();
+            btnReset.addEventListener('click', resetAll);
+            updateMetrics(); // Initial paint
+        }
+
+        function renderDiagnoses() {
+            let html = '';
+            diagnoses.forEach(dx => {
+                const isSpec = toggled.has(dx.id);
+                const code = isSpec ? dx.icd_specific : dx.icd_vague;
+                const badgeClass = isSpec ? dx.tier_specific : dx.tier_vague;
+                const badgeLabel = badgeClass === 'none' ? 'No impact' : badgeClass.toUpperCase();
+                const roleLabel = dx.role.toUpperCase();
+
+                let specTextClass = '';
+                if (dx.tier_specific === 'cc') specTextClass = 'text-cc';
+                if (dx.tier_specific === 'mcc') specTextClass = 'text-mcc';
+
+                html += `
+          <div class="dx-row ${isSpec ? 'is-specified' : ''}" id="dx-row-${dx.id}">
+            <div class="dx-top">
+              <div class="dx-main">
+                <span class="dx-number">${dx.id + 1}.</span>
+                <div class="dx-text-wrap">
+                  <div class="dx-vague">${dx.vague}</div>
+                  <div class="dx-specific ${specTextClass}">${dx.specific}</div>
+                </div>
+              </div>
+              <div class="dx-badges">
+                <span class="badge ${badgeClass}" id="badge-${dx.id}">${badgeLabel}</span>
+                <span class="icd-pill" id="icd-${dx.id}">${code}</span>
+              </div>
+            </div>
+            <div class="dx-bottom">
+              <div class="dx-note">${dx.note}</div>
+              <div class="dx-actions">
+                <div class="toggle-wrap" role="switch" aria-checked="${isSpec}" tabindex="0" onclick="toggleDx(${dx.id})" onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); toggleDx(${dx.id}); }">
+                  <div class="toggle-track">
+                    <div class="toggle-thumb"></div>
+                  </div>
+                  <span class="toggle-label" id="toggle-lbl-${dx.id}">${isSpec ? 'Specified' : 'Specify'}</span>
+                </div>
+                <span class="role-tag role-${dx.role}">${roleLabel}</span>
+              </div>
+            </div>
+          </div>
+        `;
+            });
+            dxListEl.innerHTML = html;
+        }
+
+        window.toggleDx = function (id) {
+            if (toggled.has(id)) {
+                toggled.delete(id);
+            } else {
+                toggled.add(id);
+            }
+
+            const dx = diagnoses[id];
+            const isSpec = toggled.has(id);
+            const row = document.getElementById(`dx-row-${id}`);
+            const toggleWrap = row.querySelector('.toggle-wrap');
+            const toggleLbl = document.getElementById(`toggle-lbl-${id}`);
+            const badge = document.getElementById(`badge-${id}`);
+            const icd = document.getElementById(`icd-${id}`);
+
+            // Update classes and accessibility
+            if (isSpec) {
+                row.classList.add('is-specified');
+            } else {
+                row.classList.remove('is-specified');
+            }
+            toggleWrap.setAttribute('aria-checked', isSpec);
+
+            animateValue(toggleLbl, isSpec ? 'Specified' : 'Specify');
+
+            const newBadgeClass = isSpec ? dx.tier_specific : dx.tier_vague;
+            const newBadgeLabel = newBadgeClass === 'none' ? 'No impact' : newBadgeClass.toUpperCase();
+
+            badge.className = `badge ${newBadgeClass}`;
+            badge.textContent = newBadgeLabel;
+            icd.textContent = isSpec ? dx.icd_specific : dx.icd_vague;
+
+            updateMetrics();
+        }
+
+        function resetAll() {
+            if (toggled.size === 0) return;
+            toggled.clear();
+            // To properly animate the transition backwards, we shouldn't just re-render DOM strings right away.
+            // Easiest vanilla way without framework is to manually untoggle everything via toggleDx logic but in batch.
+            diagnoses.forEach(dx => {
+                const row = document.getElementById(`dx-row-${dx.id}`);
+                if (row.classList.contains('is-specified')) {
+                    row.classList.remove('is-specified');
+                    const toggleWrap = row.querySelector('.toggle-wrap');
+                    toggleWrap.setAttribute('aria-checked', 'false');
+                    const toggleLbl = document.getElementById(`toggle-lbl-${dx.id}`);
+                    animateValue(toggleLbl, 'Specify');
+                    const badge = document.getElementById(`badge-${dx.id}`);
+                    badge.className = `badge ${dx.tier_vague}`;
+                    badge.textContent = 'NO IMPACT';
+                    const icd = document.getElementById(`icd-${dx.id}`);
+                    icd.textContent = dx.icd_vague;
+                }
+            });
+            updateMetrics();
+        }
+
+        function computeMetrics(toggled) {
+            const mccIds = new Set([0, 1, 2]); // diagnoses that are MCC when specified
+            const ccIds = new Set([3, 4]);    // diagnoses that are CC when specified
+
+            const activeMCCs = [...toggled].filter(id => mccIds.has(id));
+            const activeCCs = [...toggled].filter(id => ccIds.has(id));
+
+            const hasMCC = activeMCCs.length > 0;
+            const hasCC = activeCCs.length > 0;
+
+            // MS-DRG
+            let drg, drgWeight, drgSub, drgTier;
+            if (hasMCC) {
+                drg = 'DRG 291'; drgWeight = 1.7543;
+                drgSub = 'HF & shock — with MCC'; drgTier = 'mcc';
+            } else if (hasCC) {
+                drg = 'DRG 292'; drgWeight = 1.0520;
+                drgSub = 'HF & shock — with CC'; drgTier = 'cc';
+            } else {
+                drg = 'DRG 293'; drgWeight = 0.7220;
+                drgSub = 'HF & shock — no CC/MCC'; drgTier = 'none';
+            }
+
+            // SOI
+            let soi, soiLabel;
+            if (activeMCCs.length >= 2) { soi = 4; soiLabel = 'Extreme'; }
+            else if (activeMCCs.length >= 1) { soi = 3; soiLabel = 'Major'; }
+            else if (activeCCs.length >= 1) { soi = 2; soiLabel = 'Moderate'; }
+            else { soi = 1; soiLabel = 'Minor'; }
+
+            // ROM — J96.01 (id=1) is the dominant ROM driver
+            let rom, romLabel;
+            if (toggled.has(1) && toggled.has(2)) { rom = 4; romLabel = 'Extreme'; }
+            else if (toggled.has(1)) { rom = 3; romLabel = 'Major'; }
+            else if (hasMCC || activeCCs.length >= 2) { rom = 2; romLabel = 'Moderate'; }
+            else { rom = 1; romLabel = 'Minor'; }
+
+            // Reimbursement
+            const reimb = Math.round(BASE_RATE * drgWeight);
+            const baseReimb = Math.round(BASE_RATE * 0.7220);
+            const delta = reimb - baseReimb;
+
+            return { drg, drgSub, drgTier, drgWeight, soi, soiLabel, rom, romLabel, reimb, delta };
+        }
+
+        const fmtMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+        function updateMetrics() {
+            const stats = computeMetrics(toggled);
+
+            // Update Cards
+            animateValue(valDrg, stats.drg);
+            animateValue(subDrg, stats.drgSub);
+
+            // Card highlighting updates based on state
+            document.documentElement.style.setProperty('--card-drg-bg', stats.drgTier === 'mcc' ? 'var(--drg-card-bg)' : (stats.drgTier === 'cc' ? 'var(--cc-card-bg)' : 'var(--color-background)'));
+            document.documentElement.style.setProperty('--card-drg-border', stats.drgTier === 'mcc' ? 'var(--drg-card-border)' : (stats.drgTier === 'cc' ? 'var(--badge-cc-text)' : 'var(--color-border)'));
+
+            animateValue(valSoi, stats.soi.toString());
+            animateValue(lblSoi, stats.soiLabel);
+            barSoi.style.width = `${(stats.soi / 4) * 100}%`;
+            let soiColor = 'var(--color-text-secondary)';
+            if (stats.soi === 3) soiColor = 'var(--text-cc)';
+            if (stats.soi === 4) soiColor = 'var(--text-mcc)';
+            barSoi.style.backgroundColor = soiColor;
+
+            animateValue(valRom, stats.rom.toString());
+            animateValue(lblRom, stats.romLabel);
+            barRom.style.width = `${(stats.rom / 4) * 100}%`;
+            let romColor = 'var(--color-text-secondary)';
+            if (stats.rom === 3) romColor = 'var(--text-cc)';
+            if (stats.rom === 4) romColor = 'var(--text-mcc)';
+            barRom.style.backgroundColor = romColor;
+
+            animateValue(valReimb, fmtMoney.format(stats.reimb));
+
+            const deltaText = stats.delta > 0 ? `+ ${fmtMoney.format(stats.delta)}` : `+ $0`;
+            animateValue(deltaReimb, deltaText);
+            if (stats.delta > 0) {
+                deltaReimb.classList.add('positive');
+            } else {
+                deltaReimb.classList.remove('positive');
+            }
+
+            // Update global progress
+            const current = toggled.size;
+            const total = diagnoses.length;
+            const pct = Math.round((current / total) * 100);
+
+            animateValue(lblProgCount, `${current} of ${total} specified`);
+            animateValue(lblProgPct, `${pct}%`);
+            barTotalProg.style.width = `${pct}%`;
+        }
+
+        function animateValue(el, newValue) {
+            if (el.textContent === newValue) return;
+
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(-4px)';
+
+            setTimeout(() => {
+                el.textContent = newValue;
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 150);
+        }
+
+        // Start
+        init();
+
+    </script>
+</body>
+
+</html>
