@@ -11,7 +11,7 @@ source: CMS FY2025/FY2026 IPPS Final Rule, MS-DRG V43.0
 
 <!-- ============================================================
   SECTION: PageHero
-  Component hint: <PageHero> — procedure title, category tag, 
+  Component hint: <PageHero> — procedure title, category tag,
   one-line description, DRG family pills
   ============================================================ -->
 
@@ -25,8 +25,8 @@ Total and partial hip and knee replacements are the highest-volume TEAM procedur
 
 <!-- ============================================================
   SECTION: TwoTierCallout
-  Component hint: <AlertBanner variant="critical"> — the single 
-  most important structural fact about this DRG family. 
+  Component hint: <AlertBanner variant="critical"> — the single
+  most important structural fact about this DRG family.
   Render prominently at top of page, not buried in body text.
   ============================================================ -->
 
@@ -47,12 +47,12 @@ Total and partial hip and knee replacements are the highest-volume TEAM procedur
 
 ## DRG Tiers at a Glance
 
-| MS-DRG | Description | Severity | Approx. Payment |
-|--------|-------------|----------|-----------------|
-| **469** | Major hip/knee joint replacement or reattachment of lower extremity | **With MCC** | ~$23,500 |
-| **470** | Major hip/knee joint replacement or reattachment of lower extremity | **Without MCC** | ~$14,500 |
-| **521** | Hip replacement with principal diagnosis of hip fracture | **With MCC** | ~$22,000 |
-| **522** | Hip replacement with principal diagnosis of hip fracture | **Without MCC** | ~$14,500 |
+| MS-DRG  | Description                                                         | Severity        | Approx. Payment |
+| ------- | ------------------------------------------------------------------- | --------------- | --------------- |
+| **469** | Major hip/knee joint replacement or reattachment of lower extremity | **With MCC**    | ~$23,500        |
+| **470** | Major hip/knee joint replacement or reattachment of lower extremity | **Without MCC** | ~$14,500        |
+| **521** | Hip replacement with principal diagnosis of hip fracture            | **With MCC**    | ~$22,000        |
+| **522** | Hip replacement with principal diagnosis of hip fracture            | **Without MCC** | ~$14,500        |
 
 > [CALLOUT-INFO]
 > Payment figures are national average approximations using CMS FY2025 IPPS base rates. Actual reimbursement varies by hospital wage index, DSH status, and teaching adjustment. The delta between DRG 470 and DRG 469 is approximately **$9,000 per case** at a mid-size community hospital.
@@ -100,7 +100,7 @@ Older joint replacement patients often carry a baseline of cardiac dysfunction. 
 
 **What physicians write instead:** "CHF" / "heart failure" / "volume overload" / "fluid overloaded"
 
-**Why it's missed:** "CHF" and "heart failure" code to I50.9 — unspecified heart failure — which is a CC, not an MCC. The specificity of *systolic vs. diastolic* and *acute vs. chronic* is what makes the difference. Both pieces are required.
+**Why it's missed:** "CHF" and "heart failure" code to I50.9 — unspecified heart failure — which is a CC, not an MCC. The specificity of _systolic vs. diastolic_ and _acute vs. chronic_ is what makes the difference. Both pieces are required.
 
 > [CALLOUT-PHRASING]
 > ❌ "Congestive heart failure, managed with Lasix"  
@@ -185,8 +185,8 @@ Post-LEJR sepsis — usually from surgical site infection, UTI, or pneumonia —
 
 <!-- ============================================================
   SECTION: BeforeAfterNote
-  Component hint: <NoteComparison> — side-by-side or stacked 
-  note display with inline highlights. Use the existing case 
+  Component hint: <NoteComparison> — side-by-side or stacked
+  note display with inline highlights. Use the existing case
   walkthrough HTML component pattern. Red highlights = missed,
   green highlights = captured.
   ============================================================ -->
@@ -272,18 +272,18 @@ In LEJR, CCs do not move the DRG. They do affect:
 
 Document these with specificity. The same precision principles apply — vague language yields no credit.
 
-| Condition | ICD-10 | What to Specify |
-|-----------|--------|-----------------|
-| Type 2 diabetes with hyperglycemia | E11.65 | Specify type (1 vs. 2) and complication |
-| Type 2 diabetes with hypoglycemia | E11.649 | Specify episode and consciousness level |
-| Chronic kidney disease, stage 3 | N18.3 | Always stage it — N18.9 (unspecified) is not a CC |
-| Chronic kidney disease, stage 4 | N18.4 | Stage 4 is CC; stage 5 is MCC |
-| Longstanding persistent atrial fibrillation | I48.11 | Specify type — unspecified Afib (I48.91) is NOT a CC |
-| Other persistent atrial fibrillation | I48.19 | Persistent ≥ 7 days but < 12 months |
-| COPD with acute exacerbation | J44.1 | Must document "exacerbation" — J44.9 is not a CC |
-| Peripheral vascular disease | I73.9 | Document if clinically active |
-| Acute posthemorrhagic anemia | D62 | Document when Hgb drops > 2 g/dL and transfusion given |
-| Hyponatremia | E87.1 | Name it — "low sodium" is a lab value, not a diagnosis |
+| Condition                                   | ICD-10  | What to Specify                                        |
+| ------------------------------------------- | ------- | ------------------------------------------------------ |
+| Type 2 diabetes with hyperglycemia          | E11.65  | Specify type (1 vs. 2) and complication                |
+| Type 2 diabetes with hypoglycemia           | E11.649 | Specify episode and consciousness level                |
+| Chronic kidney disease, stage 3             | N18.3   | Always stage it — N18.9 (unspecified) is not a CC      |
+| Chronic kidney disease, stage 4             | N18.4   | Stage 4 is CC; stage 5 is MCC                          |
+| Longstanding persistent atrial fibrillation | I48.11  | Specify type — unspecified Afib (I48.91) is NOT a CC   |
+| Other persistent atrial fibrillation        | I48.19  | Persistent ≥ 7 days but < 12 months                    |
+| COPD with acute exacerbation                | J44.1   | Must document "exacerbation" — J44.9 is not a CC       |
+| Peripheral vascular disease                 | I73.9   | Document if clinically active                          |
+| Acute posthemorrhagic anemia                | D62     | Document when Hgb drops > 2 g/dL and transfusion given |
+| Hyponatremia                                | E87.1   | Name it — "low sodium" is a lab value, not a diagnosis |
 
 > [CALLOUT-INFO]
 > **CKD escalation opportunity:** CKD stage 5 (N18.5) and ESRD (N18.6) are MCCs, not CCs. If your patient's eGFR is consistently below 15, ask whether the stage has been explicitly documented. The stage cannot be inferred from the lab by the coder — the physician must name it.
@@ -292,8 +292,8 @@ Document these with specificity. The same precision principles apply — vague l
 
 <!-- ============================================================
   SECTION: HCCList
-  Component hint: <HCCCardList> — procedure-specific HCC list 
-  pulled from HCC-by-Procedure CSV. Frame around TEAM risk 
+  Component hint: <HCCCardList> — procedure-specific HCC list
+  pulled from HCC-by-Procedure CSV. Frame around TEAM risk
   adjustment, not Medicare Advantage.
   ============================================================ -->
 
@@ -303,27 +303,27 @@ HCCs (Hierarchical Condition Categories) drive risk adjustment in the TEAM model
 
 These HCCs appear most frequently in LEJR patient populations and have the highest impact on TEAM risk adjustment:
 
-| HCC | Condition | Documentation Tip |
-|-----|-----------|-------------------|
-| HCC 37 | Diabetes with chronic complications | Must specify the complication — neuropathy, nephropathy, retinopathy |
-| HCC 48 | Morbid obesity | Provider must document "morbid obesity" — BMI code alone is insufficient |
-| HCC 326 | Chronic kidney disease, stage 5 | Stage must be explicitly documented |
-| HCC 327 | Chronic kidney disease, stage 4 | Stage must be explicitly documented |
-| HCC 226 | Heart failure, except end-stage and acute | Specify systolic vs. diastolic, chronic vs. acute |
-| HCC 238 | Specified heart arrhythmias | Afib must be typed (paroxysmal, persistent, longstanding persistent) |
-| HCC 253 | Hemiplegia/hemiparesis | Active residual deficits from prior stroke — not "history of stroke" |
-| HCC 267 | Deep vein thrombosis and pulmonary embolism | Document when present; DVT prophylaxis ≠ DVT diagnosis |
-| HCC 383 | Chronic ulcer of skin | Stage and site required |
+| HCC     | Condition                                   | Documentation Tip                                                        |
+| ------- | ------------------------------------------- | ------------------------------------------------------------------------ |
+| HCC 37  | Diabetes with chronic complications         | Must specify the complication — neuropathy, nephropathy, retinopathy     |
+| HCC 48  | Morbid obesity                              | Provider must document "morbid obesity" — BMI code alone is insufficient |
+| HCC 326 | Chronic kidney disease, stage 5             | Stage must be explicitly documented                                      |
+| HCC 327 | Chronic kidney disease, stage 4             | Stage must be explicitly documented                                      |
+| HCC 226 | Heart failure, except end-stage and acute   | Specify systolic vs. diastolic, chronic vs. acute                        |
+| HCC 238 | Specified heart arrhythmias                 | Afib must be typed (paroxysmal, persistent, longstanding persistent)     |
+| HCC 253 | Hemiplegia/hemiparesis                      | Active residual deficits from prior stroke — not "history of stroke"     |
+| HCC 267 | Deep vein thrombosis and pulmonary embolism | Document when present; DVT prophylaxis ≠ DVT diagnosis                   |
+| HCC 383 | Chronic ulcer of skin                       | Stage and site required                                                  |
 
 > [CALLOUT-WARNING]
-> **The "history of" trap:** Writing "history of stroke" maps to Z86.73 — not an HCC and not a CC. If the patient has residual weakness, altered gait, or any functional deficit from a prior stroke, that is an *active condition*, not history. Document "hemiparesis from prior CVA" — it is an MCC and an HCC.
+> **The "history of" trap:** Writing "history of stroke" maps to Z86.73 — not an HCC and not a CC. If the patient has residual weakness, altered gait, or any functional deficit from a prior stroke, that is an _active condition_, not history. Document "hemiparesis from prior CVA" — it is an MCC and an HCC.
 
 ---
 
 <!-- ============================================================
   SECTION: DischargeChecklist
-  Component hint: <DischargeChecklist> — numbered interactive 
-  checklist. Each item: clinical trigger (what to look for) + 
+  Component hint: <DischargeChecklist> — numbered interactive
+  checklist. Each item: clinical trigger (what to look for) +
   bold action (what to write). Max 6 items.
   ============================================================ -->
 
@@ -353,8 +353,8 @@ Is the diabetes typed (1 vs. 2)? Is there a documented complication (neuropathy,
 
 <!-- ============================================================
   SECTION: QueryTemplates
-  Component hint: <QueryTemplateList> — collapsible list of 
-  CDI query prompts. Write as physician-facing language. 
+  Component hint: <QueryTemplateList> — collapsible list of
+  CDI query prompts. Write as physician-facing language.
   These are conversation starters, not compliance forms.
   ============================================================ -->
 
@@ -366,31 +366,31 @@ These are the questions a CDI specialist or hospitalist colleague might raise on
 > **How to use these:** These prompts are starting points for documentation clarification. CMS requires that physician documentation represent genuine clinical judgment — these queries are designed to surface conditions that are clinically present but underdocumented, not to generate diagnoses that aren't there.
 
 **AKI query:**
-*"The creatinine rose from [baseline] to [peak] postoperatively and returned toward baseline with IV fluids — does this represent acute kidney injury in your clinical judgment?"*
+_"The creatinine rose from [baseline] to [peak] postoperatively and returned toward baseline with IV fluids — does this represent acute kidney injury in your clinical judgment?"_
 
 **Encephalopathy query:**
-*"The patient had new-onset confusion on POD [X] in the setting of [sodium 128 / glucose 320 / rising creatinine]. The CAM screen was positive and family confirmed this was not the patient's baseline. Does this represent metabolic encephalopathy secondary to [metabolic cause]?"*
+_"The patient had new-onset confusion on POD [X] in the setting of [sodium 128 / glucose 320 / rising creatinine]. The CAM screen was positive and family confirmed this was not the patient's baseline. Does this represent metabolic encephalopathy secondary to [metabolic cause]?"_
 
 **Heart failure query:**
-*"BNP was [value] and the patient required [IV Lasix dose] with [X liters] net negative. Can you specify whether this heart failure is systolic or diastolic, and whether the presentation was acute, chronic, or acute-on-chronic?"*
+_"BNP was [value] and the patient required [IV Lasix dose] with [X liters] net negative. Can you specify whether this heart failure is systolic or diastolic, and whether the presentation was acute, chronic, or acute-on-chronic?"_
 
 **Malnutrition query:**
-*"Nutrition has documented [albumin value, weight loss, physical findings] meeting ASPEN criteria for [severity] malnutrition. Can you document the diagnosis and severity of malnutrition in your note?"*
+_"Nutrition has documented [albumin value, weight loss, physical findings] meeting ASPEN criteria for [severity] malnutrition. Can you document the diagnosis and severity of malnutrition in your note?"_
 
 **OHS query:**
-*"The patient has morbid obesity (BMI [X]) and uses BiPAP at home. A prior ABG shows PaCO₂ of [value]. Does this represent obesity hypoventilation syndrome rather than OSA alone?"*
+_"The patient has morbid obesity (BMI [X]) and uses BiPAP at home. A prior ABG shows PaCO₂ of [value]. Does this represent obesity hypoventilation syndrome rather than OSA alone?"_
 
 ---
 
 <!-- ============================================================
   SECTION: PageFooter
-  Component hint: <ModuleFooter> — source citation, disclaimer, 
+  Component hint: <ModuleFooter> — source citation, disclaimer,
   last-updated date.
   ============================================================ -->
 
 ---
 
-*Source: CMS FY2025/FY2026 IPPS Final Rule · MS-DRG V43.0 · ICD-10-CM FY2025*  
-*DRG payment figures are national average approximations and vary by hospital wage index and geographic adjustment.*  
-*CC/MCC designations change annually with each CMS IPPS Final Rule. Verify against the active MS-DRG Definitions Manual for the applicable fiscal year.*  
-*Last updated: June 2026*
+_Source: CMS FY2025/FY2026 IPPS Final Rule · MS-DRG V43.0 · ICD-10-CM FY2025_  
+_DRG payment figures are national average approximations and vary by hospital wage index and geographic adjustment._  
+_CC/MCC designations change annually with each CMS IPPS Final Rule. Verify against the active MS-DRG Definitions Manual for the applicable fiscal year._  
+_Last updated: June 2026_

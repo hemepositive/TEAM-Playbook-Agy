@@ -45,14 +45,14 @@ CABG carries the highest absolute reimbursement and the highest average Severity
 
 CABG DRG assignment is determined by whether a concomitant cardiac catheterization or PTCA was performed — not by the number of vessels bypassed.
 
-| MS-DRG | Description | Severity | Approx. Payment |
-|--------|-------------|----------|-----------------|
-| **231** | Coronary bypass with PTCA | **With MCC** | ~$60,000+ |
-| **232** | Coronary bypass with PTCA | **Without MCC** | ~$43,000 |
-| **233** | Coronary bypass with cardiac catheterization | **With MCC** | ~$55,500 |
-| **234** | Coronary bypass with cardiac catheterization | **Without MCC** | ~$38,000 |
-| **235** | Coronary bypass without cardiac catheterization | **With MCC** | ~$41,000 |
-| **236** | Coronary bypass without cardiac catheterization | **Without MCC** | ~$29,000 |
+| MS-DRG  | Description                                     | Severity        | Approx. Payment |
+| ------- | ----------------------------------------------- | --------------- | --------------- |
+| **231** | Coronary bypass with PTCA                       | **With MCC**    | ~$60,000+       |
+| **232** | Coronary bypass with PTCA                       | **Without MCC** | ~$43,000        |
+| **233** | Coronary bypass with cardiac catheterization    | **With MCC**    | ~$55,500        |
+| **234** | Coronary bypass with cardiac catheterization    | **Without MCC** | ~$38,000        |
+| **235** | Coronary bypass without cardiac catheterization | **With MCC**    | ~$41,000        |
+| **236** | Coronary bypass without cardiac catheterization | **Without MCC** | ~$29,000        |
 
 > [NOTE]
 > Payment figures are national average approximations using CMS FY2025 IPPS base rates. Actual reimbursement varies by hospital wage index, DSH status, and teaching adjustment. The vessel count — 2-vessel, 3-vessel, 4-vessel — does not affect DRG assignment. Only the presence of concomitant catheterization or PTCA determines the DRG family.
@@ -83,7 +83,7 @@ Perioperative cardiac dysfunction is common after bypass — the heart is arrest
 
 **What physicians write instead:** "CHF" / "heart failure" / "volume overload" / "pump failure" / "low cardiac output"
 
-**Why it's missed:** "CHF" (I50.9) is a CC. "Pump failure" is not a codeable diagnosis. Specifying *systolic vs. diastolic* and *acute vs. chronic* is required to reach MCC status. Both elements must appear in the attending's documentation — the echocardiogram report alone is not sufficient.
+**Why it's missed:** "CHF" (I50.9) is a CC. "Pump failure" is not a codeable diagnosis. Specifying _systolic vs. diastolic_ and _acute vs. chronic_ is required to reach MCC status. Both elements must appear in the attending's documentation — the echocardiogram report alone is not sufficient.
 
 > [PHRASING]
 > ❌ "CHF exacerbation, on IV Lasix, will transition to oral"  
@@ -109,21 +109,21 @@ Post-CABG AKI is one of the most common complications of cardiopulmonary bypass 
 
 ---
 
-### 3. Perioperative Myocardial Infarction
+### 3. Metabolic Encephalopathy
 
-**ICD-10:** I21.9 — Acute myocardial infarction, unspecified (MCC) · I21.4 — Non-ST elevation MI (NSTEMI) (MCC)
+**ICD-10:** G93.41 (MCC)
 
-A perioperative MI following CABG is a serious complication and an unambiguous MCC — but it requires explicit physician documentation. Troponin elevation in the immediate post-bypass period is common and expected; the clinical threshold for documenting perioperative MI requires physician judgment and explicit naming.
+Post-pump cognitive dysfunction and delirium are well-recognized complications of cardiopulmonary bypass. When confusion arises in the context of a metabolic abnormality — hyponatremia, hyperglycemia, uremia, hypoxia, or medication effect from the post-operative pharmacologic load — metabolic encephalopathy is the correct diagnosis, and it is an MCC.
 
-**Clinical trigger:** New ST changes on postoperative EKG. Troponin elevation disproportionate to expected post-bypass level. New wall motion abnormality on postoperative echo. Cardiology consulted for suspected perioperative ischemia. Return to OR for graft failure.
+**Clinical trigger:** New-onset confusion, agitation, or disorientation not at baseline. CAM-positive assessment. Concurrent metabolic abnormality on labs. Confusion persisting beyond the immediate postoperative period in the ICU.
 
-**What physicians write instead:** "Troponin elevated postoperatively, expected post-bypass" / "EKG changes, monitoring" / "demand ischemia"
+**What physicians write instead:** "Post-pump delirium" / "ICU psychosis" / "confusion" / "altered mental status" / "delirium"
 
-**Why it's missed:** Post-bypass troponin elevation has a broad expected range, and physicians are appropriately cautious about diagnosing MI when elevation may reflect procedural injury rather than true ischemia. But when the clinical picture crosses the threshold — new EKG changes, new wall motion abnormality, disproportionate troponin elevation, or clinical concern documented by cardiology — the physician's explicit naming of the diagnosis is what captures the MCC. "Demand ischemia" does not code as MI.
+**Why it's missed:** "Post-pump delirium" and "ICU psychosis" are colloquial terms that generate no codeable diagnosis. "Delirium" (F05) is a CC, not an MCC. When there is a documentable metabolic cause — and in the post-CABG patient there almost always is — metabolic encephalopathy with a named cause is the appropriate and more specific diagnosis.
 
 > [PHRASING]
-> ❌ "Troponin elevated postoperatively, expected post-bypass changes, monitoring"  
-> ✅ "Perioperative non-ST elevation myocardial infarction — troponin peak 18.4 with new lateral ST changes on POD 1 EKG, new inferior wall motion abnormality on echo, cardiology co-managing"
+> ❌ "Post-pump delirium, improving — patient confused in ICU on POD 1"  
+> ✅ "Metabolic encephalopathy secondary to hyponatremia (Na 129) and uremia — patient agitated and disoriented on POD 2, not at baseline per family, CAM-positive, improving with metabolic correction"
 
 ---
 
@@ -145,21 +145,21 @@ Respiratory complications after CABG are common — pulmonary edema from cardiac
 
 ---
 
-### 5. Metabolic Encephalopathy
+### 5. Perioperative Myocardial Infarction
 
-**ICD-10:** G93.41 (MCC)
+**ICD-10:** I21.9 — Acute myocardial infarction, unspecified (MCC) · I21.4 — Non-ST elevation MI (NSTEMI) (MCC)
 
-Post-pump cognitive dysfunction and delirium are well-recognized complications of cardiopulmonary bypass. When confusion arises in the context of a metabolic abnormality — hyponatremia, hyperglycemia, uremia, hypoxia, or medication effect from the post-operative pharmacologic load — metabolic encephalopathy is the correct diagnosis, and it is an MCC.
+A perioperative MI following CABG is a serious complication and an unambiguous MCC — but it requires explicit physician documentation. Troponin elevation in the immediate post-bypass period is common and expected; the clinical threshold for documenting perioperative MI requires physician judgment and explicit naming.
 
-**Clinical trigger:** New-onset confusion, agitation, or disorientation not at baseline. CAM-positive assessment. Concurrent metabolic abnormality on labs. Confusion persisting beyond the immediate postoperative period in the ICU.
+**Clinical trigger:** New ST changes on postoperative EKG. Troponin elevation disproportionate to expected post-bypass level. New wall motion abnormality on postoperative echo. Cardiology consulted for suspected perioperative ischemia. Return to OR for graft failure.
 
-**What physicians write instead:** "Post-pump delirium" / "ICU psychosis" / "confusion" / "altered mental status" / "delirium"
+**What physicians write instead:** "Troponin elevated postoperatively, expected post-bypass" / "EKG changes, monitoring" / "demand ischemia"
 
-**Why it's missed:** "Post-pump delirium" and "ICU psychosis" are colloquial terms that generate no codeable diagnosis. "Delirium" (F05) is a CC, not an MCC. When there is a documentable metabolic cause — and in the post-CABG patient there almost always is — metabolic encephalopathy with a named cause is the appropriate and more specific diagnosis.
+**Why it's missed:** Post-bypass troponin elevation has a broad expected range, and physicians are appropriately cautious about diagnosing MI when elevation may reflect procedural injury rather than true ischemia. But when the clinical picture crosses the threshold — new EKG changes, new wall motion abnormality, disproportionate troponin elevation, or clinical concern documented by cardiology — the physician's explicit naming of the diagnosis is what captures the MCC. "Demand ischemia" does not code as MI.
 
 > [PHRASING]
-> ❌ "Post-pump delirium, improving — patient confused in ICU on POD 1"  
-> ✅ "Metabolic encephalopathy secondary to hyponatremia (Na 129) and uremia — patient agitated and disoriented on POD 2, not at baseline per family, CAM-positive, improving with metabolic correction"
+> ❌ "Troponin elevated postoperatively, expected post-bypass changes, monitoring"  
+> ✅ "Perioperative non-ST elevation myocardial infarction — troponin peak 18.4 with new lateral ST changes on POD 1 EKG, new inferior wall motion abnormality on echo, cardiology co-managing"
 
 ---
 
@@ -377,21 +377,21 @@ The CC does not move this 2-tier DRG. But it does:
 
 In CABG, CCs do not change the DRG payment tier. They affect APR-DRG SOI and ROM, commercial payer contracts, TEAM risk-adjusted benchmarks, and CMS quality metrics. Document them with the same specificity standards as MCCs.
 
-| Condition | ICD-10 | What to Specify |
-|-----------|--------|-----------------|
-| Paroxysmal atrial fibrillation | I48.0 | New-onset post-op afib that terminated — specify type |
-| Persistent atrial fibrillation | I48.11 | Afib present > 7 days or at discharge — specify type |
-| Type 2 diabetes with hyperglycemia | E11.65 | Tight glycemic control post-CABG is a quality measure |
-| Type 2 diabetes with hypoglycemia | E11.649 | Specify episode and consciousness level |
-| Chronic kidney disease, stage 3 | N18.3 | Stage required — N18.9 is not a CC |
-| Chronic kidney disease, stage 4 | N18.4 | Stage 4 is CC; stage 5 is MCC |
-| Acute posthemorrhagic anemia | D62 | Document when transfusion given for blood loss |
-| Hyponatremia | E87.1 | Name it — "electrolyte abnormality" is not a diagnosis |
-| COPD with acute exacerbation | J44.1 | "Exacerbation" required — J44.9 is not a CC |
-| Unspecified protein-calorie malnutrition | E46 | CC tier; document "severe" + ASPEN criteria for E43 (MCC) |
-| Peripheral vascular disease | I73.9 | Document if clinically active |
-| Atherosclerotic heart disease | I25.10 | Specificity of coronary disease documentation |
-| Delirium | F05 | CC — metabolic encephalopathy (G93.41) is the MCC upgrade |
+| Condition                                | ICD-10  | What to Specify                                           |
+| ---------------------------------------- | ------- | --------------------------------------------------------- |
+| Paroxysmal atrial fibrillation           | I48.0   | New-onset post-op afib that terminated — specify type     |
+| Persistent atrial fibrillation           | I48.11  | Afib present > 7 days or at discharge — specify type      |
+| Type 2 diabetes with hyperglycemia       | E11.65  | Tight glycemic control post-CABG is a quality measure     |
+| Type 2 diabetes with hypoglycemia        | E11.649 | Specify episode and consciousness level                   |
+| Chronic kidney disease, stage 3          | N18.3   | Stage required — N18.9 is not a CC                        |
+| Chronic kidney disease, stage 4          | N18.4   | Stage 4 is CC; stage 5 is MCC                             |
+| Acute posthemorrhagic anemia             | D62     | Document when transfusion given for blood loss            |
+| Hyponatremia                             | E87.1   | Name it — "electrolyte abnormality" is not a diagnosis    |
+| COPD with acute exacerbation             | J44.1   | "Exacerbation" required — J44.9 is not a CC               |
+| Unspecified protein-calorie malnutrition | E46     | CC tier; document "severe" + ASPEN criteria for E43 (MCC) |
+| Peripheral vascular disease              | I73.9   | Document if clinically active                             |
+| Atherosclerotic heart disease            | I25.10  | Specificity of coronary disease documentation             |
+| Delirium                                 | F05     | CC — metabolic encephalopathy (G93.41) is the MCC upgrade |
 
 > [NOTE]
 > **CKD escalation opportunity:** CKD stage 5 (N18.5) and ESRD (N18.6) are MCCs. In the CABG population with significant coronary disease and often longstanding diabetes or hypertension, advanced CKD is common. If the eGFR is consistently below 15, confirm the stage is explicitly documented by the provider — not just reflected in the lab value.
@@ -407,24 +407,24 @@ In CABG, CCs do not change the DRG payment tier. They affect APR-DRG SOI and ROM
 
 CABG patients carry the highest average HCC burden of all five TEAM procedures. Documenting active chronic conditions accurately raises the risk-adjusted TEAM target price — without it, the hospital's financial baseline for the episode is set too low before the case even begins.
 
-| HCC | Condition | Documentation Tip |
-|-----|-----------|-------------------|
-| HCC 37 | Diabetes with chronic complications | Name the complication — neuropathy, nephropathy, retinopathy |
-| HCC 48 | Morbid obesity | Provider must document "morbid obesity" — BMI code alone insufficient |
-| HCC 125/126/127 | Dementia | Less common here but document when present and affecting management |
-| HCC 155 | Major depression, moderate or severe | Active psychiatric diagnosis — document if antidepressants on MAR |
-| HCC 199 | Parkinson's and basal ganglia disorders | Active condition — not history |
-| HCC 213 | Cardio-respiratory failure and shock | Acute heart failure with shock features — document hemodynamic status |
-| HCC 224 | Acute-on-chronic heart failure | Specify type and acuity — I50.23 |
-| HCC 226 | Heart failure, except end-stage | Specify systolic vs. diastolic, chronic status |
-| HCC 228 | Acute myocardial infarction | Perioperative MI — must be documented explicitly by provider |
-| HCC 238 | Specified heart arrhythmias | Afib must be typed — unspecified afib has no HCC credit |
-| HCC 249 | Ischemic or unspecified stroke | Active cerebrovascular disease — specify if currently relevant |
-| HCC 253 | Hemiplegia/hemiparesis | Active residual deficits — not "history of stroke" |
-| HCC 263 | Atherosclerosis with ulceration/gangrene | Peripheral arterial disease with end-organ involvement |
-| HCC 280 | COPD and other chronic lung disorders | Specify — "history of COPD" without active management is lower value |
-| HCC 298 | Severe diabetic eye disease | Document when ophthalmology has established this diagnosis |
-| HCC 326/327 | CKD stage 5 / stage 4 | Stage must be explicitly documented by the provider |
+| HCC             | Condition                                | Documentation Tip                                                     |
+| --------------- | ---------------------------------------- | --------------------------------------------------------------------- |
+| HCC 37          | Diabetes with chronic complications      | Name the complication — neuropathy, nephropathy, retinopathy          |
+| HCC 48          | Morbid obesity                           | Provider must document "morbid obesity" — BMI code alone insufficient |
+| HCC 125/126/127 | Dementia                                 | Less common here but document when present and affecting management   |
+| HCC 155         | Major depression, moderate or severe     | Active psychiatric diagnosis — document if antidepressants on MAR     |
+| HCC 199         | Parkinson's and basal ganglia disorders  | Active condition — not history                                        |
+| HCC 213         | Cardio-respiratory failure and shock     | Acute heart failure with shock features — document hemodynamic status |
+| HCC 224         | Acute-on-chronic heart failure           | Specify type and acuity — I50.23                                      |
+| HCC 226         | Heart failure, except end-stage          | Specify systolic vs. diastolic, chronic status                        |
+| HCC 228         | Acute myocardial infarction              | Perioperative MI — must be documented explicitly by provider          |
+| HCC 238         | Specified heart arrhythmias              | Afib must be typed — unspecified afib has no HCC credit               |
+| HCC 249         | Ischemic or unspecified stroke           | Active cerebrovascular disease — specify if currently relevant        |
+| HCC 253         | Hemiplegia/hemiparesis                   | Active residual deficits — not "history of stroke"                    |
+| HCC 263         | Atherosclerosis with ulceration/gangrene | Peripheral arterial disease with end-organ involvement                |
+| HCC 280         | COPD and other chronic lung disorders    | Specify — "history of COPD" without active management is lower value  |
+| HCC 298         | Severe diabetic eye disease              | Document when ophthalmology has established this diagnosis            |
+| HCC 326/327     | CKD stage 5 / stage 4                    | Stage must be explicitly documented by the provider                   |
 
 > [NOTE]
 > **The "history of MI" problem:** Patients presenting for CABG frequently have prior myocardial infarctions documented in cardiology notes and on prior imaging. "History of MI" maps to Z87.39 — not an HCC. Old MI (I25.2) is an HCC. If prior infarction is present on imaging or in the clinical record, document it as old myocardial infarction rather than as historical only.
@@ -477,25 +477,25 @@ Was preoperative albumin below 2.0? Did the dietitian document malnutrition? Is 
 > These prompts surface conditions that are clinically present but underdocumented. They are written in physician-facing language. Documentation should reflect genuine clinical judgment — these are not intended to generate diagnoses that are not clinically supported.
 
 **AKI query:**  
-*"Creatinine rose from [baseline] to [peak] in the postoperative period — likely in the setting of cardiopulmonary bypass and prior contrast exposure. Does this represent acute kidney injury?"*
+_"Creatinine rose from [baseline] to [peak] in the postoperative period — likely in the setting of cardiopulmonary bypass and prior contrast exposure. Does this represent acute kidney injury?"_
 
 **Acute heart failure query:**  
-*"BNP was [value] on POD [X] and the patient required IV furosemide with [volume] net negative. The preoperative echo shows EF [value]. Can you specify whether this heart failure is systolic or diastolic, and whether the presentation was acute, chronic, or acute-on-chronic?"*
+_"BNP was [value] on POD [X] and the patient required IV furosemide with [volume] net negative. The preoperative echo shows EF [value]. Can you specify whether this heart failure is systolic or diastolic, and whether the presentation was acute, chronic, or acute-on-chronic?"_
 
 **Dilated cardiomyopathy query:**  
-*"The preoperative echocardiogram shows a dilated left ventricle with EF [value] and global hypokinesis. Does this represent dilated cardiomyopathy in addition to the ischemic coronary disease?"*
+_"The preoperative echocardiogram shows a dilated left ventricle with EF [value] and global hypokinesis. Does this represent dilated cardiomyopathy in addition to the ischemic coronary disease?"_
 
 **Perioperative MI query:**  
-*"Troponin peaked at [value] with [new EKG changes / new wall motion abnormality on echo] on POD [X]. Cardiology was consulted. Does this represent a perioperative myocardial infarction?"*
+_"Troponin peaked at [value] with [new EKG changes / new wall motion abnormality on echo] on POD [X]. Cardiology was consulted. Does this represent a perioperative myocardial infarction?"_
 
 **Encephalopathy query:**  
-*"The patient had new-onset confusion on POD [X] with concurrent [sodium value / metabolic abnormality]. Family confirms this exceeded baseline. Does this represent metabolic encephalopathy secondary to [causative condition]?"*
+_"The patient had new-onset confusion on POD [X] with concurrent [sodium value / metabolic abnormality]. Family confirms this exceeded baseline. Does this represent metabolic encephalopathy secondary to [causative condition]?"_
 
 **Pulmonary hypertension query:**  
-*"Right heart catheterization documented a mean PAP of [value]. This is referenced in the cardiology note. Can you document pulmonary hypertension as an active secondary diagnosis in the discharge summary?"*
+_"Right heart catheterization documented a mean PAP of [value]. This is referenced in the cardiology note. Can you document pulmonary hypertension as an active secondary diagnosis in the discharge summary?"_
 
 **Atrial fibrillation query:**  
-*"The patient developed atrial fibrillation on POD [X] requiring [rate control / cardioversion / anticoagulation]. Can you specify the type — paroxysmal if it terminated before discharge, or persistent if it was present at discharge?"*
+_"The patient developed atrial fibrillation on POD [X] requiring [rate control / cardioversion / anticoagulation]. Can you specify the type — paroxysmal if it terminated before discharge, or persistent if it was present at discharge?"_
 
 ---
 
@@ -506,7 +506,7 @@ Was preoperative albumin below 2.0? Did the dietitian document malnutrition? Is 
 
 ---
 
-*Source: CMS FY2025/FY2026 IPPS Final Rule · MS-DRG V43.0 · ICD-10-CM FY2025*  
-*DRG payment figures are national average approximations and vary by hospital wage index and geographic adjustment.*  
-*CC/MCC designations change annually with each CMS IPPS Final Rule. Verify against the active MS-DRG Definitions Manual for the applicable fiscal year.*  
-*Last updated: June 2026*
+_Source: CMS FY2025/FY2026 IPPS Final Rule · MS-DRG V43.0 · ICD-10-CM FY2025_  
+_DRG payment figures are national average approximations and vary by hospital wage index and geographic adjustment._  
+_CC/MCC designations change annually with each CMS IPPS Final Rule. Verify against the active MS-DRG Definitions Manual for the applicable fiscal year._  
+_Last updated: June 2026_
