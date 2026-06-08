@@ -354,6 +354,8 @@ For cases where CCs do not change payment, document them for APR-DRG SOI/ROM and
 
 | Condition | ICD-10 | What to Specify |
 |-----------|--------|-----------------|
+| Morbid obesity | E66.01 | Provider must document "morbid obesity" — BMI code alone insufficient; CC in 3-tier families (426–428, 471–473); HCC 48 for risk adjustment |
+| Obstructive sleep apnea | G47.33 | CC — screen for OHS (E66.2, MCC) if patient uses BiPAP; particularly relevant in obese spine patients |
 | Acute posthemorrhagic anemia | D62 | Common in multilevel cases; link to surgical blood loss |
 | Type 2 diabetes with hyperglycemia | E11.65 | Specify type and complication |
 | Unspecified protein-calorie malnutrition | E46 | CC tier; document "severe" + ASPEN criteria for E43 (MCC) |
@@ -418,25 +420,28 @@ Identify the DRG family first — it determines whether your CC documentation ha
 **1. Identify the tier structure**  
 Is this a 2-tier or 3-tier DRG family? Cervical fusion (471–473) and multilevel combined non-cervical (426–428) are 3-tier — both CCs and MCCs matter for payment. Single-level non-cervical (450/451) and multilevel non-cervical (447/448) are 2-tier — only MCCs move the payment.
 
-**2. Creatinine**  
+**2. Obesity**  
+Does the patient have a BMI ≥ 40? **Document "morbid obesity" explicitly — a BMI code alone is not sufficient.** Morbid obesity (E66.01) is a CC with direct payment value in 3-tier families (426–428, 471–473) and contributes to APR-DRG SOI and HCC 48 risk adjustment across all families. In obese spine patients, also consider whether OHS criteria are met — OHS (E66.2) is an MCC.
+
+**3. Creatinine**  
 Did it rise ≥ 0.3 mg/dL above the preoperative baseline? **Name it as acute kidney injury.** Include the baseline value, peak value, and clinical response. Resolution before discharge does not eliminate the diagnosis.
 
-**3. Mental status**  
+**4. Mental status**  
 Was there any new-onset confusion, disorientation, or behavioral change not at baseline? Was there a concurrent metabolic abnormality? **Document metabolic encephalopathy with the causative metabolic condition.** "Confusion" and "delirium" do not code as MCCs.
 
-**4. Respiratory status**  
+**5. Respiratory status**  
 Does the patient use BiPAP at home? Is there documented or suspected daytime hypercapnia (prior ABG, history of morning headaches, BiPAP rather than CPAP)? **Consider obesity hypoventilation syndrome rather than OSA alone.** OHS (E66.2) is an MCC; OSA (G47.33) is a CC.
 
-**5. Nutrition**  
+**6. Nutrition**  
 Was preoperative albumin below 3.0? Did the dietitian document malnutrition? **Name the diagnosis and specify severity.** "Malnutrition" alone is E46 (CC). "Severe protein-calorie malnutrition" meeting ASPEN criteria is E43 (MCC).
 
-**6. Opioids and psychiatric comorbidities**  
+**7. Opioids and psychiatric comorbidities**  
 Is the patient on chronic opioids for pain management? On antidepressants or anxiolytics? Was psychiatry or psychology involved? **Document opioid dependence (F11.20) and active psychiatric diagnoses.** These are CCs that are almost universally absent from surgical discharge summaries.
 
-**7. Blood loss and anemia**  
+**8. Blood loss and anemia**  
 Did hemoglobin drop significantly from the preoperative value, particularly in multilevel cases? Was a transfusion given? **Name it as acute posthemorrhagic anemia (D62) and link it to surgical blood loss.** "Anemia" (D64.9) is not a CC.
 
-**8. Infection**  
+**9. Infection**  
 Were antibiotics extended beyond the standard perioperative prophylaxis period for a suspected infection? Was the indication for fusion infectious — osteomyelitis or disc space infection? **Name the infectious diagnosis explicitly with site specification.** M46.20 and M46.30 are MCCs.
 
 ---
@@ -450,6 +455,9 @@ Were antibiotics extended beyond the standard perioperative prophylaxis period f
 
 > [NOTE]
 > These prompts surface conditions that are clinically present but underdocumented. They are written as physician-facing language — what a CDI specialist or hospitalist colleague might raise to clarify a diagnosis. Documentation should reflect genuine clinical judgment.
+
+**Morbid obesity query:**  
+*"The patient has a BMI of [X] documented in the chart. Can you document morbid obesity as an active secondary diagnosis in the discharge summary? The specific phrase 'morbid obesity' is required — a BMI code alone does not capture the CC credit or HCC 48 for TEAM risk adjustment. For cervical or multilevel combined fusion cases, this CC also has direct payment value."*
 
 **AKI query:**  
 *"Creatinine rose from [baseline] to [peak] postoperatively and improved with IV hydration — does this represent acute kidney injury?"*

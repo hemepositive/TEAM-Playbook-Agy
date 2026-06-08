@@ -350,6 +350,8 @@ Unlike LEJR and CABG, a single CC in a major bowel case has direct payment value
 
 | Condition | ICD-10 | What to Specify |
 |-----------|--------|-----------------|
+| Morbid obesity | E66.01 | Provider must document "morbid obesity" — BMI code alone insufficient; moves DRG 331 → 330 (~$7,500); also HCC 48 |
+| Obstructive sleep apnea | G47.33 | CC — screen for OHS (E66.2, MCC) if BiPAP-dependent |
 | Acute posthemorrhagic anemia | D62 | Link to blood loss — "anemia" alone (D64.9) is not a CC |
 | Type 2 diabetes with hyperglycemia | E11.65 | Specify type and complication |
 | Unspecified protein-calorie malnutrition | E46 | CC tier; document "severe" + ASPEN criteria for E43 (MCC) |
@@ -450,28 +452,31 @@ HCC documentation in major bowel cases is critically important for TEAM risk adj
 
 Major bowel patients present a wide range of underlying indications. This checklist covers the most commonly missed documentation gaps across all subpopulations.
 
-**1. Sepsis**  
+**1. Obesity**  
+Does the patient have a BMI ≥ 40? **Document "morbid obesity" explicitly in the discharge diagnoses — a BMI code alone is not sufficient.** Morbid obesity (E66.01) is a CC in Major Bowel with direct payment value — it moves the case from DRG 331 to DRG 330 (~$7,500) when no MCC is present. It also captures HCC 48 for TEAM risk adjustment.
+
+**2. Sepsis**  
 Was there fever, leukocytosis, and a suspected or confirmed bowel source? Were antibiotics started for a systemic indication? Were vasopressors required? **Write the word sepsis.** If organ dysfunction was present, write severe sepsis. If vasopressors were required, write septic shock. "Peritonitis" and "intra-abdominal infection" are not sepsis.
 
-**2. Perforation**  
+**3. Perforation**  
 Was the operative indication bowel perforation? **List intestinal perforation (K63.1) as a separate secondary diagnosis** in addition to the underlying cause. The perforation is an MCC; the underlying cause (diverticulitis, carcinoma) is a separate diagnosis.
 
-**3. Malignancy — primary and metastatic sites**  
+**4. Malignancy — primary and metastatic sites**  
 Is this an oncologic case? Is the primary malignancy active — not historical? Are there metastatic sites documented in oncology records or on imaging? **Name the primary diagnosis as an active condition and list each metastatic site explicitly.** Stage IV language alone does not capture the metastatic HCC or MCC.
 
-**4. Nutrition**  
+**5. Nutrition**  
 Was a nutrition consult placed? Is the patient cachectic, malnourished, or nutritionally depleted from underlying disease or treatment? Was TPN initiated? **Name the malnutrition diagnosis and specify severity.** "Malnutrition" or "unspecified malnutrition" is E46 (CC). "Severe protein-calorie malnutrition" meeting ASPEN criteria is E43 (MCC).
 
-**5. Kidney function**  
+**6. Kidney function**  
 Did creatinine rise above baseline — from bowel prep dehydration, septic hypoperfusion, or perioperative shifts? **Name it as acute kidney injury.** "Prerenal azotemia" is a mechanism, not a diagnosis.
 
-**6. Ostomy**  
+**7. Ostomy**  
 Was a colostomy or ileostomy created or present? **Document the type and functional status explicitly in the discharge diagnoses.** "Colostomy status" (Z93.3) and "ileostomy status" (Z93.2) are CCs. The operative report alone does not drive this code — it must appear in the physician's discharge documentation.
 
-**7. Anemia**  
+**8. Anemia**  
 Did hemoglobin drop significantly from the admission value? Was a transfusion given? **Name it as acute posthemorrhagic anemia (D62) and link it to the blood loss.** "Anemia" (D64.9) is not a CC.
 
-**8. Mental status**  
+**9. Mental status**  
 Was there any confusion or disorientation — particularly in septic, elderly, or sodium-depleted patients? Was there a concurrent metabolic abnormality? **Document metabolic encephalopathy with the causative condition.** "Delirium" is a CC. Metabolic encephalopathy with a named metabolic cause is an MCC.
 
 ---
@@ -485,6 +490,9 @@ Was there any confusion or disorientation — particularly in septic, elderly, o
 
 > [NOTE]
 > These prompts surface conditions that are clinically present but underdocumented. They are written in physician-facing language. Documentation should reflect genuine clinical judgment.
+
+**Morbid obesity query:**  
+*"The patient has a BMI of [X] documented in the chart. Can you document morbid obesity as an active secondary diagnosis in the discharge summary? The specific phrase 'morbid obesity' is required — a BMI code alone does not capture the CC credit or HCC 48 for TEAM risk adjustment. In Major Bowel, this CC moves the case from DRG 331 to DRG 330 if no MCC is present (~$7,500 impact)."*
 
 **Sepsis query:**  
 *"The patient presented with [fever, leukocytosis, hemodynamic instability] and an identified bowel source, and was treated with broad-spectrum IV antibiotics. Does this meet your clinical threshold for sepsis? If vasopressors were required, does this represent severe sepsis with septic shock?"*

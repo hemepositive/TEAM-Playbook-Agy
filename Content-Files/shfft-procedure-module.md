@@ -309,6 +309,7 @@ Unlike LEJR, CCs in SHFFT directly change payment — from DRG 482 to DRG 481 (~
 
 | Condition | ICD-10 | What to Specify |
 |-----------|--------|-----------------|
+| Morbid obesity | E66.01 | Provider must document "morbid obesity" — BMI code alone is not sufficient; moves DRG 482 → 481 (~$5,000) and captures HCC 48 |
 | Acute posthemorrhagic anemia | D62 | Link to blood loss — "anemia" alone (D64.9) is not a CC |
 | Type 2 diabetes with hyperglycemia | E11.65 | Specify type and complication |
 | Unspecified protein-calorie malnutrition | E46 | CC tier; document "severe" + criteria for E43 (MCC) |
@@ -365,25 +366,28 @@ HCC documentation in SHFFT has an outsized impact on TEAM risk adjustment becaus
 
 SHFFT patients are complex. This checklist targets the most commonly missed documentation gaps in this population. Each item should take under 60 seconds to review.
 
-**1. Dementia**  
+**1. Obesity**  
+Does the patient have a BMI ≥ 40? **Document "morbid obesity" explicitly in the discharge diagnoses — a BMI code alone is not sufficient.** Morbid obesity (E66.01) is a CC in SHFFT with direct payment value — it moves the case from DRG 482 to DRG 481 (~$5,000) when no MCC is present. It also captures HCC 48 for TEAM risk adjustment.
+
+**2. Dementia**  
 Is this patient a nursing home resident or does family confirm pre-existing cognitive impairment? **Document dementia as an active diagnosis with a severity level.** "History of dementia" in the PMH alone will not be coded. It must appear in your Assessment as a condition affecting the current admission.
 
-**2. Mental status changes**  
+**3. Mental status changes**  
 Was there any new-onset confusion during the admission — beyond the patient's documented baseline? Was there a concurrent metabolic abnormality? **Document metabolic encephalopathy with the causative condition.** "Delirium" is a CC; metabolic encephalopathy with a named cause is an MCC.
 
-**3. Nutrition**  
+**4. Nutrition**  
 Review the dietitian's note. Was malnutrition documented? **Acknowledge the dietitian's findings and name the severity.** "Malnutrition" or "unspecified malnutrition" is a CC. "Severe protein-calorie malnutrition" meeting ASPEN criteria is an MCC. The word "severe" and supporting criteria are required for the higher tier.
 
-**4. Anemia**  
+**5. Anemia**  
 Did hemoglobin drop from the admission value? Was a transfusion given? **Name it as acute posthemorrhagic anemia and link it to the blood loss.** "Anemia" (D64.9) is not a CC. "Acute posthemorrhagic anemia" (D62) is a CC.
 
-**5. Sodium**  
+**6. Sodium**  
 Was sodium below 135 at any point? Was IV fluid composition adjusted? Was nephrology or neurology involved? **Write the word hyponatremia in your note.** "Low sodium" and "electrolyte abnormality" are not diagnoses.
 
-**6. Kidney function**  
+**7. Kidney function**  
 Did creatinine rise above the admission baseline? **Name it as acute kidney injury.** If the patient has known CKD, document the stage — stage 5 is an MCC.
 
-**7. Falls and functional status**  
+**8. Falls and functional status**  
 Was the fall related to a neurological condition — Parkinson's, prior stroke with residual deficits, dementia? **Document the causally relevant underlying condition explicitly.** "Prior stroke" in the PMH is not the same as "residual hemiparesis from prior CVA" — the latter is an MCC; the former is not.
 
 ---
@@ -397,6 +401,9 @@ Was the fall related to a neurological condition — Parkinson's, prior stroke w
 
 > [NOTE]
 > These prompts are written as physician-facing language — what a CDI specialist or a colleague might ask to surface conditions that are clinically present but underdocumented. They are not intended to generate diagnoses that are not clinically supported.
+
+**Morbid obesity query:**  
+*"The patient has a BMI of [X] documented in the chart. Can you document morbid obesity as an active secondary diagnosis in the discharge summary? The specific phrase 'morbid obesity' is required — a BMI code alone does not capture the CC credit or HCC 48 for TEAM risk adjustment. In SHFFT, this moves the case from DRG 482 to 481 if no MCC is present."*
 
 **Dementia query:**  
 *"The patient is a nursing home resident and family confirms she has had significant memory and functional decline over the past two years. Her nursing home records reference dementia. Can you document dementia as an active diagnosis and specify the severity — mild, moderate, or severe?"*

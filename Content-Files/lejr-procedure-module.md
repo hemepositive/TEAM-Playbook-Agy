@@ -274,6 +274,8 @@ Document these with specificity. The same precision principles apply — vague l
 
 | Condition                                   | ICD-10  | What to Specify                                        |
 | ------------------------------------------- | ------- | ------------------------------------------------------ |
+| Morbid obesity                              | E66.01  | Provider must document "morbid obesity" — BMI code alone is not sufficient; also HCC 48 |
+| Obstructive sleep apnea                     | G47.33  | CC — screen for OHS (E66.2, MCC) if patient uses BiPAP |
 | Type 2 diabetes with hyperglycemia          | E11.65  | Specify type (1 vs. 2) and complication                |
 | Type 2 diabetes with hypoglycemia           | E11.649 | Specify episode and consciousness level                |
 | Chronic kidney disease, stage 3             | N18.3   | Always stage it — N18.9 (unspecified) is not a CC      |
@@ -318,6 +320,9 @@ These HCCs appear most frequently in LEJR patient populations and have the highe
 > [CALLOUT-WARNING]
 > **The "history of" trap:** Writing "history of stroke" maps to Z86.73 — not an HCC and not a CC. If the patient has residual weakness, altered gait, or any functional deficit from a prior stroke, that is an _active condition_, not history. Document "hemiparesis from prior CVA" — it is an MCC and an HCC.
 
+> [CALLOUT-INFO]
+> **Morbid obesity (HCC 48) documentation:** E66.01 requires the provider to write "morbid obesity" — a BMI code (Z68.xx) alone will not capture HCC 48. If the patient has a BMI ≥ 40 and it is documented in the chart, transfer that language explicitly into your Assessment. In LEJR, morbid obesity is a CC (not MCC), so it does not change the DRG tier — but it raises the APR-DRG SOI, improves TEAM risk adjustment, and contributes to the risk-adjusted target price.
+
 ---
 
 <!-- ============================================================
@@ -331,22 +336,25 @@ These HCCs appear most frequently in LEJR patient populations and have the highe
 
 Run through this before closing the LEJR discharge note. Each item takes under 30 seconds to check.
 
-**1. Creatinine**  
+**1. Obesity**  
+Does the patient have a BMI ≥ 40? **Document "morbid obesity" explicitly in the discharge diagnoses — a BMI code alone does not capture the condition.** Morbid obesity (E66.01) is a CC in LEJR and HCC 48 for TEAM risk adjustment. It does not move the DRG tier, but it raises APR-DRG SOI and increases the risk-adjusted episode target price.
+
+**2. Creatinine**  
 Did it rise ≥ 0.3 mg/dL above the preoperative baseline? **Name it as acute kidney injury in the discharge diagnoses.** Resolution before discharge does not eliminate the diagnosis — it was present during the stay.
 
-**2. Mental status**  
+**3. Mental status**  
 Was there any confusion, disorientation, or delirium during the admission? Was there a concurrent metabolic abnormality (low sodium, high glucose, elevated creatinine)? **Document metabolic encephalopathy with the causative metabolic condition.** "Delirium" alone is a CC; metabolic encephalopathy is an MCC.
 
-**3. Heart failure**  
+**4. Heart failure**  
 Was there any BNP elevation, pulmonary edema, or diuresis during the stay? **Specify systolic vs. diastolic AND acute vs. chronic.** "CHF" is a CC. "Acute systolic heart failure" is an MCC.
 
-**4. Respiratory status**  
+**5. Respiratory status**  
 Does the patient use BiPAP (not just CPAP)? Is there a history of daytime sleepiness or prior ABG with elevated CO₂? **Consider obesity hypoventilation syndrome rather than OSA alone.** OSA is a CC; OHS is an MCC.
 
-**5. Nutrition**  
+**6. Nutrition**  
 Was a nutrition consult placed? Did the dietitian document malnutrition? **Acknowledge the dietitian's assessment in your note and specify severity.** "Malnutrition" alone is E46 (CC). "Severe protein-calorie malnutrition" with clinical support is E43 (MCC).
 
-**6. Diabetes**  
+**7. Diabetes**  
 Is the diabetes typed (1 vs. 2)? Is there a documented complication (neuropathy, nephropathy, retinopathy, hyperglycemia)? **Document the specific complication.** Unspecified diabetes with no complication has no CC/MCC credit.
 
 ---
@@ -364,6 +372,9 @@ These are the questions a CDI specialist or hospitalist colleague might raise on
 
 > [CALLOUT-INFO]
 > **How to use these:** These prompts are starting points for documentation clarification. CMS requires that physician documentation represent genuine clinical judgment — these queries are designed to surface conditions that are clinically present but underdocumented, not to generate diagnoses that aren't there.
+
+**Morbid obesity query:**
+_"The patient has a BMI of [X] documented in the chart. Can you document morbid obesity as an active secondary diagnosis in the discharge summary? The specific term 'morbid obesity' is required — a BMI code alone does not capture HCC 48 for TEAM risk adjustment."_
 
 **AKI query:**
 _"The creatinine rose from [baseline] to [peak] postoperatively and returned toward baseline with IV fluids — does this represent acute kidney injury in your clinical judgment?"_
