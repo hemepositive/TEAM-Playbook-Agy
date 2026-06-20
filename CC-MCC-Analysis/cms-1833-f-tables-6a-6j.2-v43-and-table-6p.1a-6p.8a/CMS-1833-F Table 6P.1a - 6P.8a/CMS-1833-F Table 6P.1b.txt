@@ -1,0 +1,14 @@
+Table 6P.1b - List of ICD-10-PCS procedure code mapping between Version 42.1 and Version 43 of the MS-DRGs 			
+Deleted  (V42.1)                                   ICD-10-PCS          Procedure Code	Code Description 	Mapped  (V43)                                   ICD-10-PCS                       Procedure Code	Code Description 
+0SG604Z	"Fusion of Coccygeal Joint with Internal Fixation Device, Open Approach"	0SG504Z	"Fusion of Sacrococcygeal Joint with Internal Fixation Device, Open Approach"
+0SG607Z	"Fusion of Coccygeal Joint with Autologous Tissue Substitute, Open Approach"	0SG507Z	"Fusion of Sacrococcygeal Joint with Autologous Tissue Substitute, Open Approach"
+0SG60JZ	"Fusion of Coccygeal Joint with Synthetic Substitute, Open Approach"	0SG50JZ	"Fusion of Sacrococcygeal Joint with Synthetic Substitute, Open Approach"
+0SG60KZ	"Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Open Approach"	0SG50KZ	"Fusion of Sacrococcygeal Joint with Nonautologous Tissue Substitute, Open Approach"
+0SG634Z	"Fusion of Coccygeal Joint with Internal Fixation Device, Percutaneous Approach"	0SG534Z	"Fusion of Sacrococcygeal Joint with Internal Fixation Device, Percutaneous Approach"
+0SG637Z	"Fusion of Coccygeal Joint with Autologous Tissue Substitute, Percutaneous Approach"	0SG537Z	"Fusion of Sacrococcygeal Joint with Autologous Tissue Substitute, Percutaneous Approach"
+0SG63JZ	"Fusion of Coccygeal Joint with Synthetic Substitute, Percutaneous Approach"	0SG53JZ	"Fusion of Sacrococcygeal Joint with Synthetic Substitute, Percutaneous Approach"
+0SG63KZ	"Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Percutaneous Approach"	0SG53KZ	"Fusion of Sacrococcygeal Joint with Nonautologous Tissue Substitute, Percutaneous Approach"
+0SG644Z	"Fusion of Coccygeal Joint with Internal Fixation Device, Percutaneous Endoscopic Approach"	0SG544Z	"Fusion of Sacrococcygeal Joint with Internal Fixation Device, Percutaneous Endoscopic Approach"
+0SG647Z	"Fusion of Coccygeal Joint with Autologous Tissue Substitute, Percutaneous Endoscopic Approach"	0SG547Z	"Fusion of Sacrococcygeal Joint with Autologous Tissue Substitute, Percutaneous Endoscopic Approach"
+0SG64JZ	"Fusion of Coccygeal Joint with Synthetic Substitute, Percutaneous Endoscopic Approach"	0SG54JZ	"Fusion of Sacrococcygeal Joint with Synthetic Substitute, Percutaneous Endoscopic Approach"
+0SG64KZ	"Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Percutaneous Endoscopic Approach"	0SG54KZ	"Fusion of Sacrococcygeal Joint with Nonautologous Tissue Substitute, Percutaneous Endoscopic Approach"

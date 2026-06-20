@@ -1,0 +1,151 @@
+Table 6P.8a - List of principal diagnosis codes removed from Principal Diagnosis Collection List number 1335			
+ICD-10-CM Diagnosis Code	Description		
+E09.618	Drug or chemical induced diabetes mellitus with other diabetic arthropathy		
+E09.620	Drug or chemical induced diabetes mellitus with diabetic dermatitis		
+E09.621	Drug or chemical induced diabetes mellitus with foot ulcer		
+E09.622	Drug or chemical induced diabetes mellitus with other skin ulcer		
+E09.628	Drug or chemical induced diabetes mellitus with other skin complications		
+E09.630	Drug or chemical induced diabetes mellitus with periodontal disease		
+E09.638	Drug or chemical induced diabetes mellitus with other oral complications		
+E09.649	Drug or chemical induced diabetes mellitus with hypoglycemia without coma		
+E09.65	Drug or chemical induced diabetes mellitus with hyperglycemia		
+E09.69	Drug or chemical induced diabetes mellitus with other specified complication		
+E09.8	Drug or chemical induced diabetes mellitus with unspecified complications		
+E10.618	Type 1 diabetes mellitus with other diabetic arthropathy		
+E10.620	Type 1 diabetes mellitus with diabetic dermatitis		
+E10.621	Type 1 diabetes mellitus with foot ulcer		
+E10.622	Type 1 diabetes mellitus with other skin ulcer		
+E10.628	Type 1 diabetes mellitus with other skin complications		
+E10.630	Type 1 diabetes mellitus with periodontal disease		
+E10.638	Type 1 diabetes mellitus with other oral complications		
+E10.649	Type 1 diabetes mellitus with hypoglycemia without coma		
+E10.69	Type 1 diabetes mellitus with other specified complication		
+E10.8	Type 1 diabetes mellitus with unspecified complications		
+E11.618	Type 2 diabetes mellitus with other diabetic arthropathy		
+E11.620	Type 2 diabetes mellitus with diabetic dermatitis		
+E11.621	Type 2 diabetes mellitus with foot ulcer		
+E11.622	Type 2 diabetes mellitus with other skin ulcer		
+E11.628	Type 2 diabetes mellitus with other skin complications		
+E11.630	Type 2 diabetes mellitus with periodontal disease		
+E11.638	Type 2 diabetes mellitus with other oral complications		
+E11.649	Type 2 diabetes mellitus with hypoglycemia without coma		
+E11.69	Type 2 diabetes mellitus with other specified complication		
+E11.8	Type 2 diabetes mellitus with unspecified complications		
+E13.618	Other specified diabetes mellitus with other diabetic arthropathy		
+E13.620	Other specified diabetes mellitus with diabetic dermatitis		
+E13.621	Other specified diabetes mellitus with foot ulcer		
+E13.622	Other specified diabetes mellitus with other skin ulcer		
+E13.628	Other specified diabetes mellitus with other skin complications		
+E13.630	Other specified diabetes mellitus with periodontal disease		
+E13.638	Other specified diabetes mellitus with other oral complications		
+E13.649	Other specified diabetes mellitus with hypoglycemia without coma		
+E13.65	Other specified diabetes mellitus with hyperglycemia		
+E13.69	Other specified diabetes mellitus with other specified complication		
+E13.8	Other specified diabetes mellitus with unspecified complications		
+M10.30	"Gout due to renal impairment, unspecified site"		
+M10.311	"Gout due to renal impairment, right shoulder"		
+M10.312	"Gout due to renal impairment, left shoulder"		
+M10.319	"Gout due to renal impairment, unspecified shoulder"		
+M10.321	"Gout due to renal impairment, right elbow"		
+M10.322	"Gout due to renal impairment, left elbow"		
+M10.329	"Gout due to renal impairment, unspecified elbow"		
+M10.331	"Gout due to renal impairment, right wrist"		
+M10.332	"Gout due to renal impairment, left wrist"		
+M10.339	"Gout due to renal impairment, unspecified wrist"		
+M10.341	"Gout due to renal impairment, right hand"		
+M10.342	"Gout due to renal impairment, left hand"		
+M10.349	"Gout due to renal impairment, unspecified hand"		
+M10.351	"Gout due to renal impairment, right hip"		
+M10.352	"Gout due to renal impairment, left hip"		
+M10.359	"Gout due to renal impairment, unspecified hip"		
+M10.361	"Gout due to renal impairment, right knee"		
+M10.362	"Gout due to renal impairment, left knee"		
+M10.369	"Gout due to renal impairment, unspecified knee"		
+M10.371	"Gout due to renal impairment, right ankle and foot"		
+M10.372	"Gout due to renal impairment, left ankle and foot"		
+M10.379	"Gout due to renal impairment, unspecified ankle and foot"		
+M10.38	"Gout due to renal impairment, vertebrae"		
+M10.39	"Gout due to renal impairment, multiple sites"		
+N10	Acute pyelonephritis		
+N11.0	Nonobstructive reflux-associated chronic pyelonephritis		
+N11.8	Other chronic tubulo-interstitial nephritis		
+N11.9	"Chronic tubulo-interstitial nephritis, unspecified"		
+N12	"Tubulo-interstitial nephritis, not specified as acute or chronic"		
+N19	Unspecified kidney failure		
+N25.0	Renal osteodystrophy		
+N25.1	Nephrogenic diabetes insipidus		
+N25.81	Secondary hyperparathyroidism of renal origin		
+N25.89	Other disorders resulting from impaired renal tubular function		
+N25.9	"Disorder resulting from impaired renal tubular function, unspecified"		
+N26.9	"Renal sclerosis, unspecified"		
+N27.0	"Small kidney, unilateral"		
+N27.1	"Small kidney, bilateral"		
+N27.9	"Small kidney, unspecified"		
+N28.1	"Cyst of kidney, acquired"		
+N28.81	Hypertrophy of kidney		
+N28.82	Megaloureter		
+N28.83	Nephroptosis		
+N28.84	Pyelitis cystica		
+N28.85	Pyeloureteritis cystica		
+N28.86	Ureteritis cystica		
+N28.89	Other specified disorders of kidney and ureter		
+N28.9	"Disorder of kidney and ureter, unspecified"		
+N36.41	Hypermobility of urethra		
+N36.42	Intrinsic sphincter deficiency (ISD)		
+N36.43	Combined hypermobility of urethra and intrinsic sphincter deficiency		
+N36.8	Other specified disorders of urethra		
+N36.9	"Urethral disorder, unspecified"		
+N39.8	Other specified disorders of urinary system		
+N39.9	"Disorder of urinary system, unspecified"		
+N80.A0	"Endometriosis of bladder, unspecified depth"		
+N80.A1	Superficial endometriosis of bladder		
+N80.A2	Deep endometriosis of bladder		
+N80.A41	Superficial endometriosis of right ureter		
+N80.A42	Superficial endometriosis of left ureter		
+N80.A43	Superficial endometriosis of bilateral ureters		
+N80.A49	Superficial endometriosis of unspecified ureter		
+N80.A51	Deep endometriosis of right ureter		
+N80.A52	Deep endometriosis of left ureter		
+N80.A53	Deep endometriosis of bilateral ureters		
+N80.A59	Deep endometriosis of unspecified ureter		
+N80.A61	"Endometriosis of right ureter, unspecified depth"		
+N80.A62	"Endometriosis of left ureter, unspecified depth"		
+N80.A63	"Endometriosis of bilateral ureters, unspecified depth"		
+N80.A69	"Endometriosis of unspecified ureter, unspecified depth"		
+Q60.0	"Renal agenesis, unilateral"		
+Q60.2	"Renal agenesis, unspecified"		
+Q60.3	"Renal hypoplasia, unilateral"		
+Q60.4	"Renal hypoplasia, bilateral"		
+Q60.5	"Renal hypoplasia, unspecified"		
+Q61.00	"Congenital renal cyst, unspecified"		
+Q61.01	Congenital single renal cyst		
+Q61.02	Congenital multiple renal cysts		
+Q61.11	Cystic dilatation of collecting ducts		
+Q61.19	"Other polycystic kidney, infantile type"		
+Q61.2	"Polycystic kidney, adult type"		
+Q61.3	"Polycystic kidney, unspecified"		
+Q61.4	Renal dysplasia		
+Q61.5	Medullary cystic kidney		
+Q61.8	Other cystic kidney diseases		
+Q61.9	"Cystic kidney disease, unspecified"		
+Q62.0	Congenital hydronephrosis		
+Q62.10	"Congenital occlusion of ureter, unspecified"		
+Q62.11	Congenital occlusion of ureteropelvic junction		
+Q62.12	Congenital occlusion of ureterovesical orifice		
+Q62.2	Congenital megaureter		
+Q62.31	"Congenital ureterocele, orthotopic"		
+Q62.32	Cecoureterocele		
+Q62.39	Other obstructive defects of renal pelvis and ureter		
+Q63.0	Accessory kidney		
+Q63.1	"Lobulated, fused and horseshoe kidney"		
+Q63.2	Ectopic kidney		
+Q63.3	Hyperplastic and giant kidney		
+Q63.8	Other specified congenital malformations of kidney		
+Q63.9	"Congenital malformation of kidney, unspecified"		
+Q64.8	Other specified congenital malformations of urinary system		
+Q64.9	"Congenital malformation of urinary system, unspecified"		
+R31.0	Gross hematuria		
+R31.1	Benign essential microscopic hematuria		
+R31.21	Asymptomatic microscopic hematuria		
+R31.29	Other microscopic hematuria		
+R31.9	"Hematuria, unspecified"		

@@ -1,0 +1,115 @@
+TABLE 6J.1 - ADDITIONS TO THE CC LIST
+Diagnosis Code	Description
+E72.530	Primary hyperoxaluria, type 1
+E72.538	Other specified primary hyperoxaluria
+E72.539	Primary hyperoxaluria, unspecified
+E83.820	Generalized arterial calcification of infancy with unspecified genetic causality
+E83.821	ENPP1 deficiency causing generalized arterial calcification of infancy
+E83.823	ABCC6 deficiency causing generalized arterial calcification of infancy
+E83.825	CD73 deficiency causing arterial calcification
+I27.840	Fontan-associated liver disease [FALD]
+L02.217	Cutaneous abscess of flank
+L03.31A	Cellulitis of flank
+L03.32A	Acute lymphangitis of flank
+L98.433	Non-pressure chronic ulcer of abdomen with necrosis of muscle
+L98.434	Non-pressure chronic ulcer of abdomen with necrosis of bone
+L98.435	Non-pressure chronic ulcer of abdomen with muscle involvement without evidence of necrosis
+L98.436	Non-pressure chronic ulcer of abdomen with bone involvement without evidence of necrosis
+L98.438	Non-pressure chronic ulcer of abdomen with other specified severity
+L98.443	Non-pressure chronic ulcer of chest with necrosis of muscle
+L98.444	Non-pressure chronic ulcer of chest with necrosis of bone
+L98.445	Non-pressure chronic ulcer of chest with muscle involvement without evidence of necrosis
+L98.446	Non-pressure chronic ulcer of chest with bone involvement without evidence of necrosis
+L98.448	Non-pressure chronic ulcer of chest with other specified severity
+L98.453	Non-pressure chronic ulcer of neck with necrosis of muscle
+L98.454	Non-pressure chronic ulcer of neck with necrosis of bone
+L98.455	Non-pressure chronic ulcer of neck with muscle involvement without evidence of necrosis
+L98.456	Non-pressure chronic ulcer of neck with bone involvement without evidence of necrosis
+L98.458	Non-pressure chronic ulcer of neck with other specified severity
+L98.463	Non-pressure chronic ulcer of face with necrosis of muscle
+L98.464	Non-pressure chronic ulcer of face with necrosis of bone
+L98.465	Non-pressure chronic ulcer of face with muscle involvement without evidence of necrosis
+L98.466	Non-pressure chronic ulcer of face with bone involvement without evidence of necrosis
+L98.468	Non-pressure chronic ulcer of face with other specified severity
+L98.473	Non-pressure chronic ulcer of groin with necrosis of muscle
+L98.474	Non-pressure chronic ulcer of groin with necrosis of bone
+L98.475	Non-pressure chronic ulcer of groin with muscle involvement without evidence of necrosis
+L98.476	Non-pressure chronic ulcer of groin with bone involvement without evidence of necrosis
+L98.478	Non-pressure chronic ulcer of groin with other specified severity
+L98.A113	Non-pressure chronic ulcer of right upper arm with necrosis of muscle
+L98.A114	Non-pressure chronic ulcer of right upper arm with necrosis of bone
+L98.A115	Non-pressure chronic ulcer of right upper arm with muscle involvement without evidence of necrosis
+L98.A116	Non-pressure chronic ulcer of right upper arm with bone involvement without evidence of necrosis
+L98.A118	Non-pressure chronic ulcer of right upper arm with other specified severity
+L98.A123	Non-pressure chronic ulcer of left upper arm with necrosis of muscle
+L98.A124	Non-pressure chronic ulcer of left upper arm with necrosis of bone
+L98.A125	Non-pressure chronic ulcer of left upper arm with muscle involvement without evidence of necrosis
+L98.A126	Non-pressure chronic ulcer of left upper arm with bone involvement without evidence of necrosis
+L98.A128	Non-pressure chronic ulcer of left upper arm with other specified severity
+L98.A193	Non-pressure chronic ulcer of unspecified upper arm with necrosis of muscle
+L98.A194	Non-pressure chronic ulcer of unspecified upper arm with necrosis of bone
+L98.A195	Non-pressure chronic ulcer of unspecified upper arm with muscle involvement without evidence of necrosis
+L98.A196	Non-pressure chronic ulcer of unspecified upper arm with bone involvement without evidence of necrosis
+L98.A198	Non-pressure chronic ulcer of unspecified upper arm with other specified severity
+L98.A213	Non-pressure chronic ulcer of right forearm with necrosis of muscle
+L98.A214	Non-pressure chronic ulcer of right forearm with necrosis of bone
+L98.A215	Non-pressure chronic ulcer of right forearm with muscle involvement without evidence of necrosis
+L98.A216	Non-pressure chronic ulcer of right forearm with bone involvement without evidence of necrosis
+L98.A218	Non-pressure chronic ulcer of right forearm with other specified severity
+L98.A223	Non-pressure chronic ulcer of left forearm with necrosis of muscle
+L98.A224	Non-pressure chronic ulcer of left forearm with necrosis of bone
+L98.A225	Non-pressure chronic ulcer of left forearm with muscle involvement without evidence of necrosis
+L98.A226	Non-pressure chronic ulcer of left forearm with bone involvement without evidence of necrosis
+L98.A228	Non-pressure chronic ulcer of left forearm with other specified severity
+L98.A293	Non-pressure chronic ulcer of unspecified forearm with necrosis of muscle
+L98.A294	Non-pressure chronic ulcer of unspecified forearm with necrosis of bone
+L98.A295	Non-pressure chronic ulcer of unspecified forearm with muscle involvement without evidence of necrosis
+L98.A296	Non-pressure chronic ulcer of unspecified forearm with bone involvement without evidence of necrosis
+L98.A298	Non-pressure chronic ulcer of unspecified forearm with other specified severity
+L98.A313	Non-pressure chronic ulcer of right hand with necrosis of muscle
+L98.A314	Non-pressure chronic ulcer of right hand with necrosis of bone
+L98.A315	Non-pressure chronic ulcer of right hand with muscle involvement without evidence of necrosis
+L98.A316	Non-pressure chronic ulcer of right hand with bone involvement without evidence of necrosis
+L98.A318	Non-pressure chronic ulcer of right hand with other specified severity
+L98.A323	Non-pressure chronic ulcer of left hand with necrosis of muscle
+L98.A324	Non-pressure chronic ulcer of left hand with necrosis of bone
+L98.A325	Non-pressure chronic ulcer of left hand with muscle involvement without evidence of necrosis
+L98.A326	Non-pressure chronic ulcer of left hand with bone involvement without evidence of necrosis
+L98.A328	Non-pressure chronic ulcer of left hand with other specified severity
+L98.A393	Non-pressure chronic ulcer of unspecified hand with necrosis of muscle
+L98.A394	Non-pressure chronic ulcer of unspecified hand with necrosis of bone
+L98.A395	Non-pressure chronic ulcer of unspecified hand with muscle involvement without evidence of necrosis
+L98.A396	Non-pressure chronic ulcer of unspecified hand with bone involvement without evidence of necrosis
+L98.A398	Non-pressure chronic ulcer of unspecified hand with other specified severity
+N04.B1	Nephrotic syndrome with idiopathic immune complex membranoproliferative glomerulonephritis (IC-MPGN)
+N04.B2	Nephrotic syndrome with secondary immune complex membranoproliferative glomerulonephritis (IC-MPGN)
+Q87.87	Hao-Fountain Syndrome
+Q87.88	CTNNB1 syndrome
+Q89.81	Kabuki syndrome
+Q89.89	Other specified congenital malformations
+Q99.811	Usher syndrome, type 1
+Q99.812	Usher syndrome, type 2
+Q99.813	Usher syndrome, type 3
+Q99.818	Other Usher syndrome
+Q99.819	Usher syndrome, unspecified
+QA0.0101	SCN2A-related neurodevelopmental disorder
+QA0.0102	CACNA1A-related neurodevelopmental disorder
+QA0.0109	Neurodevelopmental disorder related to pathogenic variant in other ion channel gene
+QA0.011	Neurodevelopmental disorders, related to pathogenic variants in glutamate receptor genes
+QA0.012	Neurodevelopmental disorders, related to pathogenic variants in other receptor genes
+QA0.0131	SLC6A1-related disorder
+QA0.0139	Neurodevelopmental disorder, related to pathogenic variant in other transporter or solute carrier gene
+QA0.0141	Syntaxin-binding protein 1-related disorder
+QA0.0142	DLG4-related synaptopathy
+QA0.0149	Neurodevelopmental disorder, related to pathogenic variant in other synapse related gene
+QA0.0151	FOXG1 syndrome
+QA0.0159	Neurodevelopmental disorder, related to other genes associated with transcription and gene expression
+QA0.8	Other neurodevelopmental disorders related to pathogenic variants in other specific genes
+T78.070A	Anaphylactic reaction due to milk and dairy products with tolerance to baked milk, initial encounter
+T78.071A	Anaphylactic reaction due to milk and dairy products with reactivity to baked milk, initial encounter
+T78.079A	Anaphylactic reaction due to milk and dairy products, unspecified, initial encounter
+T78.080A	Anaphylactic reaction due to egg with tolerance to baked egg, initial encounter
+T78.081A	Anaphylactic reaction due to egg with reactivity to baked egg, initial encounter
+T78.089A	Anaphylactic reaction due to eggs, unspecified, initial encounter
+
+	Notes:

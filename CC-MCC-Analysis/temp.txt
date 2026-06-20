@@ -1,0 +1,3 @@
+ I am trying to compare the Huntsville Hospital CC and MCC capture rates amongst other hospitals in the East South Central Region that are participating in the CMS TEAM model. 
+ 
+ Write a detailed analysis of these findings for each five TEAM procedures and include recommendations. Put the output in a new file called Regional Analysis.md 

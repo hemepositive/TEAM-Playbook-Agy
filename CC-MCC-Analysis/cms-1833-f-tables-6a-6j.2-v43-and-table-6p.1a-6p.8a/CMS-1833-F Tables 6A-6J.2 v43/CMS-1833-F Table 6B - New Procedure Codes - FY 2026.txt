@@ -1,0 +1,715 @@
+TABLE 6B - NEW PROCEDURE CODES
+Procedure Code	Description	O.R.	MDC	MS-DRG
+00H033J*	Insertion of Infusion Device into Brain, Temporary, Percutaneous Approach	Y	01	023, 024, 025, 026, 027
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00P207Z*	Removal of Autologous Tissue Substitute from Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00P20JZ*	Removal of Synthetic Substitute from Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00P20KZ*	Removal of Nonautologous Tissue Substitute from Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00PT07Z*	Removal of Autologous Tissue Substitute from Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+00PT0JZ*	Removal of Synthetic Substitute from Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+00PT0KZ*	Removal of Nonautologous Tissue Substitute from Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+00W207Z*	Revision of Autologous Tissue Substitute in Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00W20JZ*	Revision of Synthetic Substitute in Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00W20KZ*	Revision of Nonautologous Tissue Substitute in Dura Mater, Open Approach	Y	01	023, 024, 025, 026, 027
+""			21	907, 908, 909
+""			24	955
+""				981, 982, 983
+00WT07Z*	Revision of Autologous Tissue Substitute in Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+00WT0JZ*	Revision of Synthetic Substitute in Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+00WT0KZ*	Revision of Nonautologous Tissue Substitute in Spinal Meninges, Open Approach	Y	01	028, 029, 030
+""			07	423, 424, 425
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+02UW3LZ	Supplement Thoracic Aorta, Descending with Intraluminal Device, Endovascular Anchors, Percutaneous Approach	Y	05	212, 216, 217, 218, 219, 220, 221
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+031209Y*	Bypass Innominate Artery to Upper Artery with Autologous Venous Tissue, Open Approach	Y	05	209, 252, 253, 254
+""				981, 982, 983
+03120AY*	Bypass Innominate Artery to Upper Artery with Autologous Arterial Tissue, Open Approach	Y	05	209, 252, 253, 254
+""				981, 982, 983
+03120JY*	Bypass Innominate Artery to Upper Artery with Synthetic Substitute, Open Approach	Y	05	209, 252, 253, 254
+""				981, 982, 983
+03120KY*	Bypass Innominate Artery to Upper Artery with Nonautologous Tissue Substitute, Open Approach	Y	05	209, 252, 253, 254
+""				981, 982, 983
+03120ZY*	Bypass Innominate Artery to Upper Artery, Open Approach	Y	05	209, 252, 253, 254
+""				981, 982, 983
+04U03LZ	Supplement Abdominal Aorta with Intraluminal Device, Endovascular Anchors, Percutaneous Approach	Y	05	268, 269
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XK0Z1*	Transfer Nasal Mucosa and Soft Tissue to Frontal Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XK0Z2*	Transfer Nasal Mucosa and Soft Tissue to Ethmoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XK0Z3*	Transfer Nasal Mucosa and Soft Tissue to Sphenoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XK0Z4*	Transfer Nasal Mucosa and Soft Tissue to Occipital Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XL0Z1*	Transfer Nasal Turbinate to Frontal Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XL0Z2*	Transfer Nasal Turbinate to Ethmoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XL0Z3*	Transfer Nasal Turbinate to Sphenoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XL0Z4*	Transfer Nasal Turbinate to Occipital Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XM0Z1*	Transfer Nasal Septum to Frontal Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XM0Z2*	Transfer Nasal Septum to Ethmoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XM0Z3*	Transfer Nasal Septum to Sphenoid Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+09XM0Z4*	Transfer Nasal Septum to Occipital Bone, Open Approach	Y	03	143, 144, 145
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0B118D6^	Bypass Trachea to Esophagus with Intraluminal Device, Via Natural or Artificial Opening Endoscopic	N		
+0C1S0E4*	Bypass Larynx to Cutaneous with Endotracheal Airway, Open Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0C1S0F4*	Bypass Larynx to Cutaneous with Tracheostomy Device, Open Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0C1S0Z4*	Bypass Larynx to Cutaneous, Open Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0C1S3E4*	Bypass Larynx to Cutaneous with Endotracheal Airway, Percutaneous Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0C1S3F4*	Bypass Larynx to Cutaneous with Tracheostomy Device, Percutaneous Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0C1S3Z4*	Bypass Larynx to Cutaneous, Percutaneous Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0CYS0Z0^	Transplantation of Larynx, Allogeneic, Open Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0CYS0Z1^	Transplantation of Larynx, Syngeneic, Open Approach	Y	03	143, 144, 145
+""			04	166, 167, 168
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0DX80Z7^	Transfer Small Intestine to Vagina, Open Approach	Y	13	748
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0DX84Z7^	Transfer Small Intestine to Vagina, Percutaneous Endoscopic Approach	Y	13	748
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0F198D3*	Bypass Common Bile Duct to Duodenum with Intraluminal Device, Via Natural or Artificial Opening Endoscopic	Y	06	356, 357, 358
+""			07	408, 409, 410
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0F198Z3*	Bypass Common Bile Duct to Duodenum, Via Natural or Artificial Opening Endoscopic	Y	06	356, 357, 358
+""			07	408, 409, 410
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0RRJ008*	Replacement of Right Shoulder Joint with Reverse Ball and Socket Synthetic Substitute, Subscapularis-sparing Technique, Open Approach	Y	08	483
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0RRJ0J8*	Replacement of Right Shoulder Joint with Synthetic Substitute, Subscapularis-sparing Technique, Open Approach	Y	08	483
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0RRK008*	Replacement of Left Shoulder Joint with Reverse Ball and Socket Synthetic Substitute, Subscapularis-sparing Technique, Open Approach	Y	08	483
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0RRK0J8*	Replacement of Left Shoulder Joint with Synthetic Substitute, Subscapularis-sparing Technique, Open Approach	Y	08	483
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRC07D*	Replacement of Right Knee Joint with Autologous Tissue Substitute, Medial Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRC07E*	Replacement of Right Knee Joint with Autologous Tissue Substitute, Lateral Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRC0KD*	Replacement of Right Knee Joint with Nonautologous Tissue Substitute, Medial Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRC0KE*	Replacement of Right Knee Joint with Nonautologous Tissue Substitute, Lateral Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRD07D*	Replacement of Left Knee Joint with Autologous Tissue Substitute, Medial Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRD07E*	Replacement of Left Knee Joint with Autologous Tissue Substitute, Lateral Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRD0KD*	Replacement of Left Knee Joint with Nonautologous Tissue Substitute, Medial Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SRD0KE*	Replacement of Left Knee Joint with Nonautologous Tissue Substitute, Lateral Meniscus, Open Approach	Y	08	461, 462, 469, 470
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT00Z0^	Resection of Right Kidney, Open Approach, Allogeneic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT00Z1^	Resection of Right Kidney, Open Approach, Syngeneic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT00Z2^	Resection of Right Kidney, Open Approach, Zooplastic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT10Z0^	Resection of Left Kidney, Open Approach, Allogeneic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT10Z1^	Resection of Left Kidney, Open Approach, Syngeneic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0TT10Z2^	Resection of Left Kidney, Open Approach, Zooplastic	Y	11	656, 657, 658, 659, 660, 661
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0U7C7DJ^	Dilation of Cervix with Intraluminal Device, Temporary, Via Natural or Artificial Opening	N		
+10D10ZZ^	Extraction of Products of Conception, Retained, Open Approach	Y	14	770, 796, 797, 798
+""				981, 982, 983
+3E0U0GC^	Introduction of Other Therapeutic Substance into Joints, Open Approach	N		
+5A05A6M*	Intraoperative Cerebral Embolic Filtration, Single Capture Filter	N		
+5A05A6N*	Intraoperative Cerebral Embolic Filtration, Dual Capture Filter	N		
+5A05A6P*	Intraoperative Cerebral Embolic Filtration, Single Deflection Filter	N		
+5A05A6Q*	Intraoperative Cerebral Embolic Filtration, Extracorporeal Flow Reversal Circuit	N		
+6A4T00A	Hypothermia of Urinary System using Donor Organ Protective Thermal Insulation, Single, Intraoperative	N		
+8E0ZXGP*	External Confocal Microscopy, Intraoperative Specimen Analysis	N		
+D228DZZ^	Stereotactic Other Photon Radiosurgery of Conduction Mechanism	N**	05	317
+F08D5AZ	Wound Management Treatment of Integumentary System - Head and Neck using Negative Pressure Therapy	N**	23	945, 946
+F08F5AZ	Wound Management Treatment of Integumentary System - Upper Back / Upper Extremity using Negative Pressure Therapy	N**	23	945, 946
+F08G5AZ	Wound Management Treatment of Integumentary System - Lower Back / Lower Extremity using Negative Pressure Therapy	N**	23	945, 946
+F08H5AZ	Wound Management Treatment of Integumentary System - Whole Body using Negative Pressure Therapy	N**	23	945, 946
+F08J5AZ	Wound Management Treatment of Musculoskeletal System - Head and Neck using Negative Pressure Therapy	N**	23	945, 946
+F08K5AZ	Wound Management Treatment of Musculoskeletal System - Upper Back / Upper Extremity using Negative Pressure Therapy	N**	23	945, 946
+F08L5AZ	Wound Management Treatment of Musculoskeletal System - Lower Back / Lower Extremity using Negative Pressure Therapy	N**	23	945, 946
+F08M5AZ	Wound Management Treatment of Musculoskeletal System - Whole Body using Negative Pressure Therapy	N**	23	945, 946
+X05233B*	Destruction of Thoracic Sympathetic Nerve, Cardiac Plexus using Radiofrequency Ablation, Percutaneous Approach, New Technology Group 11	Y	01	040, 041, 042
+""			05	264
+""				981, 982, 983
+X053X4B*	Destruction of Brain using Focused Ultrasound Therapy, External Approach, New Technology Group 11	Y	01	025, 026, 027
+""			17	820, 821, 822, 826, 827, 828
+""			21	907, 908, 909
+""			24	955
+""				987, 988, 989
+X27339B*	Dilation of Right Pulmonary Artery with Expandable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27439B*	Dilation of Left Pulmonary Artery with Expandable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27535B*	Dilation of Right Subclavian Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27635B*	Dilation of Left Subclavian Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27735B*	Dilation of Right Axillary Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27835B*	Dilation of Left Axillary Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27935B*	Dilation of Right Brachial Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27A35B*	Dilation of Left Brachial Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27B35B*	Dilation of Right Basilic Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27C35B*	Dilation of Left Basilic Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27D35B*	Dilation of Right Cephalic Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27E35B*	Dilation of Left Cephalic Vein with Cell Impermeable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	01	037, 038, 039
+""			04	166, 167, 168
+""			05	252, 253, 254
+""			06	356, 357, 358
+""			07	423, 424, 425
+""			08	515, 516, 517
+""			09	579, 580, 581
+""			10	628, 629, 630
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X27W39B*	Dilation of Thoracic Aorta, Descending with Expandable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X27X39B*	Dilation of Thoracic Aorta, Ascending/Arch with Expandable Intraluminal Device, Percutaneous Approach, New Technology Group 11	Y	05	252, 253, 254
+""				981, 982, 983
+X28F3WB*	Division of Aortic Valve using Leaflet Laceration, Radiofrequency Energy, Percutaneous Approach, New Technology Group 11	Y	05	319, 320
+""				981, 982, 983
+X2AH34B*	Right Common Carotid Artery Cerebral Embolic Filtration, Single Integrated Distal Filter, Percutaneous Approach, New Technology Group 11	N		
+X2AJ34B*	Left Common Carotid Artery Cerebral Embolic Filtration, Single Integrated Distal Filter, Percutaneous Approach, New Technology Group 11	N		
+X2AK34B*	Right Internal Carotid Artery Cerebral Embolic Filtration, Single Integrated Distal Filter, Percutaneous Approach, New Technology Group 11	N		
+X2AL34B*	Left Internal Carotid Artery Cerebral Embolic Filtration, Single Integrated Distal Filter, Percutaneous Approach, New Technology Group 11	N		
+X2H03BB*	Insertion of Volume Sensor Management Device into Inferior Vena Cava, Percutaneous Approach, New Technology Group 11	N		
+X2H13XB	Insertion of Temporary Phrenic Nerve/Diaphragm Stimulation Electrodes into Superior Vena Cava, Percutaneous Approach, New Technology Group 11	Y	05	264
+""				981, 982, 983
+X2HN37B*	Insertion of Endocardiac Pacing Electrode into Left Ventricle, Percutaneous Approach, New Technology Group 11	Y	05	264
+""				981, 982, 983
+X2HP38B*	Insertion of Temporary Intraluminal Device into Right Anterior Tibial Artery, Percutaneous Approach, New Technology Group 11	N		
+X2HQ38B*	Insertion of Temporary Intraluminal Device into Left Anterior Tibial Artery, Percutaneous Approach, New Technology Group 11	N		
+X2HR38B*	Insertion of Temporary Intraluminal Device into Right Posterior Tibial Artery, Percutaneous Approach, New Technology Group 11	N		
+X2HS38B*	Insertion of Temporary Intraluminal Device into Left Posterior Tibial Artery, Percutaneous Approach, New Technology Group 11	N		
+X2HT38B*	Insertion of Temporary Intraluminal Device into Right Peroneal Artery, Percutaneous Approach, New Technology Group 11	N		
+X2HU38B*	Insertion of Temporary Intraluminal Device into Left Peroneal Artery, Percutaneous Approach, New Technology Group 11	N		
+X2KA30A^	Bypass Left Atrium using Conduit through Coronary Sinus to Right Atrium, Percutaneous Approach, New Technology Group 10	Y	05	270, 271, 272
+""			21	907, 908, 909
+""				981, 982, 983
+X2U93YA^	Supplement Right Atrium with Intraluminal Device, Heterotopic Bioprosthetic Valve(s), Percutaneous Approach, New Technology Group 10	Y	05	266, 267
+""				981, 982, 983
+X2VY06B*	Restriction of Thoracic Aortic Arch and Descending Thoracic Aorta using Uncovered Intraluminal Device with Support Cuff, Open Approach, New Technology Group 11	Y	05	209, 212, 216, 217, 218, 219, 220, 221
+""			11	673, 674, 675
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XDJ07LB*	Inspection of Upper Intestinal Tract using Ingestible Capsule with Light Absorption Sensor, Via Natural or Artificial Opening, New Technology Group 11	N		
+XHH80HB*	Insertion of Ultrasound Transmitter and Battery for Endocardiac Pacing Electrode into Chest Subcutaneous Tissue and Fascia, Open Approach, New Technology Group 11	N**	05	258, 259
+XNH60HB*	Insertion of Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device into Right Pelvic Bone, Open Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNH63HB*	Insertion of Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device into Right Pelvic Bone, Percutaneous Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNH70HB*	Insertion of Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device into Left Pelvic Bone, Open Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNH73HB*	Insertion of Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device into Left Pelvic Bone, Percutaneous Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS40GA^	Reposition Right Humeral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS43GA^	Reposition Right Humeral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS50GA^	Reposition Left Humeral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS53GA^	Reposition Left Humeral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS60GA^	Reposition Right Radius with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS63GA^	Reposition Right Radius with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS70GA^	Reposition Left Radius with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS73GA^	Reposition Left Radius with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS80GA^	Reposition Right Ulna with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS83GA^	Reposition Right Ulna with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS90GA^	Reposition Left Ulna with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNS93GA^	Reposition Left Ulna with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	510, 511, 512
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSA0GA^	Reposition Right Upper Femur with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSA3GA^	Reposition Right Upper Femur with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSB0GA^	Reposition Left Upper Femur with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSB3GA^	Reposition Left Upper Femur with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSC0GA^	Reposition Right Lower Femur with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSC3GA^	Reposition Right Lower Femur with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSD0GA^	Reposition Left Lower Femur with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSD3GA^	Reposition Left Lower Femur with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSE0GA^	Reposition Right Femoral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSE3GA^	Reposition Right Femoral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSF0GA^	Reposition Left Femoral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSF3GA^	Reposition Left Femoral Shaft with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	480, 481, 482
+""			21	907, 908, 909
+""			24	956
+""				981, 982, 983
+XNSG0GA^	Reposition Right Tibia with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSG3GA^	Reposition Right Tibia with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSH0GA^	Reposition Left Tibia with Ring External Fixation Device with Automated Strut Adjustment, Open Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSH3GA^	Reposition Left Tibia with Ring External Fixation Device with Automated Strut Adjustment, Percutaneous Approach, New Technology Group 10	Y	08	492, 493, 494
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSN0HB*	Reposition Right Pelvic Bone with Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Open Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSN3HB*	Reposition Right Pelvic Bone with Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Percutaneous Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSP0HB*	Reposition Left Pelvic Bone with Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Open Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XNSP3HB*	Reposition Left Pelvic Bone with Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Percutaneous Approach, New Technology Group 11	Y	08	515, 516, 517
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG10RB*	Fusion of Cervical Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG13RB*	Fusion of Cervical Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG14RB*	Fusion of Cervical Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG20RB*	Fusion of 2 or more Cervical Vertebral Joints using Custom-Made Anatomically Designed Interbody Fusion Device, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG23RB*	Fusion of 2 or more Cervical Vertebral Joints using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG24RB*	Fusion of 2 or more Cervical Vertebral Joints using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG40RB*	Fusion of Cervicothoracic Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG43RB*	Fusion of Cervicothoracic Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRG44RB*	Fusion of Cervicothoracic Vertebral Joint using Custom-Made Anatomically Designed Interbody Fusion Device, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	429, 430, 471, 472, 473
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRGE0HB*	Fusion of Right Sacroiliac Joint using Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	402, 426, 427, 428, 447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRGE3HB*	Fusion of Right Sacroiliac Joint using Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	402, 426, 427, 428, 447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRGF0HB*	Fusion of Left Sacroiliac Joint using Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	402, 426, 427, 428, 447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRGF3HB*	Fusion of Left Sacroiliac Joint using Bone-Density-Specific Thread and Porosity Pattern Internal Fixation Device, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	402, 426, 427, 428, 447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH10GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervical Vertebral Joint, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH13GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervical Vertebral Joint, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH14GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervical Vertebral Joint, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH20GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into 2 or more Cervical Vertebral Joints, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH23GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into 2 or more Cervical Vertebral Joints, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH24GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into 2 or more Cervical Vertebral Joints, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH40GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervicothoracic Vertebral Joint, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH43GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervicothoracic Vertebral Joint, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH44GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Cervicothoracic Vertebral Joint, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH60GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Thoracic Vertebral Joint, Open Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH63GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Thoracic Vertebral Joint, Percutaneous Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XRH64GB*	Insertion of Molybdenum Rhenium Alloy Spinal Stabilization Device into Thoracic Vertebral Joint, Percutaneous Endoscopic Approach, New Technology Group 11	Y	01	028, 029, 030
+""			08	518
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+XW013TB*	Introduction of Rozanolixizumab-noli Monoclonal Antibody into Subcutaneous Tissue, Percutaneous Approach, New Technology Group 11	N		
+XW033FB	Introduction of Valoctocogene Roxaparvovec-rvox into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	018
+XW033MA^	Introduction of Emapalumab-lzsg Anti-IFNy Monoclonal Antibody into Peripheral Vein, Percutaneous Approach, New Technology Group 10	N		
+XW033NA^	Introduction of Tarlatamab-dlle Antineoplastic into Peripheral Vein, Percutaneous Approach, New Technology Group 10	N		
+XW033PB*	Introduction of Aztreonam-avibactam Anti-infective into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N		
+XW033QB*	Introduction of Iloprost into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N		
+XW033RB*	Introduction of Letetresgene Autoleucel into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	018
+XW033WB*	Introduction of Fosfomycin Anti-infective into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N		
+XW043FB	Introduction of Valoctocogene Roxaparvovec-rvox into Central Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	018
+XW043MA^	Introduction of Emapalumab-lzsg Anti-IFNy Monoclonal Antibody into Central Vein, Percutaneous Approach, New Technology Group 10	N		
+XW043NA^	Introduction of Tarlatamab-dlle Antineoplastic into Central Vein, Percutaneous Approach, New Technology Group 10	N		
+XW043PB*	Introduction of Aztreonam-avibactam Anti-infective into Central Vein, Percutaneous Approach, New Technology Group 11	N		
+XW043QB*	Introduction of Iloprost into Central Vein, Percutaneous Approach, New Technology Group 11	N		
+XW043RB*	Introduction of Letetresgene Autoleucel into Central Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	018
+XW043WB*	Introduction of Fosfomycin Anti-infective into Central Vein, Percutaneous Approach, New Technology Group 11	N		
+XW0DXVB*	Introduction of Xanomeline and Trospium Chloride into Mouth and Pharynx, External Approach, New Technology Group 11	N		
+XW0U0XB*	Introduction of Peptide Enhanced Bone Void Filler into Joints, Open Approach, New Technology Group 11	N		
+XW0U3XB*	Introduction of Peptide Enhanced Bone Void Filler into Joints, Percutaneous Approach, New Technology Group 11	N		
+XW0U4XB*	Introduction of Peptide Enhanced Bone Void Filler into Joints, Percutaneous Endoscopic Approach, New Technology Group 11	N		
+XW133SB*	Transfusion of Mozafancogene Autotemcel into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	016, 017
+XW133YB*	Transfusion of Nonautologous (Human) Fibrinogen Concentrate, Shelf-stable into Peripheral Vein, Percutaneous Approach, New Technology Group 11	N		
+XW143SB*	Transfusion of Mozafancogene Autotemcel into Central Vein, Percutaneous Approach, New Technology Group 11	N**	PRE	016, 017
+XW143YB*	Transfusion of Nonautologous (Human) Fibrinogen Concentrate, Shelf-stable into Central Vein, Percutaneous Approach, New Technology Group 11	N		
+XX2KXDB*	Monitoring of Interstitial Glucose, Wearable Sensor, External Approach, New Technology Group 11	N		
+XXA539B*	Circulatory Filtration, Ticagrelor, Percutaneous Approach, New Technology Group 11	N		
+XXE5X5A^	Measurement of Immune Response, Whole Blood Cellular Assessment via Microfluidic Deformability, New Technology Group 10	N		
+XXE5XBB*	Measurement of Infection and Immune Response, Gene Expression Testing System, New Technology Group 11	N		
+XXEZXAB*	Measurement of Macronutrient Content, Computer-aided Assessment for Nutrition Management, New Technology Group 11	N		
+XXEZXCB*	Measurement of Infection, Computer-aided Triage and Notification, New Technology Group 11	N		
+
+	Notes:
+	(*)-These codes were made public for the Spring 2025 ICD-10 Coordination and Maintenance Committee Update and were not finalized in time to include in the proposed rule. They will be implemented on October 1, 2025.
+	(^)-These codes were implemented on April 1, 2025.
+	(**)-Non-OR procedure affects DRGs

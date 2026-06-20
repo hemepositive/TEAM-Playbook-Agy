@@ -1,0 +1,24 @@
+Table 6P.4b - List of ICD-10-PCS  procedure codes finalized for the logic of new MS-DRG 318		
+		
+PERCUTANEOUS CORONARY ATHERECTOMY 		
+ICD-10-PCS Procedure Code	Description	
+02C03Z6	"Extirpation of matter from coronary artery, one artery, bifurcation, percutaneous approach"	
+02C03Z7	"Extirpation of matter from coronary artery, one artery, orbital atherectomy technique, percutaneous approach"	
+02C03ZZ	"Extirpation of matter from coronary artery, one artery, percutaneous approach"	
+02C04Z6	"Extirpation of matter from coronary artery, one artery, bifurcation, percutaneous endoscopic approach"	
+02C04ZZ	"Extirpation of matter from coronary artery, one artery, percutaneous endoscopic approach"	
+02C13Z6	"Extirpation of matter from coronary artery, two arteries, bifurcation, percutaneous approach"	
+02C13Z7	"Extirpation of matter from coronary artery, two arteries, orbital atherectomy technique, percutaneous approach"	
+02C13ZZ	"Extirpation of matter from coronary artery, two arteries, percutaneous approach"	
+02C14Z6	"Extirpation of matter from coronary artery, two arteries, bifurcation, percutaneous endoscopic approach"	
+02C14ZZ	"Extirpation of matter from coronary artery, two arteries, percutaneous endoscopic approach"	
+02C23Z6	"Extirpation of matter from coronary artery, three arteries, bifurcation, percutaneous approach"	
+02C23Z7	"Extirpation of matter from coronary artery, three arteries, orbital atherectomy technique, percutaneous approach"	
+02C23ZZ	"Extirpation of matter from coronary artery, three arteries, percutaneous approach"	
+02C24Z6	"Extirpation of matter from coronary artery, three arteries, bifurcation, percutaneous endoscopic approach"	
+02C24ZZ	"Extirpation of matter from coronary artery, three arteries, percutaneous endoscopic approach"	
+02C33Z6	"Extirpation of matter from coronary artery, four or more arteries, bifurcation, percutaneous approach"	
+02C33Z7	"Extirpation of matter from coronary artery, four or more arteries, orbital atherectomy technique, percutaneous approach"	
+02C33ZZ	"Extirpation of matter from coronary artery, four or more arteries, percutaneous approach"	
+02C34Z6	"Extirpation of matter from coronary artery, four or more arteries, bifurcation, percutaneous endoscopic approach"	
+02C34ZZ	"Extirpation of matter from coronary artery, four or more arteries, percutaneous endoscopic approach"	

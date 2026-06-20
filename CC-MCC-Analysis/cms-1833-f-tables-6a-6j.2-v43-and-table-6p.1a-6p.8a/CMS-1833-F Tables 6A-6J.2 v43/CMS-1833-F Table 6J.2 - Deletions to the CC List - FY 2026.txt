@@ -1,0 +1,8 @@
+TABLE 6J.2 - DELETIONS TO THE CC LIST
+Diagnosis Code	Description
+E72.53	Primary hyperoxaluria
+Q89.8	Other specified congenital malformations
+T78.07XA	Anaphylactic reaction due to milk and dairy products, initial encounter
+T78.08XA	Anaphylactic reaction due to eggs, initial encounter
+
+	Notes:

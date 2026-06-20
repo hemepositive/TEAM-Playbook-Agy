@@ -1,0 +1,7 @@
+TABLE 6F - REVISED PROCEDURE CODE TITLES
+Procedure Code	Description	O.R.	MDC	MS-DRG
+XW133G8^	Transfusion of Atidarsagene Autotemcel into Peripheral Vein, Percutaneous Approach, New Technology Group 8			016, 017
+XW143G8^	Transfusion of Atidarsagene Autotemcel into Central Vein, Percutaneous Approach, New Technology Group 8			016, 017
+
+	Notes:
+	(^)-These code descriptions were revised on April 1, 2025.

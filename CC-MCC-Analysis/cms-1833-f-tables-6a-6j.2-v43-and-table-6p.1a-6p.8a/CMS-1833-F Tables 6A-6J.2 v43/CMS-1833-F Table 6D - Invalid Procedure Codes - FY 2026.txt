@@ -1,0 +1,93 @@
+TABLE 6D - INVALID PROCEDURE CODES
+Procedure Code	Description	O.R.	MDC	MS-DRG
+0SG604Z^	Fusion of Coccygeal Joint with Internal Fixation Device, Open Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG607Z^	Fusion of Coccygeal Joint with Autologous Tissue Substitute, Open Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG60JZ^	Fusion of Coccygeal Joint with Synthetic Substitute, Open Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG60KZ^	Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Open Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG634Z^	Fusion of Coccygeal Joint with Internal Fixation Device, Percutaneous Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG637Z^	Fusion of Coccygeal Joint with Autologous Tissue Substitute, Percutaneous Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG63JZ^	Fusion of Coccygeal Joint with Synthetic Substitute, Percutaneous Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG63KZ^	Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Percutaneous Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG644Z^	Fusion of Coccygeal Joint with Internal Fixation Device, Percutaneous Endoscopic Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG647Z^	Fusion of Coccygeal Joint with Autologous Tissue Substitute, Percutaneous Endoscopic Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG64JZ^	Fusion of Coccygeal Joint with Synthetic Substitute, Percutaneous Endoscopic Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+0SG64KZ^	Fusion of Coccygeal Joint with Nonautologous Tissue Substitute, Percutaneous Endoscopic Approach	Y	01	028, 029, 030
+""			08	447, 448, 450, 451, 456, 457, 458
+""			21	907, 908, 909
+""			24	957, 958, 959
+""				981, 982, 983
+X2A5312*	Cerebral Embolic Filtration, Dual Filter in Innominate Artery and Left Common Carotid Artery, Percutaneous Approach, New Technology Group 2	N		
+X2A6325*	Cerebral Embolic Filtration, Single Deflection Filter in Aortic Arch, Percutaneous Approach, New Technology Group 5	N		
+X2AH336*	Cerebral Embolic Filtration, Extracorporeal Flow Reversal Circuit from Right Common Carotid Artery, Percutaneous Approach, New Technology Group 6	N		
+X2AJ336*	Cerebral Embolic Filtration, Extracorporeal Flow Reversal Circuit from Left Common Carotid Artery, Percutaneous Approach, New Technology Group 6	N		
+XW03306*	Introduction of Brexanolone into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW03326*	Introduction of Nerinitide into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW03336*	Introduction of Durvalumab Antineoplastic into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW03366*	Introduction of Lefamulin Anti-infective into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033A6*	Introduction of Cefiderocol Anti-infective into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033B6*	Introduction of Omadacycline Anti-infective into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033C6*	Introduction of Eculizumab into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033D6*	Introduction of Atezolizumab Antineoplastic into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033E6*	Introduction of Etesevimab Monoclonal Antibody into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW033F6*	Introduction of Bamlanivimab Monoclonal Antibody into Peripheral Vein, Percutaneous Approach, New Technology Group 6	N		
+XW04306*	Introduction of Brexanolone into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW04326*	Introduction of Nerinitide into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW04336*	Introduction of Durvalumab Antineoplastic into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW04366*	Introduction of Lefamulin Anti-infective into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043A6*	Introduction of Cefiderocol Anti-infective into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043B6*	Introduction of Omadacycline Anti-infective into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043C6*	Introduction of Eculizumab into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043D6*	Introduction of Atezolizumab Antineoplastic into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043E6*	Introduction of Etesevimab Monoclonal Antibody into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW043F6*	Introduction of Bamlanivimab Monoclonal Antibody into Central Vein, Percutaneous Approach, New Technology Group 6	N		
+XW0DX66*	Introduction of Lefamulin Anti-infective into Mouth and Pharynx, External Approach, New Technology Group 6	N		
+XXE5XN6*	Measurement of Infection, Positive Blood Culture Fluorescence Hybridization for Organism Identification, Concentration and Susceptibility, New Technology Group 6	N		
+XXEBXQ6*	Measurement of Infection, Lower Respiratory Fluid Nucleic Acid-base Microbial Detection, New Technology Group 6	N		
+
+	Notes:
+	(*)-These codes were made public for the Spring 2025 ICD-10 Coordination and Maintenance Committee Update and were not finalized in time to include in the proposed rule. They will be invalid effective October 1, 2025.
+	(^)-These codes were invalid effective April 1, 2025.
