@@ -4,13 +4,9 @@ import { ThemeProvider } from './context/ThemeContext';
 import { SpecialtyProvider } from './context/SpecialtyContext';
 import { DocsLayout } from './components/DocsLayout';
 import { LandingPage } from './pages/LandingPage';
-import { Overview } from './pages/Overview';
-import { Fundamentals } from './pages/Fundamentals';
-import { LEJR } from './pages/LEJR';
-import { HipFracture } from './pages/HipFracture';
-import { SpinalFusion } from './pages/SpinalFusion';
-import { CABG } from './pages/CABG';
-import { MajorBowel } from './pages/MajorBowel';
+import { PlaybookPage } from './pages/PlaybookPage';
+import { Cases } from './pages/Cases';
+import { ReferencePage } from './pages/ReferencePage';
 
 const App: React.FC = () => {
   return (
@@ -27,13 +23,9 @@ const App: React.FC = () => {
               element={
                 <DocsLayout>
                   <Routes>
-                    <Route path="overview" element={<Overview />} />
-                    <Route path="fundamentals" element={<Fundamentals />} />
-                    <Route path="lejr" element={<LEJR />} />
-                    <Route path="hip-fracture" element={<HipFracture />} />
-                    <Route path="spinal-fusion" element={<SpinalFusion />} />
-                    <Route path="cabg" element={<CABG />} />
-                    <Route path="major-bowel" element={<MajorBowel />} />
+                    <Route path="reference/:slug" element={<ReferencePage />} />
+                    <Route path=":procedure/cases" element={<Cases />} />
+                    <Route path=":module" element={<PlaybookPage />} />
                     <Route path="*" element={<Navigate to="overview" replace />} />
                   </Routes>
                 </DocsLayout>

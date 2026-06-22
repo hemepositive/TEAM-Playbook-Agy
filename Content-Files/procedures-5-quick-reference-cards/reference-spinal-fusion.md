@@ -50,7 +50,7 @@ last-updated: 2026-06
 | 7 | Myelopathy (when not principal dx) | "Stenosis" or "weakness" instead of myelopathy diagnosis | G99.2, M47.10–M47.16 |
 | 8 | Diabetes with neuropathy | "Diabetes" without specifying complication | E11.40, E10.40 |
 | 9 | Atrial fibrillation (specified type) | "A-fib" without type | I48.0, I48.11, I48.19 |
-| 10 | Drug or alcohol withdrawal | "History of alcohol use" when withdrawal is actively managed | F10.239, F11.23 |
+| 10 | Morbid obesity (BMI ≥40) | "Obese" or "BMI 42" written without diagnosis — Z68 code alone is not a CC | E66.01 |
 
 ---
 
@@ -77,6 +77,10 @@ Spinal fusion has 13 HCC risk adjustment variables. The population skews younger
 **Myelopathy (spinal fusion-specific)**
 Instead of: *"Cervical stenosis with upper extremity weakness — proceed with ACDF."*
 Write: *"Cervical spondylotic myelopathy at C5-C6 (G99.2), bilateral upper extremity weakness and impaired fine motor function, modified JOA score 12/18. Proceeding with anterior cervical discectomy and fusion."*
+
+**Morbid Obesity**
+Instead of: *"Obese, BMI 42.5."*
+Write: *"Morbid obesity (BMI 42.5) — patient's severe obesity requires specialized surgical positioning, customized bariatric bed in recovery, and extra personnel for mobilization."*
 
 **OHS vs. OSA**
 Instead of: *"Morbid obesity, uses CPAP at home for sleep apnea."*
@@ -112,6 +116,7 @@ Write: *"Moderate protein-calorie malnutrition (E44.0) — unintentional 8% weig
 - [ ] **Substance use** — if withdrawal managed during stay: document withdrawal diagnosis, not just "history of use"
 - [ ] **DRG family check** — confirm your procedure maps to a 3-tier DRG family before assuming CCs carry payment weight; check the DRG family navigator in the full procedure module
 - [ ] **Anemia** — if transfusion given: document acute blood loss anemia (D62)
+- [ ] **Morbid Obesity** — if BMI is ≥40, or BMI is 35–39.9 with severe weight-exacerbated comorbidities: document "morbid obesity" to capture CC (+1.4214 weight shift on 3-tier cases) and HCC 48
 - [ ] **POA status** — all secondary diagnoses should reflect whether present on admission
 
 *Source: CMS MS-DRG V43.0 · FY2026 ICD-10-CM · Last updated June 2026*

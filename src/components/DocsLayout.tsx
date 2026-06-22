@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useSpecialty, type Specialty } from '../context/SpecialtyContext';
-import { generalNavItems, procedureNavItems } from '../config/navigation';
+import { generalNavItems, procedureNavItems, referenceNavItems } from '../config/navigation';
 import { Sun, Moon, Stethoscope, Menu, X, ArrowLeft } from 'lucide-react';
 import { TOC } from './TOC';
 
@@ -70,8 +70,71 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
           <h4 className="px-3 mb-2 text-xs font-semibold tracking-wider uppercase text-slate-400 font-display">
             Procedure Playbooks
           </h4>
+          <nav className="space-y-4">
+            {filteredProcedures.map(proc => {
+              const playbookPath = `/docs/${proc.slug}`;
+              const casesPath = `/docs/${proc.slug}/cases`;
+              const refCardPath = `/docs/reference/${proc.refSlug}`;
+              
+              const isPlaybookActive = location.pathname === playbookPath;
+              const isCasesActive = location.pathname === casesPath;
+              const isRefActive = location.pathname === refCardPath;
+              const isAnyActive = isPlaybookActive || isCasesActive || isRefActive;
+              
+              return (
+                <div key={proc.slug} className="space-y-1">
+                  <div className={`px-3 py-1 text-xs font-bold font-display uppercase tracking-wide transition-colors ${
+                    isAnyActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'
+                  }`}>
+                    {proc.title}
+                  </div>
+                  <div className="pl-3 ml-2 border-l border-slate-200 dark:border-slate-800/80 space-y-1">
+                    <Link
+                      to={playbookPath}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-1.5 text-xs rounded-md transition-colors font-medium ${
+                        isPlaybookActive
+                          ? 'bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-950/45 dark:text-emerald-400'
+                          : 'text-slate-650 hover:text-slate-900 hover:bg-slate-100/60 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/40'
+                      }`}
+                    >
+                      Playbook Guide
+                    </Link>
+                    <Link
+                      to={casesPath}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-1.5 text-xs rounded-md transition-colors font-medium ${
+                        isCasesActive
+                          ? 'bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-950/45 dark:text-emerald-400'
+                          : 'text-slate-650 hover:text-slate-900 hover:bg-slate-100/60 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/40'
+                      }`}
+                    >
+                      Interactive Cases
+                    </Link>
+                    <Link
+                      to={refCardPath}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-1.5 text-xs rounded-md transition-colors font-medium ${
+                        isRefActive
+                          ? 'bg-emerald-50 text-emerald-700 font-semibold dark:bg-emerald-950/45 dark:text-emerald-400'
+                          : 'text-slate-650 hover:text-slate-900 hover:bg-slate-100/60 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/40'
+                      }`}
+                    >
+                      Quick Reference
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </nav>
+        </div>
+
+        <div>
+          <h4 className="px-3 mb-2 text-xs font-semibold tracking-wider uppercase text-slate-400 font-display">
+            Reference Guides
+          </h4>
           <nav className="space-y-1">
-            {filteredProcedures.map(item => (
+            {referenceNavItems.map(item => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -79,7 +142,7 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
                 className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                   location.pathname === item.path
                     ? 'bg-emerald-50 text-emerald-700 font-medium dark:bg-emerald-950/50 dark:text-emerald-400'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/40'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/65 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/40'
                 }`}
               >
                 {item.title}

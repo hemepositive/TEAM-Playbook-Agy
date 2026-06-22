@@ -943,7 +943,37 @@
         "difficulty": 2,
         "psi": false
       }
+    },
+    {
+      "id": "vignette-obesity-001",
+      "scenario": "Your patient has a BMI of 43 documented by the nurse. You write 'BMI 43 — patient is obese' in the discharge summary. What is the documentation gap?",
+      "instead": "Obesity, BMI 43 documented in vitals. Plan for post-discharge weight management.",
+      "write": "Morbid obesity (BMI 43.1) — patient's severe obesity requires specialized post-operative mobilization and respiratory monitoring.",
+      "why": "A BMI code (Z68.xx) alone does not function as a CC or trigger HCC 48. To capture the CC status and risk-adjust quality/cost metrics, the provider must explicitly document the diagnosis of 'morbid obesity' or 'severe obesity' in the progress notes or discharge summary.",
+      "tags": {
+        "condition": "Morbid Obesity",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 1,
+        "psi": false
+      }
+    },
+    {
+      "id": "vignette-obesity-002",
+      "scenario": "Your patient has a BMI of 36.5, Type 2 diabetes, and severe obstructive sleep apnea. How should you document their obesity to capture maximum clinical severity and risk adjustment?",
+      "instead": "Class 2 obesity, BMI 36.5, on home CPAP and metformin.",
+      "write": "Morbid obesity due to comorbidities (BMI 36.5, severe weight-exacerbated diabetes and obstructive sleep apnea) — requires customized postoperative mobility and respiratory monitoring.",
+      "why": "A BMI of 35.0-39.9 is Class 2 obesity, which normally does not carry CC status or trigger HCC 48. However, if weight-exacerbated comorbidities (like sleep apnea, diabetes, or severe osteoarthritis) are present, it qualifies as 'morbid obesity due to comorbidities' (E66.01) and should be documented as such to secure the CC and HCC 48.",
+      "tags": {
+        "condition": "Morbid Obesity",
+        "classification": "CC",
+        "procedures": ["LEJR", "SHFFT", "Spinal Fusion", "CABG", "Major Bowel"],
+        "audience": "both",
+        "difficulty": 2,
+        "psi": false
+      }
     }
-
   ]
 }
+

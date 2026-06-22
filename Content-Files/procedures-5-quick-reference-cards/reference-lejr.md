@@ -47,7 +47,7 @@ last-updated: 2026-06
 | 7 | Acute DVT | "DVT prophylaxis given" — describes treatment, not diagnosis | I82.4xx |
 | 8 | CKD Stage IV | "CKD" without staging | N18.4 |
 | 9 | Drug-induced delirium | "Confusion" without etiology | F05 |
-| 10 | COPD (stable, no exacerbation) | "Pulmonary history" or "lung disease" | J44.1 |
+| 10 | Morbid obesity (BMI ≥40) | "Obese" or "BMI 42" written without diagnosis — Z68 code alone is not a CC | E66.01 |
 
 ---
 
@@ -89,6 +89,10 @@ Write: *"Metabolic encephalopathy secondary to uremia and electrolyte disturbanc
 Instead of: *"Poor appetite, dietary consult placed."*
 Write: *"Moderate protein-calorie malnutrition per ASPEN clinical criteria — significant weight loss, reduced intake, muscle wasting on exam. Nutrition support initiated."*
 
+**Morbid Obesity**
+Instead of: *"Obese, BMI 42.1."*
+Write: *"Morbid obesity (BMI 42.1) — patient's severe obesity requires specialized post-op mobilization planning and extra personnel for transfer."*
+
 **OHS**
 Instead of: *"Morbid obesity, on CPAP at home."*
 Write: *"Obesity hypoventilation syndrome (BMI 44, home BiPAP, baseline pCO₂ elevated). CPAP/BiPAP continued in-house."*
@@ -104,6 +108,7 @@ Write: *"Obesity hypoventilation syndrome (BMI 44, home BiPAP, baseline pCO₂ e
 - [ ] **Heart failure** — if IV diuresis given, BNP elevated, or volume management required: specify systolic vs. diastolic, acute vs. chronic
 - [ ] **Encephalopathy** — if CAM positive, acute confusion, or altered baseline cognition: name the type and etiology (metabolic, toxic, etc.)
 - [ ] **Malnutrition** — if nutrition consult placed or supplemental nutrition started: document severity as physician diagnosis (mild/moderate/severe)
+- [ ] **Morbid Obesity** — if BMI is ≥40, or BMI is 35–39.9 with severe comorbidities: document "morbid obesity" explicitly, not just "obese" or BMI values
 - [ ] **OHS** — if patient uses home BiPAP or has known hypercapnia: document OHS explicitly, not just "morbid obesity"
 - [ ] **Diabetes** — specify type (1 or 2) and any complications (neuropathy, nephropathy, retinopathy); avoid "diabetes mellitus" alone
 - [ ] **Anemia** — if transfusion given or Hgb dropped significantly: document acute blood loss anemia (D62), not just "anemia"

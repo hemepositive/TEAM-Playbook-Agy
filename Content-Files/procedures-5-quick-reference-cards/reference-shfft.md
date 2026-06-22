@@ -48,7 +48,7 @@ last-updated: 2026-06
 | 7 | Atrial fibrillation (specified type) | "A-fib" without type; "irregular rhythm" | I48.0, I48.11, I48.19 |
 | 8 | Hyponatremia or hypernatremia | Electrolyte abnormalities documented as labs, not diagnoses | E87.0, E87.1 |
 | 9 | Hemiplegia / hemiparesis | "History of stroke" without documenting current motor deficit | G81.90–G81.94 |
-| 10 | CKD Stage IV | "CKD" without staging | N18.4 |
+| 10 | Morbid obesity (BMI ≥40) | "Obese" or "BMI 42" written without diagnosis — Z68 code alone is not a CC | E66.01 |
 
 ---
 
@@ -66,6 +66,7 @@ SHFFT has 16 HCC risk adjustment variables — the same count as LEJR. The admis
 | 37 | Diabetes with chronic complications | Name the complication — neuropathy, nephropathy, retinopathy |
 | 267 | DVT / PE | Acute or chronic; document if on anticoagulation for prior VTE |
 | 238 | Specified heart arrhythmias | AF type — paroxysmal, persistent, permanent |
+| 48 | Morbid obesity | BMI ≥40 or BMI 35-39.9 with comorbidities + provider diagnosis |
 
 **The admission H&P must do triple work for SHFFT:** establish POA, capture HCCs, and set the comorbidity baseline — all in one document, written urgently. Treat it accordingly.
 
@@ -73,6 +74,10 @@ SHFFT has 16 HCC risk adjustment variables — the same count as LEJR. The admis
 
 <!-- Section: PhrasingExamples -->
 ## Exact Phrasing Examples
+
+**Morbid Obesity**
+Instead of: *"Obese, BMI 36.5, history of diabetes and HTN."*
+Write: *"Morbid obesity due to comorbidities (BMI 36.5, severe weight-exacerbated diabetes and hypertension) — requires customized postoperative mobility planning and respiratory monitoring."*
 
 **Dementia (most common miss in SHFFT)**
 Instead of: *"Patient confused, likely dementia per family."*
@@ -109,6 +114,7 @@ Write: *"Left hemiparesis — residual deficit from prior right MCA stroke. Base
 - [ ] **Malnutrition** — if weight loss, muscle wasting, low albumin, or reduced intake documented: physician must name severity (mild/moderate/severe)
 - [ ] **Sepsis** — if antibiotics started for systemic infection with vital sign changes: document sepsis with source, not just "UTI" or "infection"
 - [ ] **Anemia** — if transfusion given: document acute blood loss anemia (D62)
+- [ ] **Morbid Obesity** — if BMI is ≥40, or BMI is 35–39.9 with severe weight-exacerbated comorbidities: document "morbid obesity" to capture CC (+0.4885 weight shift) and HCC 48
 - [ ] **Hemiplegia/hemiparesis** — if prior stroke with residual motor deficit: document the active deficit, not just "history of stroke"
 - [ ] **Hyponatremia/hypernatremia** — if Na <135 or >145 required management: document as diagnosis, not lab finding
 - [ ] **Diabetes** — specify type and complications; avoid "DM" alone

@@ -4,15 +4,29 @@ export interface NavItem {
   specialty: 'all' | 'ortho' | 'spine' | 'cardiac' | 'general';
 }
 
+export interface ProcedureNavItem {
+  title: string;
+  slug: string;      // e.g., 'lejr'
+  refSlug: string;   // e.g., 'lejr' or 'shfft' (ref file route slug)
+  specialty: 'ortho' | 'spine' | 'cardiac' | 'general';
+}
+
 export const generalNavItems: NavItem[] = [
   { title: 'What is TEAM?', path: '/docs/overview', specialty: 'all' },
   { title: 'CDI Fundamentals', path: '/docs/fundamentals', specialty: 'all' }
 ];
 
-export const procedureNavItems: NavItem[] = [
-  { title: 'Lower Extremity Joint (LEJR)', path: '/docs/lejr', specialty: 'ortho' },
-  { title: 'Surgical Hip Fracture (SHFFT)', path: '/docs/hip-fracture', specialty: 'ortho' },
-  { title: 'Spinal Fusion', path: '/docs/spinal-fusion', specialty: 'spine' },
-  { title: 'CABG x 3', path: '/docs/cabg', specialty: 'cardiac' },
-  { title: 'Major Bowel Procedure', path: '/docs/major-bowel', specialty: 'general' }
+export const procedureNavItems: ProcedureNavItem[] = [
+  { title: 'Lower Extremity Joint (LEJR)', slug: 'lejr', refSlug: 'lejr', specialty: 'ortho' },
+  { title: 'Surgical Hip Fracture (SHFFT)', slug: 'hip-fracture', refSlug: 'shfft', specialty: 'ortho' },
+  { title: 'Spinal Fusion', slug: 'spinal-fusion', refSlug: 'spinal-fusion', specialty: 'spine' },
+  { title: 'CABG x 3', slug: 'cabg', refSlug: 'cabg', specialty: 'cardiac' },
+  { title: 'Major Bowel Procedure', slug: 'major-bowel', refSlug: 'major-bowel', specialty: 'general' }
+];
+
+export const referenceNavItems: NavItem[] = [
+  { title: 'CC/MCC Specificity Guide', path: '/docs/reference/cc-mcc', specialty: 'all' },
+  { title: 'General HCC Reference', path: '/docs/reference/hcc', specialty: 'all' },
+  { title: 'APR-DRG SOI/ROM Guide', path: '/docs/reference/apr-drg', specialty: 'all' },
+  { title: 'Patient Safety Indicators (PSI)', path: '/docs/reference/psi', specialty: 'all' }
 ];

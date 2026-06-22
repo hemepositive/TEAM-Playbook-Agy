@@ -379,6 +379,7 @@ In CABG, CCs do not change the DRG payment tier. They affect APR-DRG SOI and ROM
 
 | Condition                                | ICD-10  | What to Specify                                           |
 | ---------------------------------------- | ------- | --------------------------------------------------------- |
+| Morbid obesity                           | E66.01  | Provider must document "morbid obesity" — BMI code alone insufficient; also HCC 48 |
 | Paroxysmal atrial fibrillation           | I48.0   | New-onset post-op afib that terminated — specify type     |
 | Persistent atrial fibrillation           | I48.11  | Afib present > 7 days or at discharge — specify type      |
 | Type 2 diabetes with hyperglycemia       | E11.65  | Tight glycemic control post-CABG is a quality measure     |
@@ -464,6 +465,9 @@ Did the patient develop postoperative atrial fibrillation? **Specify the type �
 **8. Nutrition**  
 Was preoperative albumin below 2.0? Did the dietitian document malnutrition? Is the patient cachectic on exam? **Name the diagnosis and specify severity.** "Malnutrition" alone is E46 (CC). "Severe protein-calorie malnutrition" meeting ASPEN criteria is E43 (MCC).
 
+**9. Obesity**  
+Does the patient have a BMI ≥ 40? **Document "morbid obesity" explicitly.** Morbid obesity (E66.01) is a CC and triggers HCC 48 risk adjustment. While CCs do not move the CABG (2-tier) payment directly, it raises the APR-DRG SOI and adjusts the expected complication and cost benchmarks.
+
 ---
 
 <!-- ============================================================
@@ -496,6 +500,9 @@ _"Right heart catheterization documented a mean PAP of [value]. This is referenc
 
 **Atrial fibrillation query:**  
 _"The patient developed atrial fibrillation on POD [X] requiring [rate control / cardioversion / anticoagulation]. Can you specify the type — paroxysmal if it terminated before discharge, or persistent if it was present at discharge?"_
+
+**Morbid obesity query:**  
+_"The patient has a BMI of [X] documented in the chart. Can you document morbid obesity as an active secondary diagnosis in the discharge summary? The specific phrase 'morbid obesity' is required — a BMI code alone does not capture the CC or HCC 48 risk adjustment."_
 
 ---
 

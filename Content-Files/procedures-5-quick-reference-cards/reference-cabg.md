@@ -48,7 +48,7 @@ last-updated: 2026-06
 | 7 | COPD with acute exacerbation | "COPD" without exacerbation; "pulmonary disease" | J44.1 |
 | 8 | Diabetes with complications | "Diabetes" or "DM" without specifying complication type | E11.40–E11.69 |
 | 9 | Cardiomyopathy (non-ischemic, stable) | Underlying cardiomyopathy undocumented when HF is present | I42.0–I42.9 |
-| 10 | Peripheral arterial disease | "Vascular disease" without site or severity | I70.201–I70.799 |
+| 10 | Morbid obesity (BMI ≥40) | "Obese" or "BMI 42" written without diagnosis — Z68 code alone is not a CC | E66.01 |
 
 ---
 
@@ -67,6 +67,7 @@ CABG has 12 HCC risk adjustment variables — the fewest of the five procedures.
 | 37 | Diabetes with chronic complications | Name the complication — nephropathy interacts with AKI risk |
 | 280 | COPD | Severity and exacerbation status |
 | 327 | CKD Stage 4 | Stage the CKD — matters significantly for AKI prediction and management |
+| 48 | Morbid obesity | BMI ≥40 or BMI 35-39.9 with weight-exacerbated comorbidities + provider diagnosis |
 
 **Pre-op cardiology note is the primary HCC source.** "Systolic dysfunction" does not code to the same HCC as "chronic systolic heart failure." Cardiologists should use diagnosis language, not functional descriptions.
 
@@ -91,6 +92,10 @@ Write: *"Acute kidney injury, stage 2 (N17.9), post-cardiopulmonary bypass, like
 **Perioperative MI**
 Instead of: *"Troponin elevated postop — expected after bypass."*
 Write: *"Perioperative myocardial infarction (I97.190) — troponin I peak 42 ng/mL, new ST changes in inferior leads on POD1, confirmed on repeat ECG. Cardiology co-managing."*
+
+**Morbid Obesity**
+Instead of: *"Obese, BMI 41.3."*
+Write: *"Morbid obesity (BMI 41.3) — patient's severe obesity requires specialized postoperative mobilization, bariatric bed, and respiratory care monitoring to prevent sternal dehiscence."*
 
 **Encephalopathy**
 Instead of: *"ICU delirium — reorientation protocol."*
@@ -119,6 +124,7 @@ Write: *"Dilated cardiomyopathy (I42.0) — EF 25% on pre-op TTE, left ventricul
 - [ ] **Malnutrition** — if nutrition support initiated or prolonged ICU course: physician documents severity
 - [ ] **Diabetes** — specify type and complications; avoid "DM" alone
 - [ ] **COPD** — if respiratory involvement during stay: document exacerbation status
+- [ ] **Morbid Obesity** — if BMI is ≥40, or BMI is 35–39.9 with severe weight-exacerbated comorbidities: document "morbid obesity" to capture CC and trigger HCC 48 risk adjustment
 - [ ] **POA status** — all secondary diagnoses should reflect whether present on admission or developed during stay
 
 *Source: CMS MS-DRG V43.0 · FY2026 ICD-10-CM · Last updated June 2026*

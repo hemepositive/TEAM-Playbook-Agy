@@ -48,7 +48,7 @@ last-updated: 2026-06
 | 7 | Atrial fibrillation (specified type) | "A-fib" without type; undocumented entirely | I48.0, I48.11, I48.19 |
 | 8 | Peritonitis (when not principal dx) | Present in perforation cases; may need explicit documentation as secondary dx | K65.0–K65.9 |
 | 9 | C. difficile enteritis | Positive C. diff during hospitalization; diagnosis not named | A04.71, A04.72 |
-| 10 | Hyponatremia | Electrolyte abnormality documented as lab value, not diagnosis | E87.1 |
+| 10 | Morbid obesity (BMI ≥40) | "Obese" or "BMI 42" written without diagnosis — Z68 code alone is not a CC | E66.01 |
 
 ---
 
@@ -64,7 +64,7 @@ Major Bowel has 13 HCC risk adjustment variables, with the most oncology-specifi
 | 9/10/12 | Other active malignancy | Lung, head/neck, brain, breast, prostate — specify stage and whether under active treatment |
 | 85 | Congestive heart failure | Specify systolic vs. diastolic; acute vs. chronic |
 | 37 | Diabetes with chronic complications | Name the complication; avoid "DM" alone |
-| 48 | Morbid obesity | BMI ≥40 with physician diagnosis |
+| 48 | Morbid obesity | BMI ≥40 or BMI 35-39.9 with comorbidities + provider diagnosis (E66.01, HCC 48) |
 | 280 | COPD | Severity and exacerbation status |
 | 54 | Drug/alcohol dependence | Active substance use disorder — not "history of" if currently active |
 
@@ -85,6 +85,10 @@ Write: *"Stage III colon cancer (C18.7), post right hemicolectomy 8 months ago, 
 
 Instead of: *"Metastatic colon cancer — palliative intent."*
 Write: *"Metastatic colorectal cancer (C18.7) with hepatic metastases (C78.7) and peritoneal carcinomatosis (C78.6). Palliative systemic therapy with FOLFIRI ongoing. No curative intent."*
+
+**Morbid Obesity**
+Instead of: *"Obese, BMI 37.5, history of sleep apnea."*
+Write: *"Morbid obesity due to comorbidities (BMI 37.5, obstructive sleep apnea) — patient's severe obesity requires bariatric bed, custom mobilization protocol, and active CPAP compliance monitoring postoperatively."*
 
 **Malnutrition**
 Instead of: *"Patient with poor nutritional status, dietitian following."*
@@ -123,6 +127,7 @@ Write: *"High-output ileostomy with dehydration risk — output averaging 1,800m
 - [ ] **C. difficile** — if C. diff positive during stay: document as diagnosis, not just "positive culture"
 - [ ] **Heart failure** — if diuresis or volume management required: specify systolic vs. diastolic, acute vs. chronic
 - [ ] **COPD** — if respiratory involvement during stay: document exacerbation status
+- [ ] **Morbid Obesity** — if BMI is ≥40, or BMI is 35–39.9 with severe weight-exacerbated comorbidities: document "morbid obesity" to capture CC (+0.7127 weight shift on DRG 330) and HCC 48
 - [ ] **POA status** — all secondary diagnoses should reflect whether present on admission; critical for perforation, peritonitis cases where POA timing matters
 
 *Source: CMS MS-DRG V43.0 · FY2026 ICD-10-CM · Last updated June 2026*
