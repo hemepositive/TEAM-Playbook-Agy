@@ -127,11 +127,11 @@ These apply across all five procedures and all HCC categories:
 
 Full HCC tables — with ICD-10 codes, documentation requirements, and common misses specific to each procedure population — are in the individual procedure pages:
 
-- **LEJR** → `reference-hcc-lejr` — 16 HCC variables; heart failure, diabetes, COPD, arrhythmias, dementia
-- **SHFFT** → `reference-hcc-shfft` — 16 HCC variables; dementia, heart failure, hemiplegia, CKD
-- **Spinal Fusion** → `reference-hcc-spinal-fusion` — 13 HCC variables; myelopathy, depression, obesity
-- **CABG** → `reference-hcc-cabg` — 12 HCC variables; HF, MI/angina, vascular disease
-- **Major Bowel** → `reference-hcc-major-bowel` — 13 HCC variables; malignancy categories, HF, DM
+- **LEJR** → [LEJR](/docs/reference/hcc-lejr) — 16 HCC variables; heart failure, diabetes, COPD, arrhythmias, dementia
+- **SHFFT** → [SHFFT](/docs/reference/hcc-shfft) — 16 HCC variables; dementia, heart failure, hemiplegia, CKD
+- **Spinal Fusion** → [Spinal Fusion](/docs/reference/hcc-spinal-fusion) — 13 HCC variables; myelopathy, depression, obesity
+- **CABG** → [CABG](/docs/reference/hcc-cabg) — 12 HCC variables; HF, MI/angina, vascular disease
+- **Major Bowel** → [Major Bowel](/docs/reference/hcc-major-bowel) — 13 HCC variables; malignancy categories, HF, DM
 
 ---
 

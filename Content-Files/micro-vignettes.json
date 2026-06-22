@@ -117,7 +117,7 @@
       "id": "sepsis-003",
       "scenario": "You write 'SIRS' in your note for a post-CABG patient with fever, tachycardia, and elevated WBC after a sternal wound infection is confirmed. What should you have written instead?",
       "instead": "SIRS in the setting of sternal wound infection — antibiotics started.",
-      "write": "Sepsis due to sternal wound infection, post-CABG. Confirmed infection source with systemic response meeting Sepsis-3 criteria. IV vancomycin and piperacillin-tazobactam initiated. Cardiothoracic surgery consulted for wound management.",
+      "write": "Sepsis due to sternal wound infection, post-CABG. Confirmed infection source with systemic response meeting Sepsis-3 criteria. IV vancomycin and piperacillin-tazobactam initiated. Cardiac surgery consulted for wound management.",
       "why": "SIRS is not sepsis in ICD-10-CM coding. SIRS codes to a different, lower-severity category. When a confirmed infection is the source, write sepsis — not SIRS.",
       "tags": {
         "condition": "Sepsis",
@@ -677,7 +677,7 @@
       "id": "pleural-002",
       "scenario": "Your CABG patient has small bilateral pleural effusions on POD 5 that are not causing respiratory compromise. You plan to discharge tomorrow. Should you document them?",
       "instead": "(Effusions not mentioned in discharge summary — 'clinically insignificant')",
-      "write": "Small bilateral pleural effusions, post-CABG, clinically stable. No respiratory compromise, no intervention required at this time. Follow up with cardiothoracic surgery in 2 weeks.",
+      "write": "Small bilateral pleural effusions, post-CABG, clinically stable. No respiratory compromise, no intervention required at this time. Follow up with cardiac surgery in 2 weeks.",
       "why": "Even clinically insignificant effusions should be documented when present — they are a CC regardless of whether they required intervention. More importantly, documenting them at discharge ensures the next provider knows about them and can monitor for progression.",
       "tags": {
         "condition": "Pleural Effusion",

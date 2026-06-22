@@ -11,7 +11,12 @@ const refRouteMap: Record<string, string> = {
   shfft: '/reference/shfft',
   'spinal-fusion': '/reference/spinal-fusion',
   cabg: '/reference/cabg',
-  'major-bowel': '/reference/major-bowel'
+  'major-bowel': '/reference/major-bowel',
+  'hcc-lejr': '/reference/hcc/lejr',
+  'hcc-shfft': '/reference/hcc/shfft',
+  'hcc-spinal-fusion': '/reference/hcc/spinal-fusion',
+  'hcc-cabg': '/reference/hcc/cabg',
+  'hcc-major-bowel': '/reference/hcc/major-bowel',
 };
 
 export const ReferencePage: React.FC = () => {

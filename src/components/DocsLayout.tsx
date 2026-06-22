@@ -20,8 +20,8 @@ export const DocsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
     { value: 'all', label: 'All Specialties' },
     { value: 'ortho', label: 'Orthopedic Surgery' },
     { value: 'spine', label: 'Spine Surgery' },
-    { value: 'cardiac', label: 'Cardiothoracic' },
-    { value: 'general', label: 'General Surgery' }
+    { value: 'cardiac', label: 'Cardiac Surgery' },
+    { value: 'general', label: 'Colorectal Surgery' }
   ];
 
   const sidebarContent = (

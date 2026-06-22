@@ -8,7 +8,7 @@ const procedureLabelMap: Record<string, string> = {
   lejr: 'Lower Extremity Joint (LEJR)',
   'hip-fracture': 'Surgical Hip Fracture (SHFFT)',
   'spinal-fusion': 'Spinal Fusion',
-  cabg: 'CABG x 3',
+  cabg: 'CABG',
   'major-bowel': 'Major Bowel Procedure'
 };
 

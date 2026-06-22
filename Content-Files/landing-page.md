@@ -9,11 +9,7 @@ last-updated: 2026-06
 
 # Your documentation is worth more than you think.
 
-Starting January 2026, Medicare changed how it pays for five common surgeries — joint replacement, hip fracture repair, spinal fusion, bypass surgery, and bowel resection. Your hospital now receives a single bundled payment for each episode of care, and that payment is calculated partly based on how sick your patients are documented to be.
-
-Not how sick they are. How sick your notes say they are.
-
-This playbook shows you what that means in practice — and what to write.
+Your hospital now receives a single bundled payment for each episode of care, and Medicare calculates this payment based on the severity of illness documented for your patients. The only way insurance companies can assess how sick the patients are is through the documentation you provide. This playbook outlines what this means in practice and offers guidance on what to write.
 
 ---
 

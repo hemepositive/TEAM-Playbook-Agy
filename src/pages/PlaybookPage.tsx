@@ -5,6 +5,7 @@ import contentData from '../data/playbook-content.json';
 const moduleRouteMap: Record<string, string> = {
   overview: '/learn/team-overview',
   fundamentals: '/learn/cdi-fundamentals',
+  'surgical-decisions': '/learn/surgical-decisions-and-cost',
   lejr: '/procedures/lejr',
   'hip-fracture': '/procedures/shfft',
   'spinal-fusion': '/procedures/spinal-fusion',

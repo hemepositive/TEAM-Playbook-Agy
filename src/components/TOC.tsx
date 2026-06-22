@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface TOCItem {
   id: string;
@@ -9,6 +10,7 @@ interface TOCItem {
 export const TOC: React.FC = () => {
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>('');
+  const location = useLocation();
 
   useEffect(() => {
     const headingElements = Array.from(document.querySelectorAll('article h2, article h3'));
@@ -35,7 +37,7 @@ export const TOC: React.FC = () => {
 
     headingElements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   if (headings.length === 0) return null;
 

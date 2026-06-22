@@ -13,14 +13,15 @@ export interface ProcedureNavItem {
 
 export const generalNavItems: NavItem[] = [
   { title: 'What is TEAM?', path: '/docs/overview', specialty: 'all' },
-  { title: 'CDI Fundamentals', path: '/docs/fundamentals', specialty: 'all' }
+  { title: 'CDI Fundamentals', path: '/docs/fundamentals', specialty: 'all' },
+  { title: 'Surgical Decisions', path: '/docs/surgical-decisions', specialty: 'all' }
 ];
 
 export const procedureNavItems: ProcedureNavItem[] = [
   { title: 'Lower Extremity Joint (LEJR)', slug: 'lejr', refSlug: 'lejr', specialty: 'ortho' },
   { title: 'Surgical Hip Fracture (SHFFT)', slug: 'hip-fracture', refSlug: 'shfft', specialty: 'ortho' },
   { title: 'Spinal Fusion', slug: 'spinal-fusion', refSlug: 'spinal-fusion', specialty: 'spine' },
-  { title: 'CABG x 3', slug: 'cabg', refSlug: 'cabg', specialty: 'cardiac' },
+  { title: 'CABG', slug: 'cabg', refSlug: 'cabg', specialty: 'cardiac' },
   { title: 'Major Bowel Procedure', slug: 'major-bowel', refSlug: 'major-bowel', specialty: 'general' }
 ];
 

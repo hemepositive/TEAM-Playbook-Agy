@@ -250,7 +250,7 @@ export const scenarios: ScenarioData[] = [
     "gender": "Male",
     "admittingDx": "Multivessel CAD",
     "chiefComplaint": "I had terrible chest pressure while shoveling snow.",
-    "hpi": "Patient admitted for CABG x 3. On post-op day 2, the telemetry monitor alarms for an irregular, rapid heartbeat. EKG confirms a new arrhythmia. The patient is started on an amiodarone drip.",
+    "hpi": "Patient admitted for CABG. On post-op day 2, the telemetry monitor alarms for an irregular, rapid heartbeat. EKG confirms a new arrhythmia. The patient is started on an amiodarone drip.",
     "pmh": [
       "Coronary Artery Disease",
       "Hyperlipidemia. No prior history of arrhythmias"
@@ -693,7 +693,7 @@ export const scenarios: ScenarioData[] = [
     "gender": "Male",
     "admittingDx": "Triple Vessel CAD",
     "chiefComplaint": "I feel like an elephant is sitting on my chest.",
-    "hpi": "Admitted for CABG x 3. On post-op day 3, the patient develops pink frothy sputum, bilateral crackles on lung exam, and worsening dyspnea. His BNP skyrockets to 1200. He is started on IV Lasix with significant diuresis. An echo confirms an ejection fraction of 25%. The patient also has Class 3 Obesity (BMI 43.4) which increases the risk of postoperative wound infection and sternal dehiscence.",
+    "hpi": "Admitted for CABG. On post-op day 3, the patient develops pink frothy sputum, bilateral crackles on lung exam, and worsening dyspnea. His BNP skyrockets to 1200. He is started on IV Lasix with significant diuresis. An echo confirms an ejection fraction of 25%. The patient also has Class 3 Obesity (BMI 43.4) which increases the risk of postoperative wound infection and sternal dehiscence.",
     "pmh": [
       "Coronary Artery Disease",
       "Morbid obesity"

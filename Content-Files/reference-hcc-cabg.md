@@ -70,7 +70,7 @@ Heart failure documentation in the CABG population follows the same specificity 
 
 [PHRASING]
 ❌ "CAD, CHF, DM — proceed with CABG." — Diagnoses listed without specificity; no HCC weight captured for HF or DM.
-✅ "Three-vessel CAD with recent NSTEMI (I21.4). Ischemic cardiomyopathy (I25.5) with chronic systolic heart failure (I50.22), EF 30%, NYHA Class III, on carvedilol, lisinopril, and furosemide. Type 2 diabetes mellitus with CKD (E11.65), eGFR 28 (CKD Stage 4, N18.4). COPD, moderate (J44.1), on tiotropium. Proceeding with CABG × 3." — All relevant HCCs captured; clinical picture complete.
+✅ "Three-vessel CAD with recent NSTEMI (I21.4). Ischemic cardiomyopathy (I25.5) with chronic systolic heart failure (I50.22), EF 30%, NYHA Class III, on carvedilol, lisinopril, and furosemide. Type 2 diabetes mellitus with CKD (E11.65), eGFR 28 (CKD Stage 4, N18.4). COPD, moderate (J44.1), on tiotropium. Proceeding with CABG." — All relevant HCCs captured; clinical picture complete.
 
 ---
 

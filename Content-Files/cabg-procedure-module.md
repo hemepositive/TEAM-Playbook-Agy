@@ -224,7 +224,7 @@ Cardiac cachexia — the syndrome of weight loss, muscle wasting, and nutritiona
 
 ## Before & After: The Post-CABG Note That Left $13,000 on the Table
 
-**The patient:** 68-year-old male admitted for CABG ×3 without cardiac catheterization (DRG 235/236 family). History of triple-vessel CAD, hypertension, hyperlipidemia, and type 2 diabetes. Preoperative echo shows EF 30% with global hypokinesis. Preoperative albumin is 1.8. POD 1: creatinine rises from 1.1 to 2.6. POD 2: patient is found confused and disoriented; sodium is 127. BNP on POD 3 is 2,100; patient requires IV Lasix with 2.5L net negative.
+**The patient:** 68-year-old male admitted for CABG without cardiac catheterization (DRG 235/236 family). History of triple-vessel CAD, hypertension, hyperlipidemia, and type 2 diabetes. Preoperative echo shows EF 30% with global hypokinesis. Preoperative albumin is 1.8. POD 1: creatinine rises from 1.1 to 2.6. POD 2: patient is found confused and disoriented; sodium is 127. BNP on POD 3 is 2,100; patient requires IV Lasix with 2.5L net negative.
 
 ---
 
@@ -232,7 +232,7 @@ Cardiac cachexia — the syndrome of weight loss, muscle wasting, and nutritiona
 
 ```
 DISCHARGE DIAGNOSES:
-1. Status post CABG ×3
+1. Status post CABG
 2. Coronary artery disease, triple vessel
 3. Hypertension
 4. Hyperlipidemia
@@ -241,7 +241,7 @@ DISCHARGE DIAGNOSES:
 7. [HIGHLIGHT-MISS] Cardiomyopathy [/HIGHLIGHT-MISS]
 
 HOSPITAL COURSE:
-Patient underwent uncomplicated CABG ×3. Transferred to
+Patient underwent uncomplicated CABG. Transferred to
 cardiac surgery ICU in stable condition.
 
 POD 1: [HIGHLIGHT-MISS] Creatinine up to 2.6, likely pump-related,
@@ -275,7 +275,7 @@ cardiology follow-up.
 
 ```
 DISCHARGE DIAGNOSES:
-1. Status post CABG ×3
+1. Status post CABG
 2. Coronary artery disease, triple vessel
 3. [HIGHLIGHT-OK] Acute kidney injury, resolving [/HIGHLIGHT-OK]
 4. [HIGHLIGHT-OK] Dilated cardiomyopathy [/HIGHLIGHT-OK]
@@ -288,7 +288,7 @@ DISCHARGE DIAGNOSES:
 11. Type 2 diabetes mellitus, with hyperglycemia
 
 HOSPITAL COURSE:
-Patient underwent uncomplicated CABG ×3. Transferred to
+Patient underwent uncomplicated CABG. Transferred to
 cardiac surgery ICU in stable condition.
 
 POD 1: Patient developed [HIGHLIGHT-OK] acute kidney injury [/HIGHLIGHT-OK] — creatinine
