@@ -1,5 +1,0 @@
-# Ignore local data directory
-data/
-
-# OS files
-.DS_Store
