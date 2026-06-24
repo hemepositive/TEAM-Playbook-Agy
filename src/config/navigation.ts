@@ -14,6 +14,7 @@ export interface ProcedureNavItem {
 export const generalNavItems: NavItem[] = [
   { title: 'What is TEAM?', path: '/docs/overview', specialty: 'all' },
   { title: 'CDI Fundamentals', path: '/docs/fundamentals', specialty: 'all' },
+  { title: 'How H&P Becomes a DRG', path: '/docs/documentation-to-drg', specialty: 'all' },
   { title: 'Surgical Decisions', path: '/docs/surgical-decisions', specialty: 'all' }
 ];
 
@@ -26,8 +27,10 @@ export const procedureNavItems: ProcedureNavItem[] = [
 ];
 
 export const referenceNavItems: NavItem[] = [
+  { title: 'DRG Payment Essentials', path: '/docs/reference/drg-payments', specialty: 'all' },
   { title: 'CC/MCC Specificity Guide', path: '/docs/reference/cc-mcc', specialty: 'all' },
   { title: 'General HCC Reference', path: '/docs/reference/hcc', specialty: 'all' },
   { title: 'APR-DRG SOI/ROM Guide', path: '/docs/reference/apr-drg', specialty: 'all' },
   { title: 'Patient Safety Indicators (PSI)', path: '/docs/reference/psi', specialty: 'all' }
 ];
+

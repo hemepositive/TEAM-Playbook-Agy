@@ -1,4 +1,13 @@
+---
+title: "How H&P Becomes a DRG"
+procedure: null
+route: /learn/documentation-to-drg
+drg-family: null
+tier-structure: null
+---
+
 # From Assessment & Plan to Medicare Payment
+
 
 *How your H\&P becomes a DRG claim*
 

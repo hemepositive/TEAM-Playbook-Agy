@@ -3,6 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import contentData from '../data/playbook-content.json';
 
 const refRouteMap: Record<string, string> = {
+  'drg-payments': '/reference/drg-payments',
   'cc-mcc': '/reference/cc-mcc',
   hcc: '/reference/hcc',
   'apr-drg': '/reference/apr-drg',

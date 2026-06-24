@@ -1,4 +1,13 @@
+---
+title: "DRG Payment Essentials"
+procedure: null
+route: /reference/drg-payments
+drg-family: null
+tier-structure: null
+---
+
 # DRG Payment Essentials — Physician & APP Reference
+
 
 *Clinical Documentation Reference | CDI Program*
 
